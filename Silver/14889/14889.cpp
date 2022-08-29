@@ -24,7 +24,9 @@ int main() {
             s[i][j] += s[j][i];
             sum += s[i][j];
             s[j][i] = 0;
+            cout << s[i][j] ' ';
         }
+        cout << '\n';
     }
 
     vector<int> v;
