@@ -7,35 +7,57 @@
 
 using namespace std;
 
+bool arr[20];
 int N;
 int sum = 0;
+int mymin = 50000;
+int s[20][20];
+
+void mkteam(int index, int cnt) {
+    vector<int> start, link;
+    int stscore = 0;
+    int lkscore = 0;
+    if(cnt == N / 2) {
+        for(int i = 0; i < N; i++) {
+            if(arr[i]) {
+                start.push_back(i);
+            }
+            else {
+                link.push_back(i);
+            }
+        }
+
+        for(int i = 0; i < N / 2; i++) {
+            for(int j = 0; j < N / 2; j++) {
+                stscore += s[start[i]][start[j]];
+                lkscore += s[link[i]][link[i]];
+            }
+        }
+
+        if(abs(stscore - lkscore) < mymin) {
+            mymin = abs(stscore - lkscore);
+        }
+    }
+
+    for(int i = index; i < N; i++) {
+        if(arr[i]) {
+            continue;
+        }
+        else {
+            arr[i] = true;
+            mkteam(index, cnt + 1);
+            arr[i] = false;
+        }
+    }
+}
 
 int main() {
     cin >> N;
-    int s[N][N];
     for(int i = 0; i < N; i++) {
         for(int j = 0; j < N; j++) {
             cin >> s[i][j];
         }
     }
-
-    for(int i = 0; i < N; i++) {
-        for(int j = 0; j < N; j++) {
-            s[i][j] += s[j][i];
-            sum += s[i][j];
-            s[j][i] = 0;
-            cout << s[i][j] << ' ';
-        }
-        cout << '\n';
-    }
-
-    vector<int> v;
-    for(int i = 0; i < N; i++) {
-        for(int j = 0; j < N; j++) {
-            if(s[i][j]) {
-                v.push_back(s[i][j]);
-            }
-        }
-    }
-    sort(v.begin(), v.end()); 
+    mkteam(0, 0);
+    cout << mymin;
 }

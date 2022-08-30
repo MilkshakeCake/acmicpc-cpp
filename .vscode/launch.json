@@ -9,7 +9,7 @@
       "stopAtEntry": false,
       "externalConsole": true,
       "cwd": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/Silver/14889",
-      "program": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/Silver/14889/build/Release/outRelease",
+      "program": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/Silver/14889/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
