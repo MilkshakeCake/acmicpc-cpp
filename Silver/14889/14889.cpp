@@ -37,7 +37,5 @@ int main() {
             }
         }
     }
-    sort(v.begin(), v.end());
-3
-    
+    sort(v.begin(), v.end());    
 }
