@@ -32,7 +32,7 @@ void mkteam(int index, int cnt) {
                 lkscore += s[link[i]][link[j]];
             }
         }
-    
+
         if(abs(stscore - lkscore) < mymin) {
             mymin = abs(stscore - lkscore);
         }
@@ -60,3 +60,4 @@ int main() {
     mkteam(0, 0);
     cout << mymin;
 }
+//time out
