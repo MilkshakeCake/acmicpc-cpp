@@ -60,4 +60,5 @@ int main() {
     mkteam(0, 0);
     cout << mymin;
 }
+
 //time out
