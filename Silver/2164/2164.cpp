@@ -4,6 +4,7 @@
 #include <iostream>
 #include <algorithm>
 #include <utility>
+#include <queue>
 
 using namespace std;
 
@@ -12,17 +13,17 @@ int main() {
     cin.tie(0);
     int n;
     cin >> n;
-    vector<int> v;
+    queue<int> q;
     for(int i = 1; i <= n; i++) {
-        v.push_back(i);
+        q.push(i);
     }
 
-    while(v.size() > 1) {
-        v.erase(v.begin());
-
-        v.push_back(v[0]);
-
-        v.erase(v.begin());
+    
+    while(q.size() > 1) {
+    q.pop();
+    q.push(q.front());
+    q.pop();
     }
-    cout << v[0];
+
+    cout << q.front();
 }
