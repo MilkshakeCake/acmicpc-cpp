@@ -8,8 +8,17 @@
 using namespace std;
 
 int main() {
-    int arr[10] = {1};
+    vector<int> v;
     for(int i = 0; i < 10; i++) {
-        cout << arr[i] << ' ';
+        v.push_back(i);
+        cout << v[i] << ' ';
     }
+    cout << '\n';
+
+    v.erase(v.begin());
+    v.pop_back();
+    for(unsigned int i = 0; i < v.size(); i++) {
+        cout << v[i] << ' ';
+    }
+
 }
