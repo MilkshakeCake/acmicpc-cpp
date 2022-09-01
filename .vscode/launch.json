@@ -33,8 +33,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/Silver/2164",
-      "program": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/Silver/2164/build/Release/outRelease",
+      "cwd": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/Silver/9012",
+      "program": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/Silver/9012/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
