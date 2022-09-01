@@ -22,7 +22,7 @@ int main() {
         v.push_back(temp);
     }
     sort(v.begin(), v.end());
-    int snum = 1;
+    int snum = 0;
     int lnum = v[v.size()-1];
 
     while(snum <= lnum) {
