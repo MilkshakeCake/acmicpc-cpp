@@ -29,8 +29,10 @@ int main() {
             if(stak.empty()) {
                 cout << "-1" << '\n';
             }
-            else cout << stak.top() << '\n';
-            stak.pop();
+            else {
+                cout << stak.top() << '\n';
+                stak.pop();
+            }
         }
 
         else if(str == "size") {
@@ -48,4 +50,5 @@ int main() {
             else cout << stak.top() << '\n';
         }
     }
+    return 0;
 }
