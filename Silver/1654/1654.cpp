@@ -22,12 +22,12 @@ int main() {
         v.push_back(temp);
     }
     sort(v.begin(), v.end());
-    int snum = 0;
-    int lnum = v[v.size()-1];
+    long long snum = 1;
+    long long lnum = v[v.size()-1];
 
     while(snum <= lnum) {
-        int iter = (snum + lnum) / 2;
-        int cnt = 0;
+        long long iter = (snum + lnum) / 2;
+        long long cnt = 0;
         for(int i = 0; i < k; i++) {
             cnt += v[i] / iter;
         }
