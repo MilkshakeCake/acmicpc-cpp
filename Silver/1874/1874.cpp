@@ -1,9 +1,6 @@
-#include <string>
-#include <cmath>
 #include <vector>
 #include <iostream>
 #include <algorithm>
-#include <utility>
 #include <stack>
 
 using namespace std;
@@ -14,27 +11,38 @@ int main() {
     cout.tie(NULL);
     
     stack<int> stk;
-    stk.push(0);
+
     int n;
     cin >> n;
+
+    vector<int> arr;
     int temp;
-    vector<char> ch;
-    int next = 1;
+
     for(int i = 0; i < n; i++) {
         cin >> temp;
-        if(stk.top() > temp) {
-            cout << "NO";
-            return 0;
-        }
-        while(temp > stk.top()) {
-            stk.push(next++);
-            ch.push_back('+');
-        }
-        if(stk.empty()) continue;
-        stk.pop();
-        ch.push_back('-');
+        arr.push_back(temp);
     }
-    for(unsigned int i = 0; i < ch.size() - 1; i++) {
+
+    vector<char> ch;
+    int next = 0;
+    
+    for(int i = 1; i <= n; i++) {
+        stk.push(i);
+        ch.push_back('+');
+
+        while(!stk.empty() && stk.top() == arr[next]) {
+            stk.pop();
+            ch.push_back('-');
+            next++;
+        }
+    }
+
+    if(!stk.empty()) {
+        cout << "NO";
+        return 0;
+    }
+
+    for(unsigned int i = 0; i < ch.size(); i++) {
         cout << ch[i] << '\n';
     }
 }

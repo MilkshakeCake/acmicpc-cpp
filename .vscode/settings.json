@@ -35,6 +35,7 @@
     "unordered_map": "cpp",
     "vector": "cpp",
     "utility": "cpp",
-    "numeric": "cpp"
+    "numeric": "cpp",
+    "new": "cpp"
   }
 }
