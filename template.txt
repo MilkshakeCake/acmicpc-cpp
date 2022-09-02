@@ -4,6 +4,9 @@
 #include <iostream>
 #include <algorithm>
 #include <utility>
+#include <queue>
+#include <stack>
+#include <deque>
 
 using namespace std;
 
