@@ -18,12 +18,13 @@ int main() {
     string str;
     cin >> l >> str;
 
-    long long hash = 0;
-    for(unsigned int i = 0; i < str.length(); i++) {
-        hash += (str[i] - 96) * pow(31, i);
+    long long int hash = 0;
+    for(int i = 0; i < l; i++) {
+        long long int temp = str[i] - 96;
+        for(int j = 0; j < i; j++) {
+            temp = (temp * 31) % M;
+            hash += temp;
+        }
     }
-    hash--;
-
-    hash %= M;
-    cout << hash;
+    cout << hash % M;
 }

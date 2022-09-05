@@ -12,10 +12,10 @@ int main() {
     int hash = 0;
     int temp;
     for(int i = 0; i < 5; i++) {
-        temp = (str[i] - 96) * pow(31, i);
+        temp = (str[i] - 96) * (int)(pow(31, i) + 0.5);
         hash += temp;
-        cout << str[i] - 96 << ' ' << pow(31, i) << ' ' << temp << ' ' << hash << '\n';
+        cout << str[i] - 96 << ' ' << (int)(pow(31, i) + 0.5) << ' ' << temp << ' ' << hash << '\n';
     }
 
-    cout << hash - 1;
+    cout << hash;
 }
