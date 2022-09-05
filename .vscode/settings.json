@@ -38,6 +38,7 @@
     "numeric": "cpp",
     "new": "cpp",
     "map": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "istream": "cpp"
   }
 }
