@@ -36,6 +36,8 @@
     "vector": "cpp",
     "utility": "cpp",
     "numeric": "cpp",
-    "new": "cpp"
+    "new": "cpp",
+    "map": "cpp",
+    "queue": "cpp"
   }
 }

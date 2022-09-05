@@ -1,23 +1,20 @@
-#include <string>
-#include <cmath>
+// 프린터 큐 - Baekjoon Online Judge no.1966
+
+#include <cstdio>
 #include <vector>
 #include <iostream>
 #include <algorithm>
 #include <utility>
+#include <queue>
 
 using namespace std;
 
-struct myStruct {
-    int key;
-    int index;
-    myStruct(int k, int idx) : key(k), index(idx) {}
-};
-
-struct myCompare {
-    inline bool operator() (const myStruct& str1, const myStruct& str2) {
-        return (str1.key < str2.key);
-    }
-};
+// bool operator< () {
+//         if(str1.index == str2.index) {
+//             return str1.key > str2.key;
+//         }
+//         return str1.index < str2.index;
+//     }
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -30,12 +27,33 @@ int main() {
         int n, m;
         cin >> n >> m;
 
-        vector<int> v;
-        int vtmp;
+        priority_queue<int> pq;
+        queue<pair<int, int> > que;
+        int temp;
         for(int i = 0; i < n; i++) {
-            cin >> vtmp;
-            v.push_back(vtmp);
+            cin >> temp;
+            pq.push(temp);
+            que.push(make_pair(i, temp));
         }
-        sort(v.begin(), v.end(), myCompare());
+
+        int cnt = 0;
+        while(true) {
+            int idx = que.front().first;
+
+            if(pq.top() > que.front().second) {
+                que.push(que.front());
+                que.pop();
+            }
+
+            else {
+                que.pop();
+                pq.pop();
+                cnt++;
+                if(idx == m) {
+                    cout << cnt << '\n';
+                    break;
+                }
+            }
+        }
     }
 }
