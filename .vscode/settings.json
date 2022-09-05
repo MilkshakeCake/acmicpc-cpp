@@ -39,6 +39,7 @@
     "new": "cpp",
     "map": "cpp",
     "queue": "cpp",
-    "istream": "cpp"
+    "istream": "cpp",
+    "cmath": "cpp"
   }
 }

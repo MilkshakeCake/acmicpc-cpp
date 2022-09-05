@@ -1,0 +1,1 @@
+h = modular(sum of a(i)*(r^i) where i = 0 ~ l - 1) (l = length of array of a(i))

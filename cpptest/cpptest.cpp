@@ -8,7 +8,14 @@
 using namespace std;
 
 int main() {
-    string str;
-    getline(cin, str, '.');
-    cout << str.substr(str.find('[') + 1, str.find(']') - str.find('[') - 1);
+    string str = "abcde";
+    int hash = 0;
+    int temp;
+    for(int i = 0; i < 5; i++) {
+        temp = (str[i] - 96) * pow(31, i);
+        hash += temp;
+        cout << str[i] - 96 << ' ' << pow(31, i) << ' ' << temp << ' ' << hash << '\n';
+    }
+
+    cout << hash - 1;
 }
