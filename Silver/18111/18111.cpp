@@ -5,6 +5,8 @@
 #include <algorithm>
 #include <map>
 
+const int INF = 1e9 + 7;
+
 using namespace std;
 
 int main() {
@@ -30,7 +32,7 @@ int main() {
         }
     }
 
-    int mintm = 257;
+    int mintm = INF;
     int maxH = 0;
     int jpres = j;
 
