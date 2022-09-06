@@ -8,14 +8,14 @@
 using namespace std;
 
 int main() {
-    string str = "abcde";
-    int hash = 0;
-    int temp;
+    int sum = 0;
+    int arr[5];
+    int arr2[5];
     for(int i = 0; i < 5; i++) {
-        temp = (str[i] - 96) * (int)(pow(31, i) + 0.5);
-        hash += temp;
-        cout << str[i] - 96 << ' ' << (int)(pow(31, i) + 0.5) << ' ' << temp << ' ' << hash << '\n';
+        arr[i] = (i + 1) * 10;
+        arr2[i] = arr[i] % 7;
+        sum += arr2[i];
     }
-
-    cout << hash;
+    sum %= 7;
+    if(sum == 3) cout << 'y';
 }

@@ -1,0 +1,33 @@
+// 키 바인딩을 이 파일에 넣어서 기본값 재정의auto[]
+[
+    {
+        "key": "ctrl+alt+c",
+        "command": "C_Cpp_Runner.buildSingleFile",
+        "when": "C_Cpp_Runner:activatedExtension"
+    },
+    {
+        "key": "ctrl+alt+b",
+        "command": "-C_Cpp_Runner.buildSingleFile",
+        "when": "C_Cpp_Runner:activatedExtension"
+    },
+    {
+        "key": "ctrl+alt+v",
+        "command": "C_Cpp_Runner.runSingleFile",
+        "when": "C_Cpp_Runner:activatedExtension"
+    },
+    {
+        "key": "ctrl+alt+r",
+        "command": "-C_Cpp_Runner.runSingleFile",
+        "when": "C_Cpp_Runner:activatedExtension"
+    },
+    {
+        "key": "ctrl+shift+a",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "ctrl+shift+oem_3",
+        "command": "-workbench.action.terminal.new",
+        "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+    }
+]

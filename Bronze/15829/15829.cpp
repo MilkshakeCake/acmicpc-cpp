@@ -23,8 +23,8 @@ int main() {
         long long int temp = str[i] - 96;
         for(int j = 0; j < i; j++) {
             temp = (temp * 31) % M;
-            hash += temp;
         }
+        hash += temp;
     }
     cout << hash % M;
 }
