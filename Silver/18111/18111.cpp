@@ -18,14 +18,9 @@ int main() {
     floor = 257;
     ceil = 0;
     map<int, int> myMap; // key : given height (ex : 63, 64) val : count of heights that are shown
-    vector<int> idxVec; // array of given heights of each cell
     for(int i = 0; i < (n * m); i++) {
         std::cin >> temp;
         myMap[temp]++;
-        sort(idxVec.begin(), idxVec.end());
-        if(!binary_search(idxVec.begin(), idxVec.end(), temp)) {
-            idxVec.push_back(temp);
-        }
 
         if(temp > ceil) {
             ceil = temp;
@@ -37,23 +32,23 @@ int main() {
 
     int mintm = 257;
     int maxH = 0;
-
-    sort(idxVec.begin(), idxVec.end());
+    int jpres = j;
 
     for(int height = floor; height <= ceil; height++) { // each case of possible heights
         int time = 0;
         int jpr = 0;
+        j = jpres;
 
         // sum worktime thru loop
-        for(unsigned int i = 0; i < idxVec.size(); i++) {
-            if(idxVec[i] > height){
-                time += 2 * myMap[idxVec[i]] * (idxVec[i] - height);
-                j += myMap[idxVec[i]] * (idxVec[i] - height);
+        for(auto& i : myMap) {
+            if(i.first > height){
+                time += 2 * i.second * (i.first - height);
+                j += i.second * (i.first - height);
             }
 
             else {
-                time += myMap[idxVec[i]] * (height - idxVec[i]);
-                jpr += myMap[idxVec[i]] * (height - idxVec[i]);
+                time += i.second * (height - i.first);
+                jpr += i.second * (height - i.first);
             }
         }
 
