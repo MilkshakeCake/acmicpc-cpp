@@ -1,11 +1,6 @@
-//요세푸스 문제 0
+//요세푸스 문제 0 - Baekjoon Online Judge no.11866
 
-#include <string>
-#include <cmath>
-#include <vector>
 #include <iostream>
-#include <algorithm>
-#include <utility>
 #include <queue>
 
 using namespace std;

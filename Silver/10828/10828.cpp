@@ -1,10 +1,9 @@
+// 스택 - Baekjoon Online Judge no.10828
+
 #include <string>
-#include <cmath>
 #include <vector>
 #include <iostream>
-#include <algorithm>
 #include <stack>
-#include <utility>
 
 using namespace std;
 

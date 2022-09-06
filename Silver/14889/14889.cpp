@@ -1,9 +1,9 @@
+// 스타트와 링크 - Baekjoon Online Judge no.14889
+
 #include <string>
 #include <cmath>
 #include <vector>
 #include <iostream>
-#include <algorithm>
-#include <utility>
 
 using namespace std;
 

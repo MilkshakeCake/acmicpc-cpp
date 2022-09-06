@@ -1,3 +1,5 @@
+// 스택 수열 - Baekjoon Online Judge no.1874
+
 #include <vector>
 #include <iostream>
 #include <algorithm>

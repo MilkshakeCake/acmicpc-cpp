@@ -1,10 +1,8 @@
+// 큐 - Baekjoon Online Judge no.10845
+
 #include <string>
-#include <cmath>
-#include <vector>
 #include <iostream>
-#include <algorithm>
 #include <queue>
-#include <utility>
 
 using namespace std;
 

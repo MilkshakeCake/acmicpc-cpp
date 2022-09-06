@@ -1,10 +1,8 @@
+// 덱 - Baekjoon Online Judge no.10866
+
 #include <string>
-#include <cmath>
-#include <vector>
 #include <iostream>
-#include <algorithm>
 #include <deque>
-#include <utility>
 
 using namespace std;
 
