@@ -14,5 +14,7 @@
 using namespace std;
 
 int main() {
-    cout << 2*pow(31, 3);
+    int a = 3;
+    int b = 5;
+    cout << (a < b ? a : b);
 }

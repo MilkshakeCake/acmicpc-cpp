@@ -12,18 +12,28 @@
 
 using namespace std;
 
+vector<bool> arr(10, true);
+vector<int> v;
+string n;
+int m;
+int cnt = 0;
+
+void recursive(int num, int save) {
+    if(arr[num]) {
+        v.push_back(num);
+        cnt++;
+    }
+    else {
+        num == 9 ? recursive(0, save) : recursive(num + 1, save);
+    }
+    
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-
-    bool arr[10];
-    for(int i = 0; i < 10; i++) {
-        arr[i] = true;
-    }
     
-    string n;
-    int m;
     cin >> n >> m;
     while(m--) {
         int temp;
@@ -31,15 +41,16 @@ int main() {
         arr[temp] = false;
     }
 
-    int chan = 100;
-    int cnt = 0;
-
-    for(unsigned int i = 0; i < n.length(); i++) {
-        if(arr[n[i]]) {
-            cnt++;
-        }
-        else {
-            
-        }
+    for(int i = 0; i < (int)n.length(); i++) {
+        recursive((int)n[i] - 48, 0);
     }
+
+    int tencnt = 1;
+    int sum = 0;
+    for(int i = (int)v.size() - 1; i >= 0; i--) {
+        sum += v[i] * tencnt;
+        tencnt *= 10;
+    }
+    cnt += abs(sum - stoi(n));
+    cout << (abs(stoi(n) - 100) < cnt ? abs(stoi(n) - 100) : cnt);
 }

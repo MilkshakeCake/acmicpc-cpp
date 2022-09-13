@@ -41,6 +41,7 @@
     "queue": "cpp",
     "istream": "cpp",
     "cmath": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "iostream": "cpp"
   }
 }
