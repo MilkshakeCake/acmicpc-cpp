@@ -33,10 +33,23 @@
 
 using namespace std;
 
+vt<ll> v = {0, 1, 2};
+int n;
+
+void fib() {
+    ll temp;
+    F_OR3(i, 3, n + 1) {
+        temp = v[i-1] + v[i-2];
+        v.push_back(temp % 15746);
+    }
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     
-    
+    cin >> n;
+    fib();
+    cout << v[n]%15746;
 }

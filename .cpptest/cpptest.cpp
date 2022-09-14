@@ -14,7 +14,15 @@
 using namespace std;
 
 int main() {
-    int a = 3;
-    int b = 5;
-    cout << (a < b ? a : b);
+    vector<vector<int> > v;
+    vector<int> temp;
+    temp.push_back(1);
+    temp.push_back(2);
+    v.push_back(temp);
+    temp.pop_back();
+    temp.pop_back();
+    temp.push_back(30);
+    temp.push_back(40);
+    v.push_back(temp);
+    for(auto& i : v) cout << v[i];
 }
