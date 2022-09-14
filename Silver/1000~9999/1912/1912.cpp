@@ -20,6 +20,7 @@
 #define vt vector
 #define all(c) (c).begin(), (c).end()
 #define sz(x) (int)(x).size()
+#define vtend(v) (v)[sz(v)-1]
 
 #define F_OR(i, a, b, s) for (int i = (a); (s) > 0 ? i < (b) : i > (b); i += (s))
 #define F_OR1(e) F_OR(i, 0, e, 1)
@@ -35,5 +36,38 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
+    int n, temp;
+    cin >> n;
+    vt<int> origin;
+    F_OR1(n) {
+        cin >> temp;
+        origin.push_back(temp);
+    }
+
+    vt<int> v;
+    F_OR1(n) {
+        if(i == 0) {
+            v.push_back(origin[i]);
+            continue;
+        }
+        v.push_back(origin[i] + vtend(v));
+    }
+
+    vt<pair<int, int> > pr;
+    for(int i = 0; i < n; i++) {
+        pr.push_back(make_pair(v[i], i));
+    }
+    sort(all(pr));
+
+    int maxn = -1001;
+    for(int i = pr[0].second; i < sz(v); i++) {
+        if(v[i] > maxn) maxn = v[i];
+    }
     
+    if(vtend(pr).first < 0) {
+        cout << vtend(pr).first;
+        return 0;
+    }
+
+    cout << maxn - pr[0].first;
 }
