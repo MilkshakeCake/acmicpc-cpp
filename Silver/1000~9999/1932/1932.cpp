@@ -1,5 +1,4 @@
-// RGB거리 - Baekjoon Online Judge no.1149
-// Dynamic Programming
+// "Project_Name" - Baekjoon Online Judge no."Project_Num"
 
 #include <string>
 #include <cmath>
@@ -36,16 +35,29 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int house;
-    cin >> house;
-    int costdp[1001][3] = {{0, 0, 0}};
-    int cost[3];
+    int upper[500] = {0};
+    int lower[500] = {0};
 
-    for(int i = 1; i <= house; i++) {
-        cin >> cost[0] >> cost[1] >> cost[2];
-        costdp[i][0] = min(costdp[i-1][1], costdp[i-1][2]) + cost[0];
-        costdp[i][1] = min(costdp[i-1][0], costdp[i-1][2]) + cost[1];
-        costdp[i][2] = min(costdp[i-1][1], costdp[i-1][0]) + cost[2];
+    int n;
+    cin >> n;
+    cin >> upper[0];
+    F_OR3(i, 1, n) {
+        F_OR2(j, i + 1) {
+            cin >> lower[j];
+        }
+
+        lower[0] += upper[0];
+
+        F_OR3(j, 1, i) {
+            lower[j] += max(upper[j], upper[j-1]);
+        }
+        
+        lower[i] += upper[i-1];
+
+        F_OR2(j, i + 1) {
+            upper[j] = lower[j];
+        }
     }
-    cout << min(min(costdp[house][0], costdp[house][1]), costdp[house][2]);
+    sort(upper, upper + n, greater<>());
+    cout << upper[0];
 }
