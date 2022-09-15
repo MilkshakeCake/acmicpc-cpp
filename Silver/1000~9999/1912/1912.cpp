@@ -26,7 +26,6 @@
 #define F_OR1(e) F_OR(i, 0, e, 1)
 #define F_OR2(i, e) F_OR(i, 0, e, 1)
 #define F_OR3(i, b, e) F_OR(i, b, e, 1)
-#define F_OR4(i, b, e, s) F_OR(i, b, e, s)
 #define EACH(x, a) for (auto& x : a)
 
 using namespace std;
@@ -36,38 +35,19 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int n, temp;
+    int n;
     cin >> n;
-    vt<int> origin;
+    int arr[100000] = {0};
+    int dp[100000] = {0};
     F_OR1(n) {
-        cin >> temp;
-        origin.push_back(temp);
+        cin >> arr[i];
     }
-
-    vt<int> v;
-    F_OR1(n) {
-        if(i == 0) {
-            v.push_back(origin[i]);
-            continue;
-        }
-        v.push_back(origin[i] + vtend(v));
+    dp[0] = arr[0];
+    int res = dp[0];
+    F_OR3(i, 1, n) {
+        if(dp[i-1] >= 0) dp[i] = dp[i-1] + arr[i];
+        else dp[i] = arr[i];
+        res = max(res, dp[i]);
     }
-
-    vt<pair<int, int> > pr;
-    for(int i = 0; i < n; i++) {
-        pr.push_back(make_pair(v[i], i));
-    }
-    sort(all(pr));
-
-    int maxn = -1001;
-    for(int i = pr[0].second; i < sz(v); i++) {
-        if(v[i] > maxn) maxn = v[i];
-    }
-    
-    if(vtend(pr).first < 0) {
-        cout << vtend(pr).first;
-        return 0;
-    }
-
-    cout << maxn - pr[0].first;
+    cout << res;
 }
