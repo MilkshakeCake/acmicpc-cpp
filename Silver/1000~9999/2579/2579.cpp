@@ -1,4 +1,4 @@
-// 연속합 - Baekjoon Online Judge no.1912
+// 계단 오르기 - Baekjoon Online Judge no.2579
 
 #include <string>
 #include <cmath>
@@ -20,34 +20,31 @@
 #define vt vector
 #define all(c) (c).begin(), (c).end()
 #define sz(x) (int)(x).size()
-#define vtend(v) (v)[sz(v)-1]
 
 #define F_OR(i, a, b, s) for (int i = (a); (s) > 0 ? i < (b) : i > (b); i += (s))
 #define F_OR1(e) F_OR(i, 0, e, 1)
 #define F_OR2(i, e) F_OR(i, 0, e, 1)
 #define F_OR3(i, b, e) F_OR(i, b, e, 1)
+#define F_OR4(i, b, e, s) F_OR(i, b, e, s)
 #define EACH(x, a) for (auto& x : a)
 
 using namespace std;
 
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    
     int n;
     cin >> n;
-    int arr[100000] = {0};
-    int dp[100000] = {0};
-    F_OR1(n) {
+    int arr[300] = {0};
+    for(int i = 0; i < n; i++) {
         cin >> arr[i];
     }
+
+    int dp[300];
     dp[0] = arr[0];
-    int res = dp[0];
-    F_OR3(i, 1, n) {
-        if(dp[i-1] >= 0) dp[i] = dp[i-1] + arr[i];
-        else dp[i] = arr[i];
-        res = max(res, dp[i]);
+    dp[1] = arr[1] + arr[0];
+    dp[2] = arr[2] + max(arr[1], arr[0]);
+    for(int i = 3; i < n; i++) {
+        dp[i] = arr[i] + max(arr[i-1] + dp[i-3], dp[i-2]);
     }
-    cout << res;
+
+    cout << dp[n-1];
 }

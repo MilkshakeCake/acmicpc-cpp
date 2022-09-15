@@ -16,6 +16,11 @@
 using namespace std;
 
 int main() {
-    int a = 5;
-    int& b = a;
+    int n;
+    cin >> n;
+    int arr[301] = {0};
+    for(int i = 1; i <= n; i++) {
+        cin >> arr[i];
+    }
+    for(auto& i : arr) cout << i << ' ';
 }

@@ -1,4 +1,4 @@
-// "Project_Name" - Baekjoon Online Judge no."Project_Num"
+// 정수 삼각형 - Baekjoon Online Judge no.1932
 
 #include <string>
 #include <cmath>
