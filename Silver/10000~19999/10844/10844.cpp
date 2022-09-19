@@ -49,6 +49,7 @@ int main() {
     while(--n) {
         for(int i = 1; i < 11; i++) {
             col2[i] = col1[i-1] % mod + col1[i+1] % mod;
+            col2[i] %= mod;
         }
         for(int i = 1; i < 11; i++) {
             col1[i] = col2[i];

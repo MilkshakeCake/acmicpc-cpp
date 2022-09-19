@@ -13,7 +13,7 @@ int r, c;
 void recursive(int x, int y, int n) {
     if(x == r && y == c) {
         cout << result;
-        return;
+        exit(0);
     }
 
     if(r >= x + n || c >= y + n) {

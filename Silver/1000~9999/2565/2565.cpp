@@ -1,4 +1,4 @@
-// "Project_Name" - Baekjoon Online Judge no."Project_Num"
+// 전깃줄 - Baekjoon Online Judge no.2565
 
 #include <string>
 #include <cmath>
