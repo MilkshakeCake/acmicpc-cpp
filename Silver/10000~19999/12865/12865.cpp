@@ -47,5 +47,14 @@ int main() {
         arr.push_back(make_pair(temp1, temp2));
     }
 
-    
+    dpw[0] = arr[0].sc;
+
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < i; j++) {
+            if(dpw[j] + arr[i].sc <= k) {
+                dpw[i] = dpw[j] + arr[i].sc;
+            }
+            else dpw[i] = arr[i].sc;
+        }
+    }
 }
