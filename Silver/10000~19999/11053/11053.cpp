@@ -4,19 +4,9 @@
 #include <cmath>
 #include <vector>
 #include <iostream>
-#include <fstream>
 #include <algorithm>
 
-#define ll long long
-#define ull unsigned long long
-#define ld long double
-#define pii pair<int, int>
-#define pll pair<ll, ll>
-#define fr first
-#define sc second
-#define vt vector
-#define all(c) (c).begin(), (c).end()
-#define sz(x) (int)(x).size()
+#define all(v) (v).begin(), (v).end()
 
 #define F_OR(i, a, b, s) for (int i = (a); (s) > 0 ? i < (b) : i > (b); i += (s))
 #define F_OR1(e) F_OR(i, 0, e, 1)
@@ -33,22 +23,13 @@ int main() {
     
     int n;
     cin >> n;
-    vt<int> arr;
-    vt<int> dp(1001, 1);
+    vector<int> arr;
+    vector<int> dp(1001, 1);
 
-    // int temp;
-    // F_OR1(n) {
-    //     cin >> temp;
-    //     arr.push_back(temp);
-    // }
-
-    ifstream readFile;
-    string filedir = "1to1000.txt";
-    readFile.open(filedir);
-    string temp;
+    int temp;
     F_OR1(n) {
-        getline(readFile, temp);
-        arr.push_back(stoi(temp));
+        cin >> temp;
+        arr.push_back(temp);
     }
 
     F_OR3(i, 1, n) {
