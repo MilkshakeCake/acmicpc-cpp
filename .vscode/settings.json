@@ -42,6 +42,7 @@
     "istream": "cpp",
     "cmath": "cpp",
     "random": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "iosfwd": "cpp"
   }
 }

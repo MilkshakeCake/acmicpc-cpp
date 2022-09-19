@@ -1,6 +1,7 @@
 // Practice techniques of C++
 
 #include <string>
+#include <fstream>
 #include <cmath>
 #include <vector>
 #include <iostream>
@@ -16,11 +17,13 @@
 using namespace std;
 
 int main() {
+    ifstream readFile;
+    readFile.open("text.txt");
     int n;
     cin >> n;
-    int arr[301] = {0};
-    for(int i = 1; i <= n; i++) {
-        cin >> arr[i];
+    string str;
+    for(int i = 0; i < n; i++) {
+        getline(readFile, str);
+        cout << str << '\n';
     }
-    for(auto& i : arr) cout << i << ' ';
 }

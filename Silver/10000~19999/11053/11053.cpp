@@ -1,15 +1,11 @@
-// "Project_Name" - Baekjoon Online Judge no."Project_Num"
+// 가장 긴 증가하는 부분 수열 - Baekjoon Online Judge no.11053
 
 #include <string>
 #include <cmath>
 #include <vector>
 #include <iostream>
-#include <algorithm>
-#include <utility>
-#include <queue>
-#include <stack>
-#include <deque>
 #include <fstream>
+#include <algorithm>
 
 #define ll long long
 #define ull unsigned long long
@@ -35,5 +31,32 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    
+    int n;
+    cin >> n;
+    vt<int> arr;
+    vt<int> dp(1001, 1);
+
+    // int temp;
+    // F_OR1(n) {
+    //     cin >> temp;
+    //     arr.push_back(temp);
+    // }
+
+    ifstream readFile;
+    string filedir = "1to1000.txt";
+    readFile.open(filedir);
+    string temp;
+    F_OR1(n) {
+        getline(readFile, temp);
+        arr.push_back(stoi(temp));
+    }
+
+    F_OR3(i, 1, n) {
+        F_OR3(j, 0, i) {
+            if(arr[j] < arr[i]) {
+                dp[i] = max(dp[i], dp[j] + 1);
+            }
+        }
+    }
+    cout << dp[max_element(all(dp)) - dp.begin()];
 }
