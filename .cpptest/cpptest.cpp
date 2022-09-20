@@ -17,13 +17,12 @@
 using namespace std;
 
 int main() {
-    ifstream readFile;
-    readFile.open("text.txt");
-    int n;
-    cin >> n;
-    string str;
-    for(int i = 0; i < n; i++) {
-        getline(readFile, str);
-        cout << str << '\n';
+    vector<int> v;
+    for(int i = 0; i < 5; i++) {
+        int temp;
+        cin >> temp;
+        v.push_back(temp);
     }
+    v.erase(v.begin() + 3);
+    for(auto& i : v) cout << i << ' ';
 }
