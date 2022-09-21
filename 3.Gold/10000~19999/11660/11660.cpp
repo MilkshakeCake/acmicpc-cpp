@@ -1,4 +1,4 @@
-// 나머지 합 - Baekjoon Online Judge no.10986
+// 구간 합 구하기 5 - Baekjoon Online Judge no.11660
 
 #include <string>
 #include <cmath>
@@ -35,19 +35,28 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int n, mod;
-    cin >> n >> mod;
-    vt<int> arr(mod, 0);
-
-
+    vt<vt<int> > board;
+    vt<int> v(1, 0);
+    board.push_back(v);
+    int n, m;
     int temp;
-    unsigned ll int sum = 0;
-    unsigned ll int result = 0;
+    cin >> n >> m;
     for(int i = 0; i < n; i++) {
-        cin >> temp;
-        sum += temp;
-        sum %= mod;
-        result += arr[sum % mod]++;
+        vt<int> tmp(n + 1, 0);
+        for(int j = 1; j <= n; j++) {
+            cin >> temp;
+            tmp[j] = temp + tmp[j -1];
+        }
+        board.push_back(tmp);
     }
-    cout << result + arr[0];
+
+    while(m--) {
+        int x1, y1, x2, y2;
+        cin >> x1 >> y1 >> x2 >> y2;
+        int sum = 0;
+        for(int i = y1; i <= y2; i++) {
+            sum += board[i][x2] - board[i][x1 - 1];
+        }
+        cout << sum << '\n';
+    }
 }

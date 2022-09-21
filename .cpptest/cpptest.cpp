@@ -17,12 +17,18 @@
 using namespace std;
 
 int main() {
-    vector<int> v;
+    vector<vector<int> > bigV;
+    vector<int> smallV1;
+    vector<int> smallV2;
     for(int i = 0; i < 5; i++) {
-        int temp;
-        cin >> temp;
-        v.push_back(temp);
+        smallV1.push_back(i);
     }
-    v.erase(v.begin() + 3);
-    for(auto& i : v) cout << i << ' ';
+    bigV.push_back(smallV1);
+
+    for(int i = 1; i < 6; i++) {
+        smallV2.push_back(i*10);
+    }
+    bigV.push_back(smallV2);
+
+    cout << bigV[1][1];
 }
