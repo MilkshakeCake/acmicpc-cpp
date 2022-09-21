@@ -1,4 +1,4 @@
-// 구간 합 구하기 - Baekjoon Online Judge no.11659
+// 수열 - Baekjoon Online Judge no.2559
 
 #include <string>
 #include <cmath>
@@ -35,20 +35,26 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int n, m;
-    cin >> n >> m;
-    
+    int n, k;
+    cin >> n >> k;
+    int maxn = -10000000;
+    int temp = 0;
     vt<int> arr(1, 0);
-    
-    F_OR1(n) {
-        int temp;
-        cin >> temp;
-        arr.push_back(temp + arr[sz(arr)-1]);
+    for(int i = 0; i < n; i++) {
+        int input;
+        cin >> input;
+        arr.push_back(input);
     }
 
-    while(m--) {
-        int start, fin;
-        cin >> start >> fin;
-        cout << arr[fin] - arr[start - 1] << '\n';
+    for(int i = 1; i <= k; i++) {
+        temp += arr[i];
     }
+    maxn = max(maxn, temp);
+
+    for(int i = 2; i < n - k + 2; i++) {
+        temp -= arr[i -1];
+        temp += arr[i + k -1];
+        maxn = max(maxn, temp);
+    }
+    cout << maxn;
 }
