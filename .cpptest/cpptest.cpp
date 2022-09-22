@@ -17,24 +17,20 @@
 using namespace std;
 
 int main() {
-    vector<vector<int> > bigV;
-    vector<int> smallV1;
-    vector<int> smallV2;
-    for(int i = 0; i < 5; i++) {
-        smallV1.push_back(i);
-    }
-    bigV.push_back(smallV1);
-
-    for(int i = 1; i < 6; i++) {
-        smallV2.push_back(i*10);
-    }
-    bigV.push_back(smallV2);
-
-    for(int i = 0; i < 2; i++) {
-        cout << '[' << i << "][j]" << ' ';
-        for(int j = 0; j < 5; j++) {
-            cout << bigV[i][j] << ' ';
+    string str;
+    cin >> str;
+    vector<int> vs;
+    
+    int start = 0;
+    for(int i = 0; i < (int)str.length(); i++) {
+        if(str[i] == '+') {
+            vs.push_back(stoi(str.substr(start, i)));
+            start = i;
         }
-        cout << '\n';
+        if(i == (int)str.length() - 1) {
+            vs.push_back(stoi(str.substr(start)));
+        }
     }
+
+    for(auto& i : vs) cout << i << ' ';
 }
