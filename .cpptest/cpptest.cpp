@@ -30,5 +30,11 @@ int main() {
     }
     bigV.push_back(smallV2);
 
-    cout << bigV[1][1];
+    for(int i = 0; i < 2; i++) {
+        cout << '[' << i << "][j]" << ' ';
+        for(int j = 0; j < 5; j++) {
+            cout << bigV[i][j] << ' ';
+        }
+        cout << '\n';
+    }
 }
