@@ -1,4 +1,4 @@
-// 주유소 - Baekjoon Online Judge no.13305
+// "Project_Name" - Baekjoon Online Judge no."Project_Num"
 
 #include <string>
 #include <cmath>
@@ -30,28 +30,12 @@
 
 using namespace std;
 
-ll int price = 0;
-int storage = 1000000001;
-int road[100000];
-int oil[100000];
+
 
 int main() {
-    int n;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     
-    cin >> n;
-    for(int i = 0; i < n -1; i++) {
-        cin >> road[i];
-    }
     
-    for(int i = 0; i < n; i++) {
-        cin >> oil[i];
-    }
-
-    for(int i = 0; i < n - 1; i++) {
-        if(storage > oil[i]) {
-            storage = oil[i];
-        }
-        price += storage * road[i];
-    }
-    cout << price;
 }

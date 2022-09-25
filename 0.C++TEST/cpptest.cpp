@@ -17,7 +17,5 @@
 using namespace std;
 
 int main() {
-    vector<int> v(10, 0);
-    v.push_back(1);
-    for(auto& i : v) cout << i << ' ';
+    bool integer = 1;
 }

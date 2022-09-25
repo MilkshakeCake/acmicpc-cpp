@@ -1,4 +1,4 @@
-// 주유소 - Baekjoon Online Judge no.13305
+// 충남대학교 SW_IT Contest F
 
 #include <string>
 #include <cmath>
@@ -30,28 +30,15 @@
 
 using namespace std;
 
-ll int price = 0;
-int storage = 1000000001;
-int road[100000];
-int oil[100000];
-
-int main() {
-    int n;
-    
-    cin >> n;
-    for(int i = 0; i < n -1; i++) {
-        cin >> road[i];
-    }
-    
-    for(int i = 0; i < n; i++) {
-        cin >> oil[i];
+int main() {    
+    int a, b;
+    cin >> a >> b;
+    int round = 0;
+    while(a < 6 && b < 6) {
+        round++;
+        round % 2 ? b += a : a += b;
     }
 
-    for(int i = 0; i < n - 1; i++) {
-        if(storage > oil[i]) {
-            storage = oil[i];
-        }
-        price += storage * road[i];
-    }
-    cout << price;
+    if(round % 2) cout << "yt";
+    else cout << "yj";
 }

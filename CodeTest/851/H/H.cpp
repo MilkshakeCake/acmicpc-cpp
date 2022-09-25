@@ -1,4 +1,4 @@
-// 주유소 - Baekjoon Online Judge no.13305
+// 충남대학교 SW_IT Contest H
 
 #include <string>
 #include <cmath>
@@ -10,6 +10,7 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <map>
 
 #define ll long long
 #define ull unsigned long long
@@ -30,28 +31,22 @@
 
 using namespace std;
 
-ll int price = 0;
-int storage = 1000000001;
-int road[100000];
-int oil[100000];
-
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    map<int, int> mat;
     int n;
-    
     cin >> n;
-    for(int i = 0; i < n -1; i++) {
-        cin >> road[i];
-    }
-    
+    int temp;
+    int cnt = 1;
     for(int i = 0; i < n; i++) {
-        cin >> oil[i];
-    }
-
-    for(int i = 0; i < n - 1; i++) {
-        if(storage > oil[i]) {
-            storage = oil[i];
+        cin >> temp;
+        if(mat[temp] != 0) {
+            cnt = max(cnt, ++mat[temp]);
         }
-        price += storage * road[i];
+        else mat[temp]++;
     }
-    cout << price;
+    cout << cnt;
 }

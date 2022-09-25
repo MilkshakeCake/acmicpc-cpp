@@ -39,7 +39,6 @@ int main() {
     cin >> n >> mod;
     vt<int> arr(mod, 0);
 
-
     int temp;
     unsigned ll int sum = 0;
     unsigned ll int result = 0;
