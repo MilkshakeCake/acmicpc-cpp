@@ -40,5 +40,5 @@ int main() {
         if(i) idk[i] = max(idk[i -1] + bulb[i].first, 0);
     }
 
-    
+    cout << sum + bulb[max_element(bulb.begin(), bulb.end()) - bulb.begin()];
 }
