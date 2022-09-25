@@ -30,6 +30,8 @@ int main() {
         cin >> bulb[i].first;
         preserve[i] = bulb[i].first;
     }
+    
+    bool flag = true;
 
     for(int i = 0; i < n; i++) {
         cin >> bulb[i].second;
@@ -37,8 +39,15 @@ int main() {
             sum += bulb[i].first;
             bulb[i].first *= -1;
         }
+        else flag = false;
+        
         if(i) idk[i] = max(idk[i -1] + bulb[i].first, 0);
     }
+    
+    if(!flag) {
+        cout << sum - preserve[min_element(preserve.begin(), preserve.end()) - preserve.begin];
+        return 0;
+    }
 
-    cout << sum + bulb[max_element(bulb.begin(), bulb.end()) - bulb.begin()];
+    cout << sum + idk[max_element(idk.begin(), idk.end()) - idk.begin()];
 }
