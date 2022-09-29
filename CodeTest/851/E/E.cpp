@@ -1,4 +1,4 @@
-// 충남대학교 SW_IT Contest E
+// 펠린드롬 소떡소떡 - 충남대학교 SW_IT Contest E
 
 #include <string>
 #include <cmath>

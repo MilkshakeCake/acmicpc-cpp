@@ -45,6 +45,7 @@
     "iostream": "cpp",
     "iosfwd": "cpp",
     "array": "cpp",
-    "initializer_list": "cpp"
+    "initializer_list": "cpp",
+    "algorithm": "cpp"
   }
 }

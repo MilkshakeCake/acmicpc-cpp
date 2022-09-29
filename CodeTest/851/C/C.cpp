@@ -1,4 +1,4 @@
-// 충남대학교 SW_IT Contest C
+// 홀짝 수열 - 충남대학교 SW_IT Contest C
 
 #include <string>
 #include <cmath>

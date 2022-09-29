@@ -1,4 +1,4 @@
-// 충남대학교 SW_IT Contest A
+// MBTI - 충남대학교 SW_IT Contest A
 
 #include <string>
 #include <cmath>

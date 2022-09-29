@@ -17,5 +17,11 @@
 using namespace std;
 
 int main() {
-    bool integer = 1;
+    vector<int> vt;
+    for(int i = 0; i < 10; i++) {
+        vt.push_back(i * (10 - i));
+    }
+
+    sort(all(vt), less<>());
+    for(auto& i : vt) cout << i << ' ';
 }

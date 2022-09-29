@@ -1,4 +1,4 @@
-// 충남대학교 SW_IT Contest F
+// 젓가락 게임 - 충남대학교 SW_IT Contest F
 
 #include <string>
 #include <cmath>

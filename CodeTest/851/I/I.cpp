@@ -1,4 +1,4 @@
-// 충남대학교 SW_IT Contest I
+// 소수 부르기 게임 - 충남대학교 SW_IT Contest I
 
 #include <string>
 #include <cmath>

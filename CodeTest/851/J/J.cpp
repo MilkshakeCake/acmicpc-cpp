@@ -1,4 +1,4 @@
-// 충남대학교 SW_IT Contest J
+// 최대 상승 - 충남대학교 SW_IT Contest J
 
 #include <string>
 #include <cmath>

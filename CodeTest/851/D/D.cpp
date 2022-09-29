@@ -1,4 +1,4 @@
-// 충남대학교 SW_IT Contest D
+// 균형 잡힌 소떡소떡 - 충남대학교 SW_IT Contest D
 
 #include <string>
 #include <cmath>

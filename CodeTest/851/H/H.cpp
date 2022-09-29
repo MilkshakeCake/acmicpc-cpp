@@ -1,4 +1,4 @@
-// 충남대학교 SW_IT Contest H
+// 마트료시카 합치기 - 충남대학교 SW_IT Contest H
 
 #include <string>
 #include <cmath>
