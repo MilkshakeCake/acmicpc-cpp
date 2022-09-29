@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/0.C++TEST",
-      "program": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/0.C++TEST/build/Debug/outDebug",
+      "cwd": "d:/Personal/C++/CodeTest/851/M",
+      "program": "d:/Personal/C++/CodeTest/851/M/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
