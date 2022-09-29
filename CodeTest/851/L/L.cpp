@@ -1,4 +1,4 @@
-// 전구 뒤집기 : 충남대학교 SW_IT Contest L
+// 전구 뒤집기 - 충남대학교 SW_IT Contest L
 
 #include <string>
 #include <cmath>
