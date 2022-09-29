@@ -31,27 +31,31 @@
 using namespace std;
 
 ll int price = 0;
-int storage = 1000000001;
-int road[100000];
-int oil[100000];
+int storage = 1000000000;
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
     int n;
     
     cin >> n;
-    for(int i = 0; i < n -1; i++) {
+    vt<int> road(n, 0);
+    vt<int> oil(n, 0);
+    for(int i = 1; i < n; i++) {
         cin >> road[i];
     }
+    road.push_back(road[n -1]);
     
     for(int i = 0; i < n; i++) {
         cin >> oil[i];
     }
+    oil.push_back(0);
 
     for(int i = 0; i < n - 1; i++) {
-        if(storage > oil[i]) {
-            storage = oil[i];
-        }
-        price += storage * road[i];
+        storage = min(storage, oil[i]);
+        price += storage * road[i +1];
     }
     cout << price;
 }
