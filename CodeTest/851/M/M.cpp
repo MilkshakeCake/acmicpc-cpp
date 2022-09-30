@@ -33,5 +33,6 @@ int main() {
 
     sum -= maxn;
 
-    cout << min(maxn, sum + 1) + sum;
+    long long res = min(sum +1, maxn) + sum;
+    cout << res;
 }
