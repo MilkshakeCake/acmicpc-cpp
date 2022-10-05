@@ -1,4 +1,4 @@
-// Practice Techniques of C++
+// 쿼드트리 - Baekjoon Online Judge #1992
 
 #include <string>
 #include <cmath>
@@ -30,15 +30,49 @@
 
 using namespace std;
 
+bool board[65][65] = {};
+
+void quadTree(int len, int x, int y) {
+    if(len == 1) {
+        cout << board[x][y];
+        return;
+    }
+
+    bool flag = false;
+    for(int i = x; i < x + len; i++) {
+        for(int j = y; j < y + len; j++) {
+            if(board[i][j] != board[x][y]) {
+                flag = true;
+                break;
+            }
+        }
+        if(flag) break;
+    }
+
+    if(!flag) {
+        cout << board[x][y];
+        return;
+    }
+
+    else {
+        cout << '(';
+        quadTree(len /2, x, y);
+        quadTree(len /2, x, y + len /2);
+        quadTree(len /2, x + len /2, y);
+        quadTree(len /2, x + len /2, y + len /2);
+        cout << ')';
+    }
+
+    return;
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-
+    
     int n;
     cin >> n;
-    bool board[9][9] = {};
-    
     for(int i = 0; i < n; i++) {
         string temp;
         cin >> temp;
@@ -46,11 +80,5 @@ int main() {
             board[i][j] = (bool)(temp[j] - 48);
         }
     }
-    
-    F_OR1(n) {
-        for(int j = 0; j < n; j++) {
-            cout << board[i][j] << ' ';
-        }
-        cout << "|\n";
-    }
+    quadTree(n, 0, 0);
 }
