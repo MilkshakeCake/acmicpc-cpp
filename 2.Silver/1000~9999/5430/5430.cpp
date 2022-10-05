@@ -10,6 +10,7 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <sstream>
 
 #define ll long long
 #define ull unsigned long long
@@ -37,7 +38,7 @@ int main() {
     
     int t;
     cin >> t;
-    for(int i = 0; i < t; i++) {
+    while(t--) {
         string P;
         cin >> P;
 
@@ -47,11 +48,20 @@ int main() {
 
         int n;
         cin >> n;
-        for(int j = 0; j < n; j++) {
-            char tmp;
-            cin >> tmp;
-            if((int)tmp > 47 && (int)tmp < 58) dq.push_back((int)tmp - 48);
-        }
+        string num;
+        cin >> num;
+		num.erase(0, 1);
+		num.erase(num.size() - 1, 1);
+
+		istringstream istr(num);
+
+        string str;
+		while (getline(istr, str, ',')) {
+			dq.push_back(stoi(str));
+		}
+
+        int start = 0;
+        int end = n;
 
         for(int j = 0; j < sz(P); j++) {
             if(P[j] == 'R') {
@@ -59,28 +69,38 @@ int main() {
             }
 
             else {
-                if(dq.empty()) {
+                if(start == end) {
                     error = true;
-                    cout << "error" << '\n';
+                    cout << "error" << endl;
                     break;
                 }
 
                 if(flag) {
-                    dq.pop_back();
+                    end--;
                 }
                 else {
-                    dq.pop_front();
+                    start++;
                 }
             }
         }
         
-        if(error) break;
+        if(error) continue;
 
         cout << '[';
-        if(!dq.empty()) {
-            for(int j = 0; j < sz(dq) -1; j++) cout << dq[j] << ',';
-            cout << dq.back();
+        if(!flag) {
+            for(int j = start; j < end; j++) {
+                cout << dq[j];
+                if(j != end -1) cout << ',';
+            }
         }
-        cout << ']';
+
+        else {
+            for(int j = end - 1; j >= start; j--) {
+                cout << dq[j];
+                if(j != start) cout << ',';
+            }
+
+        }
+        cout << ']' << endl;
     }
 }
