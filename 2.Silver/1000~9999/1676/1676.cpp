@@ -1,4 +1,4 @@
-// 이항 계수 3 - Baekjoon Online Judge #11401
+// "Project_Name" - Baekjoon Online Judge #
 
 #include <string>
 #include <cmath>
@@ -33,8 +33,16 @@
 using namespace std;
 
 int main() {
-    int n, k;
-    cin >> n >> k;
-
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     
+    int n, sum(0);
+    cin >> n;
+    for(int i = 1; i < 4; i++) {
+        sum += n / pow(5, i);
+        
+    }
+
+    cout << sum;
 }
