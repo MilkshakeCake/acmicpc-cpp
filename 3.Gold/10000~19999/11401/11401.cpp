@@ -1,4 +1,4 @@
-// Practice Techniques of C++
+// 이항 계수 3 - Baekjoon Online Judge #11401
 
 #include <string>
 #include <cmath>
@@ -10,6 +10,7 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <sstream>
 #include <map>
 
 #define ll long long
@@ -35,8 +36,6 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-
-    int n;
-    cin >> n;
-    cout << n % 10007;
+    
+    
 }
