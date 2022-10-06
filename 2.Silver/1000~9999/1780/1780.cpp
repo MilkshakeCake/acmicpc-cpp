@@ -6,11 +6,9 @@
 #include <iostream>
 #include <algorithm>
 #include <utility>
-#include <queue>
-#include <stack>
-#include <deque>
-#include <fstream>
+#include <map>
 
+#define uint unsigned int
 #define ll long long
 #define ull unsigned long long
 #define ld long double
@@ -30,6 +28,35 @@
 
 using namespace std;
 
+map<int, int> nums;
+int board[3000][3000];
+
+void paper(int len, int x, int y) {
+    if(len == 1) {
+        nums[board[x][y]]++;
+        return;
+    }
+
+    bool flag = true;
+    for(int i = 0; i < len * len; i++) {
+        if(board[x][y] != board[x + i /len][y + i %len]) {
+            flag = false;
+            break;
+        }
+    }
+
+    if(flag) {
+        nums[board[x][y]]++;
+    }
+
+    else {
+        for(int j = 0; j < 9; j++) {
+            paper(len /3, x + (j /3) * (len /3), y + (j %3) * (len /3));
+        }
+    }
+    return;
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -37,5 +64,12 @@ int main() {
     
     int n;
     cin >> n;
-    cout << n;
+
+    for(int i = 0; i < n * n; i++) {
+        cin >> board[i / n][i % n];
+    }
+
+    paper(n, 0, 0);
+
+    cout << nums[-1] << '\n' << nums[0] << '\n' << nums[1];
 }

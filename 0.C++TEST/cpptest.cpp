@@ -10,6 +10,7 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <map>
 
 #define ll long long
 #define ull unsigned long long
@@ -37,20 +38,21 @@ int main() {
 
     int n;
     cin >> n;
-    bool board[9][9] = {};
-    
-    for(int i = 0; i < n; i++) {
-        string temp;
-        cin >> temp;
-        for(int j = 0; j < n; j++) {
-            board[i][j] = (bool)(temp[j] - 48);
-        }
+
+    int board[9][9];
+    map<int, int> nums;
+
+    for(int i = 0; i < n * n; i++) {
+        cin >> board[i / n][i % n];
+        nums[board[i / n][i % n]]++;
     }
-    
-    F_OR1(n) {
-        for(int j = 0; j < n; j++) {
-            cout << board[i][j] << ' ';
-        }
-        cout << "|\n";
-    }
+
+    cout << "=====================================\n";
+    // for(int i = 0; i < n; i++) {
+    //     for(int j = 0; j < n; j++) {
+    //         cout << board[i][j] << ' ';
+    //     }
+    //     cout << endl;
+    // }
+    cout << nums[-1] << ' ' << nums[0] << ' ' << nums[1];
 }

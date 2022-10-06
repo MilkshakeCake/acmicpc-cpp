@@ -10,6 +10,8 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <sstream>
+#include <map>
 
 #define ll long long
 #define ull unsigned long long
