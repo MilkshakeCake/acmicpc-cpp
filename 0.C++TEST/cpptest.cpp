@@ -38,5 +38,23 @@ int main() {
 
     int n;
     cin >> n;
-    cout << n % 10007;
+    vt<vt<int> > resultM;
+    for(int i = 0; i < n; i++) {
+        vt<int> temp;
+        for(int j = 0; j < n; j++) {
+            if(i == j) {
+                temp.push_back(1);
+                continue;
+            }
+            temp.push_back(0);
+        }
+        resultM.push_back(temp);
+    }
+
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            cout << resultM[i][j] << ' ';
+        }
+        cout << "|\n";
+    }
 }
