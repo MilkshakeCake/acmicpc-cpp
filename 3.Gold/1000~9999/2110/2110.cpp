@@ -1,4 +1,4 @@
-// 피보나치 수 6 - Baekjoon Online Judge #11444
+// 공유기 설치 - Baekjoon Online Judge #2110
 
 #include <string>
 #include <cmath>
@@ -37,8 +37,16 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    ll n;
-    cin >> n;
+    int n, c;
+    cin >> n >> c;
+
+    vt<int> house(n, 0);
+    vt<int> distance(n, 0);
+
+    for(int i = 0; i < n; i++) {
+        cin >> house[i];
+    }
+    sort(all(house));
 
     
 }

@@ -1,4 +1,4 @@
-// 피보나치 수 6 - Baekjoon Online Judge #11444
+// "Project_Name" - Baekjoon Online Judge #
 
 #include <string>
 #include <cmath>
@@ -37,8 +37,6 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    ll n;
-    cin >> n;
-
-    
+    int n, m;
+    cin >> n >> m;
 }
