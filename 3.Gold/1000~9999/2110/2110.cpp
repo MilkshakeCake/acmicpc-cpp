@@ -48,5 +48,26 @@ int main() {
     }
     sort(all(house));
 
-    
+    int low = 0;
+    int high = house[n -1];
+    int cnt;
+
+    while(low <= high) {
+        int mid = (low + high) / 2;
+        int last = 0;
+        cnt = 1;
+        for(int i = 1; i < n; i++) {
+            if(house[i] - house[last] >= mid) {
+                cnt++;
+                last = i;
+            }
+        }
+
+        if(cnt >= c) low = mid +1;
+        else high = mid -1;
+    }
+
+    cout << high;
 }
+
+// 최소 거리를 기준으로 이분탐색
