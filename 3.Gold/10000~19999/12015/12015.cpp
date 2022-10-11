@@ -34,11 +34,18 @@ using namespace std;
 
 int main() {    
     int n;
-    scanf("%d", n);
-    vt<int> arr(n, 0);
+    scanf("%d", &n);
+    vt<int> arr;
     F_OR1(n) {
-        scanf("%d", arr[i]);
+        int input;
+        scanf("%d", &input);
+        if(arr.empty() || arr.back() < input) {
+            arr.push_back(input);
+        }
+        else {
+            *lower_bound(all(arr), input) = input;
+        }
     }
 
-    
+    cout << sz(arr);
 }
