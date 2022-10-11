@@ -39,4 +39,29 @@ int main() {
     
     int n, m;
     cin >> n >> m;
+    vt<int> tree(n, 0);
+    for(int i = 0; i < n; i++) {
+        cin >> tree[i];
+    }
+    sort(all(tree));
+
+    ll high = 1000000001;
+    ll low = 0;
+    ll result = 0;
+
+    while(low <= high) {
+        ll mid = (high + low) / 2;
+        ll sum = 0;
+        for(int i = 0; i < n; i++) {
+            mid <= tree[i] ? sum += tree[i] - mid : sum += 0;
+        }
+
+        if(sum < m) high = mid -1;
+        else {
+            low = mid + 1;
+            result = max(result, mid);
+        }
+    }
+
+    cout << result;
 }
