@@ -1,4 +1,5 @@
 // 소수 부르기 게임 - 충남대학교 SW_IT Contest I
+// BOJ #25632
 
 #include <string>
 #include <cmath>

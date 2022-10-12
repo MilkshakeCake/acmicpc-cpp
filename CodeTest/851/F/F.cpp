@@ -1,4 +1,5 @@
 // 젓가락 게임 - 충남대학교 SW_IT Contest F
+// BOJ #25642
 
 #include <string>
 #include <cmath>

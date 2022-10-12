@@ -1,4 +1,5 @@
 // 햄버거 만들기 - 충남대학교 SW_IT Contest A
+// BOJ #25628
 
 #include <string>
 #include <cmath>

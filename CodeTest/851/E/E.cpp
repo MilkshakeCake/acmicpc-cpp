@@ -1,4 +1,5 @@
 // 펠린드롬 소떡소떡 - 충남대학교 SW_IT Contest E
+// BOJ #25630
 
 #include <string>
 #include <cmath>

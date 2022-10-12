@@ -1,4 +1,5 @@
 // 균형 잡힌 소떡소떡 - 충남대학교 SW_IT Contest D
+// BOJ #25641
 
 #include <string>
 #include <cmath>

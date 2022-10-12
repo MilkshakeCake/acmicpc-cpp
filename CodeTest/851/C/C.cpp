@@ -1,4 +1,5 @@
 // 홀짝 수열 - 충남대학교 SW_IT Contest C
+// BOJ #25629
 
 #include <string>
 #include <cmath>

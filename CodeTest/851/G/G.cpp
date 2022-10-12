@@ -1,4 +1,5 @@
 // 문자열 탑 쌓기 - 충남대학교 SW_IT Contest G
+// BOJ #25643
 
 #include <string>
 #include <cmath>
