@@ -30,6 +30,8 @@
 #define F_OR3(i, b, e) F_OR(i, b, e, 1)
 #define EACH(x, a) for (auto& x : a)
 
+#define MOD 1000000007
+
 using namespace std;
 
 int main() {

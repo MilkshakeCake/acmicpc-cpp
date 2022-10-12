@@ -36,19 +36,5 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    priority_queue<pii, vt<pii>, greater<pii>> pq;
 
-    int n;
-    cin >> n;
-
-    int temp;
-    for(int i = 1; i <= n; i++) {
-        cin >> temp;
-        pq.push(make_pair(temp, i));
-    }
-
-    for(int i = 0; i < n; i++) {
-        cout << pq.top().first << ' ' << pq.top().sc << '\n';
-        pq.pop();
-    }
 }
