@@ -1,4 +1,4 @@
-// 나무 자르기 - Baekjoon Online Judge #2805
+// 최대 힙 - Baekjoon Online Judge #11279
 
 #include <string>
 #include <cmath>
@@ -37,31 +37,25 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int n, m;
-    cin >> n >> m;
-    vt<int> tree(n, 0);
-    for(int i = 0; i < n; i++) {
-        cin >> tree[i];
-    }
-    sort(all(tree));
+    priority_queue<int> heap;
 
-    ll high = 1000000001;
-    ll low = 0;
-    ll result = 0;
+    int n;
+    cin >> n;
 
-    while(low <= high) {
-        ll mid = (high + low) / 2;
-        ll sum = 0;
-        for(int i = 0; i < n; i++) {
-            mid <= tree[i] ? sum += tree[i] - mid : sum += 0;
+    int input;
+    while(n--) {
+        cin >> input;
+        if(input) {
+            heap.push(input);
         }
 
-        if(sum < m) high = mid -1;
         else {
-            low = mid + 1;
-            result = max(result, mid);
+            if(heap.empty()) {
+                cout << "0\n";
+                continue;
+            }
+            cout << heap.top() << '\n';
+            heap.pop();
         }
     }
-
-    cout << result;
 }
