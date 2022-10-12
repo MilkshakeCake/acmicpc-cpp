@@ -1,4 +1,4 @@
-// 파일 합치기 - Baekjoon Online Judge no.11066
+// MBTI - Baekjoon Online Judge #25640
 
 #include <string>
 #include <cmath>
@@ -28,8 +28,6 @@
 #define F_OR3(i, b, e) F_OR(i, b, e, 1)
 #define EACH(x, a) for (auto& x : a)
 
-#define minLoc(v) min_element(all((v))) - (v).begin() 
-
 using namespace std;
 
 int main() {
@@ -37,12 +35,15 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int t;
-    cin >> t;
-    while(t--) {
-        int n;
-        cin >> n;
-        
-        
+    string mbti;
+    cin >> mbti;
+
+    int n, cnt = 0;
+    cin >> n;
+    string temp;
+    for(int i = 0; i < n; i++) {
+        cin >> temp;
+        if(temp == mbti) cnt++;
     }
+    cout << cnt;
 }

@@ -1,4 +1,4 @@
-// 파일 합치기 - Baekjoon Online Judge no.11066
+// 마트료시카 합치기 - Baekjoon Online Judge #25631
 
 #include <string>
 #include <cmath>
@@ -10,6 +10,7 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <map>
 
 #define ll long long
 #define ull unsigned long long
@@ -28,8 +29,6 @@
 #define F_OR3(i, b, e) F_OR(i, b, e, 1)
 #define EACH(x, a) for (auto& x : a)
 
-#define minLoc(v) min_element(all((v))) - (v).begin() 
-
 using namespace std;
 
 int main() {
@@ -37,12 +36,17 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int t;
-    cin >> t;
-    while(t--) {
-        int n;
-        cin >> n;
-        
-        
+    map<int, int> mat;
+    int n;
+    cin >> n;
+    int temp;
+    int cnt = 1;
+    for(int i = 0; i < n; i++) {
+        cin >> temp;
+        if(mat[temp] != 0) {
+            cnt = max(cnt, ++mat[temp]);
+        }
+        else mat[temp]++;
     }
+    cout << cnt;
 }

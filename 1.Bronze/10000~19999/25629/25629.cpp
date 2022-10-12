@@ -1,4 +1,4 @@
-// 파일 합치기 - Baekjoon Online Judge no.11066
+// 홀짝 수열 - Baekjoon Online Judge #25629
 
 #include <string>
 #include <cmath>
@@ -28,21 +28,23 @@
 #define F_OR3(i, b, e) F_OR(i, b, e, 1)
 #define EACH(x, a) for (auto& x : a)
 
-#define minLoc(v) min_element(all((v))) - (v).begin() 
-
 using namespace std;
 
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-    
-    int t;
-    cin >> t;
-    while(t--) {
-        int n;
-        cin >> n;
-        
-        
+    int odd = 0;
+    int even = 0;
+
+    int n;
+    cin >> n;
+    int temp;
+    for(int i = 0; i < n; i++) {
+        cin >> temp;
+        temp % 2 == 0 ? even++ : odd++;
     }
+
+    if(odd - even == 0 || odd - even == 1) {
+        cout << 1;
+    }
+    else cout << 0;
+    return 0;
 }

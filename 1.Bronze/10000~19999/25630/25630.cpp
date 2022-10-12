@@ -1,4 +1,4 @@
-// 파일 합치기 - Baekjoon Online Judge no.11066
+// 펠린드롬 소떡소떡 - Baekjoon Online Judge #25630
 
 #include <string>
 #include <cmath>
@@ -28,8 +28,6 @@
 #define F_OR3(i, b, e) F_OR(i, b, e, 1)
 #define EACH(x, a) for (auto& x : a)
 
-#define minLoc(v) min_element(all((v))) - (v).begin() 
-
 using namespace std;
 
 int main() {
@@ -37,12 +35,23 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int t;
-    cin >> t;
-    while(t--) {
-        int n;
-        cin >> n;
-        
-        
+    int n;
+    cin >> n;
+
+    char stst[101];
+
+    char temp;
+    for(int i = 1; i <= n; i++) {
+        cin >> temp;
+        stst[i] = temp;
     }
+
+    int cnt = 0;
+
+    for(int i = 1; i <= n /2; i++) {
+        if(stst[i] != stst[n - i +1]) {
+            cnt++;
+        }
+    }
+    cout << cnt;
 }
