@@ -1,4 +1,4 @@
-// 팩토리얼 0의 개수 - Baekjoon Online Judge #1676
+// 조합 0의 개수 - Baekjoon Online Judge #2004
 
 #include <string>
 #include <cmath>
@@ -37,13 +37,49 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int n, sum(0);
-    cin >> n;
-    int i = 1;
-    while(n / pow(5, i)) {
-        sum += n / pow(5, i);
-        i++;
+    ll n, m;
+    cin >> n >> m;
+
+    ll i = 5;
+    ll sum5 = 0;
+
+    while(n / i) {
+        sum5 += (n / i);
+        i *= 5;
     }
 
-    cout << sum;
+    i = 5;
+    ll sub = n - m;
+    while(sub / i) {
+        sum5 -= (sub / i);
+        i *= 5;
+    }
+
+    i = 5;
+    while(m / i) {
+        sum5 -= (m / i);
+        i *= 5;
+    }
+
+    ll sum2 = 0;
+
+    i = 2;
+    while(n / i) {
+        sum2 += (n / i);
+        i *= 2;
+    }
+
+    i = 2;
+    while(sub / i) {
+        sum2 -= (sub / i);
+        i *= 2;
+    }
+
+    i = 2;
+    while(m / i) {
+        sum2 -= (m / i);
+        i *= 2;
+    }
+
+    cout << min(sum2, sum5);
 }
