@@ -1,4 +1,4 @@
-// 절댓값 힙 - Baekjoon Online Judge #11286
+// 가운데를 말해요 - Baekjoon Online Judge #1655
 
 #include <string>
 #include <cmath>
@@ -32,42 +32,42 @@
 
 using namespace std;
 
-template<typename _Tp>
-    struct compare : public binary_function<_Tp, _Tp, bool>
-    {
-      _GLIBCXX14_CONSTEXPR
-      bool
-      operator()(const _Tp& __x, const _Tp& __y) const
-      {
-        if(abs(__x) != abs(__y)) return abs(__x) > abs(__y);
-        return __x > __y;
-      }
-    };
-
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    
-    priority_queue<int, vt<int>, compare<int>> heap;
+
+    priority_queue<int, vt<int>, less<int>> maximal;
+    priority_queue<int, vt<int>, greater<int>> minimal;
 
     int n;
     cin >> n;
 
-    int input;
+    int temp;
+    cin >> temp;
+    maximal.push(temp);
+    n--;
+
+    cout << temp << '\n';
+
     while(n--) {
-        cin >> input;
-        if(input) {
-            heap.push(input);
+        cin >> temp;
+        if(maximal.size() == minimal.size()) {
+            maximal.push(temp);
         }
 
         else {
-            if(heap.empty()) {
-                cout << "0\n";
-                continue;
-            }
-            cout << heap.top() << '\n';
-            heap.pop();
+            minimal.push(temp);
         }
+        
+        if(maximal.top() > minimal.top()) {
+            temp = maximal.top();
+            maximal.pop();
+            maximal.push(minimal.top());
+            minimal.pop();
+            minimal.push(temp);
+        }
+
+        cout << maximal.top() << '\n';
     }
 }
