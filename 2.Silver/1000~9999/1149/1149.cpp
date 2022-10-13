@@ -38,14 +38,14 @@ int main() {
     
     int house;
     cin >> house;
-    int costdp[1001][3] = {{0, 0, 0}};
+    vt<vt<int> > costdp(1001, vt<int>(3, 0));
     int cost[3];
 
     for(int i = 1; i <= house; i++) {
         cin >> cost[0] >> cost[1] >> cost[2];
-        costdp[i][0] = min(costdp[i-1][1], costdp[i-1][2]) + cost[0];
-        costdp[i][1] = min(costdp[i-1][0], costdp[i-1][2]) + cost[1];
-        costdp[i][2] = min(costdp[i-1][1], costdp[i-1][0]) + cost[2];
+        for(int j = 0; j < 3; j++) {
+            costdp[i][j] = min(costdp[i -1][(j +1) %3], costdp[i -1][(j +2) %3]) + cost[j];
+        }
     }
     cout << min(min(costdp[house][0], costdp[house][1]), costdp[house][2]);
 }

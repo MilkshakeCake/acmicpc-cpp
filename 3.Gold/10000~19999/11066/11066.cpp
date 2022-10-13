@@ -43,6 +43,18 @@ int main() {
         int n;
         cin >> n;
         
+        vt<int> book(n, 0);
+        F_OR1(n) {
+            cin >> book[i];
+        }
+
+        vt<vt<int> > dp(n, vt<int>(n, 0));
+        dp[0][0] = book[0] + book[1];
+
+        for(int i = 1; i < n -1; i++) {
+            dp[0][i] = min(dp[0][i -1], book[i] + book[i +1]);
+        }
+
         
     }
 }

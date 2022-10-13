@@ -58,6 +58,6 @@ int main() {
             upper[j] = lower[j];
         }
     }
-    sort(upper, upper + n, greater<>());
+    sort(upper, upper + n, greater<int>());
     cout << upper[0];
 }
