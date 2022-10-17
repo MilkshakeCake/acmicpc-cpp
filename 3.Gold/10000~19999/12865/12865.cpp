@@ -1,4 +1,4 @@
-// 평범한 배낭 - Baekjoon Online Judge no.12865
+// 평범한 배낭 - Baekjoon Online Judge #12865
 
 #include <string>
 #include <cmath>
@@ -9,6 +9,9 @@
 #include <queue>
 #include <stack>
 #include <deque>
+#include <fstream>
+#include <sstream>
+#include <map>
 
 #define ll long long
 #define ull unsigned long long
@@ -29,45 +32,27 @@
 
 using namespace std;
 
-int board[101][100001] = {};
-
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     
-    vt<pii> arr(101);
-
     int n, k;
     cin >> n >> k;
-    for(int i = 0; i < n; i++) {
-        cin >> arr[i].fr >> arr[i].sc;
-    }
 
-    for(int i = arr[0].fr; i <= k; i++) {
-        board[0][i] = arr[0].sc;
-    }
+    vt<vt<int>> board(n +1, vt<int>(k +1, 0));
+    vt<pii> obj(n +1, {0, 0});
 
-    for(int i = 1; i < n; i++) {
-        int w = arr[i].fr;
-        int v = arr[i].sc;
-        board[i][w-1] = v;
-
+    for(int i = 1; i <= n; i++) cin >> obj[i].fr >> obj[i].sc;
+    
+    for(int i = 1; i <= n; i++) {
         for(int j = 1; j <= k; j++) {
-            if(j < w) {
-                board[i][j] = board[i-1][j];
-            }
+            if(j < obj[i].fr) board[i][j] = board[i -1][j];
             else {
-                board[i][j] = max(board[i-1][j], v + board[i-1][j - w]);
+                board[i][j] = max(board[i -1][j], board[i-1][max(0, j - obj[i].fr)] + obj[i].sc);
             }
         }
     }
 
-    int result = 0;
-
-    for(int i = 0; i < n; i++) {
-        result = max(result, board[i][k]);
-    }
-
-    cout << result;
+    cout << board[n][k];
 }
