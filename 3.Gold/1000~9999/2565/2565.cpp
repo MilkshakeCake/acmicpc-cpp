@@ -1,4 +1,4 @@
-// 전깃줄 - Baekjoon Online Judge no.2565
+// 전깃줄 - Baekjoon Online Judge #2565
 
 #include <string>
 #include <cmath>
@@ -10,6 +10,8 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <sstream>
+#include <map>
 
 #define ll long long
 #define ull unsigned long long
@@ -35,29 +37,28 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int n;
-    cin >> n;
-    vt<pii> arr;
-    for(int i = 0; i < n; i++) {
-        pii tmpp;
-        int tmp1, tmp2;
-        cin >> tmp1 >> tmp2;
-        tmpp = make_pair(tmp1, tmp2);
-        arr.push_back(tmpp);
+    int k;
+    cin >> k;
+
+    vt<pii> line(k);
+    for(int i = 0; i < k; i++) {
+        cin >> line[i].first;
+        cin >> line[i].second;
     }
 
-    sort(all(arr));
+    sort(all(line));
 
-    vt<int> dp(n, 1);
+    vt<int> dp(k, 1);
     int maxn = 0;
-    for(int i = 0; i < n; i++) {
+
+    for(int i = 1; i < k; i++) {
         for(int j = 0; j < i; j++) {
-            if(arr[i].sc > arr[j].sc) {
-                dp[i] = max(dp[i], dp[j] + 1);
+            if(line[j].sc < line[i].sc) {
+                dp[i] = max(dp[i], dp[j] +1);
                 maxn = max(maxn, dp[i]);
             }
         }
     }
 
-    cout << n - maxn;
+    cout << k - maxn;
 }

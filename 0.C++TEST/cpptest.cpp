@@ -36,5 +36,17 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
+    int k;
+    cin >> k;
+    vt<pii> line(k);
+    for(int i = 0; i < k; i++) {
+        cin >> line[i].first;
+        cin >> line[i].second;
+    }
 
+    sort(all(line));
+
+    for(int i = 0; i < k; i++) {
+        cout << line[i].fr << ' ' << line[i].sc << '\n';
+    }
 }

@@ -49,7 +49,7 @@ int main() {
         lower[0] += upper[0];
 
         F_OR3(j, 1, i) {
-            lower[j] += max(upper[j], upper[j-1]);
+            lower[j] += max(upper[j], upper[j -1]);
         }
         
         lower[i] += upper[i-1];
