@@ -28,9 +28,32 @@
 #define F_OR3(i, b, e) F_OR(i, b, e, 1)
 #define EACH(x, a) for (auto& x : a)
 
-#define minLoc(v) min_element(all((v))) - (v).begin() 
+const int INF = 1e9 + 7;
 
 using namespace std;
+
+int n, book[501];
+
+vt<ll> psum(501, 0);
+vt<vt<ll> > dp(501, vt<ll>(501, -1));
+
+int cut(int l, int r) {
+   return psum[r] - (l > 0 ? psum[l -1] : 0);
+}
+
+ll f(int l, int r) {
+    ll& lr = dp[l][r];
+    if(lr != -1) return lr;
+    else if(l == r) return 0;
+
+    lr = INF;
+
+    for(int i = l; i < r; i++) {
+        lr = min(lr, cut(l, i) + cut(i +1, r) + f(l, i) + f(i +1, r));
+    }
+
+    return lr;
+}
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -40,21 +63,25 @@ int main() {
     int t;
     cin >> t;
     while(t--) {
-        int n;
         cin >> n;
         
-        vt<int> book(n, 0);
-        F_OR1(n) {
+        for(int i = 0; i < n; i++) {
             cin >> book[i];
         }
 
-        vt<vt<int> > dp(n, vt<int>(n, 0));
-        dp[0][0] = book[0] + book[1];
-
-        for(int i = 1; i < n -1; i++) {
-            dp[0][i] = min(dp[0][i -1], book[i] + book[i +1]);
+        psum[0] = book[0];
+        for(int i = 1; i < n; i++) {
+            psum[i] = psum[i -1] + book[i];
         }
 
-        
+        for(int i = 0; i < 501; i++) {
+            for(int j = 0; j < 501; j++) {
+                dp[i][j] = -1;
+            }
+        }
+
+        cout << f(0, n -1) << '\n';
     }
+
+    return 0;
 }
