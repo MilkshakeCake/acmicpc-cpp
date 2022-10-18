@@ -1,5 +1,5 @@
 vector<int> graph[100001];
-int visited[100001] = {0, };
+bool visited[100001] = {0, };
 int result[100001];
 int cnt = 0;
 

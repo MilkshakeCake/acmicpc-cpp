@@ -34,20 +34,22 @@ using namespace std;
 
 vector<int> graph[100001];
 queue<int> que;
-int visited[100001] = {0, };
+bool visited[100001] = {0, };
 int result[100001];
 int cnt = 0;
+queue<int> output;
 
 void init() {
+    cnt = 0;
     for(int i = 0; i < 100001; i++) {
-        graph[i].clear();
+        visited[i] = false;
     }
 }
 
 void bfs(int r) {
     visited[r] = true;
     que.push(r);
-    result[r] = ++cnt;
+    output.push(r);
 
     while(!que.empty()) {
         int v = que.front();
@@ -56,7 +58,7 @@ void bfs(int r) {
         for(int i = 0; i < sz(graph[v]); i++) {
             int temp = graph[v][i];
             if(!visited[temp]) {
-                result[temp] = ++cnt;
+                output.push(temp);
                 que.push(temp);
                 visited[temp] = true;
             }
@@ -68,7 +70,7 @@ void dfs(int r) {
     if(visited[r]) return;
 
     visited[r] = true;
-    result[r] = ++cnt;
+    output.push(r);
 
     for(int i = 0; i < sz(graph[r]); i++) {
         dfs(graph[r][i]);
@@ -82,5 +84,27 @@ int main() {
     
     int n, m, v;
     cin >> n >> m >> v;
-    
+
+    for(int i = 0; i < m; i++) {
+        int a, b;
+        cin >> a >> b;
+        graph[a].push_back(b);
+        graph[b].push_back(a);
+    }
+    for(int i = 1; i <= n; i++) sort(all(graph[i]));
+
+    dfs(v);
+    while(sz(output)) {
+        cout << output.front() << ' ';
+        output.pop();
+    }
+    cout << '\n';
+
+    init();
+
+    bfs(v);
+    while(sz(output)) {
+        cout << output.front() << ' ';
+        output.pop();
+    }
 }
