@@ -1,4 +1,4 @@
-// "Project_Name" - Baekjoon Online Judge #
+// 단지번호붙이기 - Baekjoon Online Judge #2667
 
 #include <string>
 #include <cmath>
@@ -84,8 +84,7 @@ int main() {
 
     int groupcnt = 0;
     for(int i = 1; i <= n; i++) {
-        for(int j = 1; i <= n; i++) {
-            if(i == 1 && j == 5) cout << "NOW\n";
+        for(int j = 1; j <= n; j++) {
             
             if(!visited[i][j] && board[i][j]) {
                 groupcnt++;
@@ -97,5 +96,6 @@ int main() {
     }
 
     cout << groupcnt << '\n';
+    sort(all(result));
     EACH(i, result) cout << i << '\n';
 }
