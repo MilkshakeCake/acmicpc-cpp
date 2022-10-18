@@ -1,4 +1,4 @@
-// Practice Techniques of C++
+// "Project_Name" - Baekjoon Online Judge #
 
 #include <string>
 #include <cmath>
@@ -10,6 +10,7 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <sstream>
 #include <map>
 
 #define ll long long
@@ -33,17 +34,30 @@ using namespace std;
 
 int board[30][30];
 vt<vt<vt<pii>>> graph;
+bool visited[30][30] = {0, };
+vt<int> result;
+int save = 0;
 
 void init() {
     vt<vt<pii>> temp(30, vt<pii>(0));
     for(int i = 0; i < 30; i++) graph.push_back(temp);
 }
 
+void dfs(int x, int y) {
+    if(visited[x][y]) return;
+    visited[x][y] = true;
+    save++;
+
+    for(int i = 0; i < sz(graph[x][y]); i++) {
+        dfs(graph[x][y][i].fr, graph[x][y][i].sc);
+    }
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-
+    
     int n; cin >> n;
     init();
 
@@ -68,13 +82,20 @@ int main() {
         }
     }
 
+    int groupcnt = 0;
     for(int i = 1; i <= n; i++) {
-        for(int j = 1; j <= n; j++) {
-            for(int k = 0; k < sz(graph[i][j]); k++) {
-                cout << '(' << graph[i][j][k].fr << ',' << graph[i][j][k].sc << ") ";
+        for(int j = 1; i <= n; i++) {
+            if(i == 1 && j == 5) cout << "NOW\n";
+            
+            if(!visited[i][j] && board[i][j]) {
+                groupcnt++;
+                dfs(i, j);
+                result.push_back(save);
+                save = 0;
             }
-            cout << '\n';
         }
-        cout << '\n';
     }
+
+    cout << groupcnt << '\n';
+    EACH(i, result) cout << i << '\n';
 }
