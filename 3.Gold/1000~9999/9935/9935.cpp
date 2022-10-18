@@ -47,9 +47,10 @@ int main() {
     for(int i = 0; i < hlen; i++) {
         ret.push_back(host[i]);
         int bidx = blen;
-        if(host[i] == bomb[--bidx]) { // bomb check loop start
-        int idx = sz(ret) -1;
-        bool tick = true;
+        if(host[i] == bomb[--bidx] && sz(ret) >= sz(bomb)) { // bomb check loop start
+            int idx = sz(ret) -1;
+            bool tick = true;
+            
             for(int j = 1; j < blen; j++) {
                 if(ret[idx -j] != bomb[--bidx]) {
                     tick = false;
