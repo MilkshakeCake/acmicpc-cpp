@@ -1,4 +1,4 @@
-// 문자열 폭발 - Baekjoon Online Judge #9935
+// "Project_Name" - Baekjoon Online Judge #
 
 #include <string>
 #include <cmath>
@@ -32,40 +32,37 @@
 
 using namespace std;
 
+int sx, sy, fx, fy;
+int sysx, sysy, rad;
+
+int disPow(int& x, int& y) {
+    return pow(x - sysx, 2) + pow(y - sysy, 2);
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     
-    string host, bomb;
-    cin >> host >> bomb;
-    deque<char> ret;
+    int tc; cin >> tc;
+    while(tc--) {
+        cin >> sx >> sy >> fx >> fy;
 
-    int hlen = sz(host);
-    int blen = sz(bomb);
+        int nos; cin >> nos;
 
-    for(int i = 0; i < hlen; i++) {
-        ret.push_back(host[i]);
-        int bidx = blen;
-        if(host[i] == bomb[--bidx]) { // bomb check loop start
-        int idx = sz(ret) -1;
-        bool tick = true;
-            for(int j = 1; j < blen; j++) {
-                if(ret[idx -j] != bomb[--bidx]) {
-                    tick = false;
-                    break;
-                }
-            }
+        int cnt = 0;
 
-            if(tick) for(int j = 0; j < blen; j++) ret.pop_back();
+        while(nos--) {
+            cin >> sysx >> sysy >> rad;
+
+            rad *= rad;
+
+            int ds = disPow(sx, sy);
+            int df = disPow(fx, fy);
+
+            if(ds < rad || df < rad) (ds < rad && df < rad) ? cnt : cnt++;
         }
-    }
 
-    if(!sz(ret)) {
-        cout << "FRULA";
-    }
-
-    else {
-        EACH(i, ret) cout << i;
+        cout << cnt << '\n';
     }
 }

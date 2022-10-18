@@ -35,18 +35,12 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-
-    int k;
-    cin >> k;
-    vt<pii> line(k);
-    for(int i = 0; i < k; i++) {
-        cin >> line[i].first;
-        cin >> line[i].second;
+    
+    deque<int> dq;
+    int n = 5;
+    while(n--) {
+        dq.push_front(n);
     }
 
-    sort(all(line));
-
-    for(int i = 0; i < k; i++) {
-        cout << line[i].fr << ' ' << line[i].sc << '\n';
-    }
+    cout << dq.max_size();
 }
