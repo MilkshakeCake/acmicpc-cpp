@@ -1,4 +1,4 @@
-// 알고리즘 수업 - 깊이 우선 탐색 1 - Baekjoon Online Judge #24479
+// 알고리즘 수업 - 너비 우선 탐색 1 - Baekjoon Online Judge #24444
 
 #include <string>
 #include <cmath>
@@ -34,17 +34,27 @@ using namespace std;
 
 vector<int> graph[100001];
 int visited[100001] = {0, };
+queue<int> que;
 int result[100001];
 int cnt = 0;
 
-void dfs(int r) {
-    if(visited[r]) return;
-
+void bfs(int r) {
     visited[r] = true;
+    que.push(r);
     result[r] = ++cnt;
 
-    for(int i = 0; i < sz(graph[r]); i++) {
-        dfs(graph[r][i]);
+    while(!que.empty()) {
+        int v = que.front();
+        que.pop();
+        
+        for(int i = 0; i < sz(graph[v]); i++) {
+            int temp = graph[v][i];
+            if(!visited[temp]) {
+                result[temp] = ++cnt;
+                que.push(temp);
+                visited[temp] = true;
+            }
+        }
     }
 }
 
@@ -63,7 +73,7 @@ int main() {
         sort(all(graph[i]));
     }
     
-    dfs(r);
+    bfs(r);
 
     for(int i = 1; i <= n; i++) {
         cout << result[i] << '\n';
