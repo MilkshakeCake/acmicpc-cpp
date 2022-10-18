@@ -1,4 +1,4 @@
-// Practice Techniques of C++
+// "Project_Name" - Baekjoon Online Judge #
 
 #include <string>
 #include <cmath>
@@ -10,6 +10,7 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <sstream>
 #include <map>
 
 #define ll long long
@@ -31,15 +32,40 @@
 
 using namespace std;
 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
+vector<int> graph[100001];
+int visited[100001] = {0, };
+int result[100001];
+int cnt = 0;
 
-    vt<int> graph[101];
+void dfs(int r) {
+    if(visited[r]) return;
+
+    visited[r] = true;
+    result[r] = ++cnt;
+
+    for(int i = 0; i < sz(graph[r]); i++) {
+        dfs(graph[r][i]);
+    }
+}
+
+int main() {
+    int n, m, r;
+    scanf("%d %d %d", &n, &m, &r);
+
+    for(int i = 1; i <= m; i++) {
+        int s, f;
+        scanf("%d %d", &s, &f);
+        graph[s].push_back(f);
+        graph[f].push_back(s);
+    }
     
-    int tmp;
-    cin >> tmp;
-    graph[0].push_back(tmp);
-    cout << sz(graph[100]);
+    for(int i = 1; i <= n; i++) {
+        sort(all(graph[i]));
+    }
+    
+    dfs(r);
+
+    for(int i = 1; i <= n; i++) {
+        cout << result[i] << '\n';
+    }
 }
