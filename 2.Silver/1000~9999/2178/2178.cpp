@@ -53,7 +53,7 @@ void bfs(int x, int y) {
         for(int i = 0; i < sz(labyrinth[v.fr][v.sc]); i++) {
             pii temp = labyrinth[v.fr][v.sc][i];
             if(!visited[temp.fr][temp.sc]) {
-                que.push(labyrinth[v.fr][v.sc][i]);
+                que.push(temp);
                 visited[temp.fr][temp.sc] = visited[v.fr][v.sc] + 1;
             }
         }
