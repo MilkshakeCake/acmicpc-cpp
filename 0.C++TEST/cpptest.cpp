@@ -31,17 +31,12 @@
 
 using namespace std;
 
-bool board[11][9];
+int i = 0;
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int k = 17;
-    while(k--) {
-        int a, b;
-        cin >> a >> b;
-        cout << a +1 << ' '  << b +1 << '\n';
-    }
+    cout << i;
 }
