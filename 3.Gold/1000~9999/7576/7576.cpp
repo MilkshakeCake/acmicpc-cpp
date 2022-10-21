@@ -40,6 +40,7 @@ vt<pii> ripe;
 queue<pii> que;
 pii last = {0, 0};
 int n, m;
+int needripe = 0;
 
 void init() {
     vt<vt<pii>> temp(1005, vt<pii>(0));
@@ -64,6 +65,7 @@ void bfs() {
                 que.push(temp);
                 visited[temp.fr][temp.sc] = visited[v.fr][v.sc] +1;
                 last = temp;
+                needripe--;
             }
         }
     }
@@ -92,6 +94,7 @@ int main() {
             }
 
             if(temp == 0) {
+                needripe++;
                 raw = true;
                 if(box[i][j -1] == -1 && box[i -1][j] == -1) {
                     nland.push_back(make_pair(i, j));
@@ -120,5 +123,9 @@ int main() {
 
     bfs();
 
-    cout << visited[last.fr][last.sc];
+    if(needripe == 0) {
+        printf("%d", visited[last.fr][last.sc]);
+    }
+    
+    else printf("-1");
 }
