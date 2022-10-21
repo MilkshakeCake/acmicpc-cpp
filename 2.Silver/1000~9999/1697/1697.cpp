@@ -1,4 +1,4 @@
-// Practice Techniques of C++
+// 숨바꼭질 - Baekjoon Online Judge #1697
 
 #include <string>
 #include <cmath>
@@ -10,6 +10,7 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <sstream>
 #include <map>
 
 #define ll long long
@@ -31,18 +32,10 @@
 
 using namespace std;
 
-int i = 0;
-
 int main() {
-    ofstream myfile;
-    myfile.open("example.txt");
-
-    for(int i = 0; i < 1000; i++) {
-        for(int j = 0; j < 1000; j++) {
-             myfile << (i == j ? 1 : 0) << ' ';
-        }
-        myfile << '\n';
-    }
-    myfile.close();
-    return 0;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    
 }

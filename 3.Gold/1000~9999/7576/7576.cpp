@@ -32,18 +32,18 @@
 
 using namespace std;
 
-vt<vt<int>> box(1002, vt<int>(1002, -1));
+vt<vt<int>> box(1005, vt<int>(1005, -1));
 vt<vt<vt<pii>>> dp;
 vt<pii> nland;
-vt<vt<int>> visited(1002, vt<int>(1002));
+vt<vt<int>> visited(1005, vt<int>(1005));
 vt<pii> ripe;
 queue<pii> que;
 pii last = {0, 0};
 int n, m;
 
 void init() {
-    vt<vt<pii>> temp(1002, vt<pii>(0));
-    for(int i = 0; i < 1002; i++) dp.push_back(temp);
+    vt<vt<pii>> temp(1005, vt<pii>(0));
+    for(int i = 0; i < 1005; i++) dp.push_back(temp);
 }
 
 void bfs() {
@@ -57,7 +57,6 @@ void bfs() {
     while(!que.empty()) {
         pii v = que.front();
         que.pop();
-        printf("%d %d\n", v.fr, v.sc);
 
         for(int i = 0; i < sz(dp[v.fr][v.sc]); i++) {
             pii temp = dp[v.fr][v.sc][i];
@@ -66,13 +65,6 @@ void bfs() {
                 visited[temp.fr][temp.sc] = visited[v.fr][v.sc] +1;
                 last = temp;
             }
-            // for(int a = 1; a <= n; a++) {
-            //     for(int b = 1; b <= m; b++) {
-            //         printf("%d ", visited[a][b]);
-            //     }
-            //     printf("\n");
-            // }
-            // printf("\n");
         }
     }
 }
@@ -89,11 +81,11 @@ int main() {
             scanf("%d", &temp);
             box[i][j] = temp;
             if(temp != -1) {
-                if(!box[i][j -1]) {
+                if(box[i][j -1] != -1) {
                     dp[i][j].push_back(make_pair(i, j -1)); 
-                    dp[i][j].push_back(make_pair(i, j));
+                    dp[i][j -1].push_back(make_pair(i, j));
                 }
-                if(!box[i -1][j]) {
+                if(box[i -1][j] != -1) {
                     dp[i -1][j].push_back(make_pair(i, j));
                     dp[i][j].push_back(make_pair(i -1, j));
                 }
@@ -128,7 +120,5 @@ int main() {
 
     bfs();
 
-    for(int i = 0; i < sz(ripe); i++) {
-        printf("%d %d\n", ripe[i].fr, ripe[i].sc);
-    }
+    cout << visited[last.fr][last.sc];
 }
