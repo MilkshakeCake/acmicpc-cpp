@@ -37,5 +37,22 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    
+    int n, k;
+    cin >> n >> k;
+
+    vt<int> area(100001, -1);
+    queue<int> que;
+    que.push(n);
+    area[n] = 0;
+    while(area[k] == -1) {
+        int now = que.front();
+        que.pop();
+        for(int i : {now -1, now +1, now *2}) {
+            if(i < 0 || i > 100000) continue;
+            if(area[i] != -1) continue;
+            que.push(i);
+            area[i] = area[now] +1;
+        }
+    }
+    cout << area[k];
 }
