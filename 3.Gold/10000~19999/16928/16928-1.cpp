@@ -1,4 +1,4 @@
-// "Project_Name" - Baekjoon Online Judge #
+// 뱀과 사다리 게임 - Baekjoon Online Judge #16928 V2
 
 #include <string>
 #include <cmath>
@@ -32,28 +32,53 @@
 
 using namespace std;
 
-vt<bool> buttons(10, true);
-vt<int> goal;
+vt<int> board(102, 0);
+vt<int> graph(102, 0);
+
+void bfs() {
+    queue<int> que;
+    que.push(1);
+    board[1] = 0;
+    
+    while(!que.empty()) {
+        int v = que.front();
+        que.pop();
+
+        for(int i = 1; i <= 6; i++) {
+            int nav = v + i;
+            if(nav > 100) break;
+            
+            if(graph[nav] != 0) {
+                nav = graph[nav];
+            }
+
+            if(board[nav] == 0) {   // not visited
+                que.push(nav);
+                board[nav] = board[v] +1;
+            }
+        }
+    }
+}
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    
-    int n, m, temp;
+
+    int n, m, head, tail;
     cin >> n >> m;
 
-    while(n) {
-        goal.push_back(n % 10);
-        n /= 10;
+    while(n--) {
+        cin >> head >> tail;
+        graph[head] = tail;
     }
 
     while(m--) {
-        cin >> temp;
-        buttons[temp] = false;
+        cin >> head >> tail;
+        graph[head] = tail;
     }
 
-    if(sz(goal) > 2) {
-        
-    }
+    bfs();
+
+    cout << board[100];
 }

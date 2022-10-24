@@ -33,7 +33,7 @@
 using namespace std;
 
 vt<int> snl(102, 0);
-vt<vt<int>> dp(102);
+vt<vt<int>> graph(102);
 
 void bfs() {
     queue<int> que;
@@ -44,17 +44,30 @@ void bfs() {
     while(!que.empty()) {
         int v = que.front();
         que.pop();
-        for(auto& i : dp[v]) {
-            if(snl[i] != 0) continue;
+        // for(auto& i : graph[v]) {
+        //     if(snl[i] != 0) continue;
 
-            if(sz(dp[v]) == 1) {
-                que.push(i);
-                snl[i] = snl[v];
+        //     if(sz(graph[v]) == 1) {
+        //         que.push(i);
+        //         snl[i] = snl[v];
+        //         continue;
+        //     }
+            
+        //     que.push(i);
+        //     snl[i] = snl[v] + 1;
+        // }
+        for(int i = 0; i < sz(graph[v]); i++) {
+            int temp = graph[v][i];
+            if(snl[temp] != 0) continue;
+
+            if(sz(graph[v]) == 1) {
+                que.push(temp);
+                snl[temp] = snl[v];
                 continue;
             }
-            
-            que.push(i);
-            snl[i] = snl[v] + 1;
+
+            que.push(temp);
+            snl[i] = snl[v] +1;
         }
     }
 }
@@ -70,21 +83,21 @@ int main() {
     for(int i = 1; i < 101; i++) {
         for(int j = 1; j < 7; j++) {
             if(i + j > 100) break;
-            dp[i].push_back(i + j);
+            graph[i].push_back(i + j);
         }
     }
 
     int head, tail;
     for(int i = 0; i < n; i++) {
         cin >> head >> tail;
-        dp[head].clear();
-        dp[head].push_back(tail);
+        graph[head].clear();
+        graph[head].push_back(tail);
     }
 
     for(int i = 0; i < m; i++) {
         cin >> head >> tail;
-        dp[head].clear();
-        dp[head].push_back(tail);
+        graph[head].clear();
+        graph[head].push_back(tail);
     }
 
     bfs();
