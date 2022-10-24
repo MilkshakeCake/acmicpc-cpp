@@ -31,18 +31,36 @@
 
 using namespace std;
 
-int i = 0;
+vt<vt<int>> dp(102);
 
 int main() {
-    ofstream myfile;
-    myfile.open("example.txt");
-
-    for(int i = 0; i < 1000; i++) {
-        for(int j = 0; j < 1000; j++) {
-             myfile << (i == j ? 1 : 0) << ' ';
+    int n, m;
+    cin >> n >> m;
+    
+    for(int i = 1; i < 101; i++) {
+        for(int j = 1; j < 7; j++) {
+            if(i + j > 100) break;
+            dp[i].push_back(i + j);
         }
-        myfile << '\n';
     }
-    myfile.close();
-    return 0;
+
+    int head, tail;
+    for(int i = 0; i < n; i++) {
+        cin >> head >> tail;
+        dp[head].clear();
+        dp[head].push_back(tail);
+    }
+
+    for(int i = 0; i < m; i++) {
+        cin >> head >> tail;
+        dp[head].clear();
+        dp[head].push_back(tail);
+    }
+
+    for(int i = 1; i < 101; i++) {
+        for(auto& j : dp[i]) {
+            cout << j << ' ';
+        }
+        cout << '\n';
+    }
 }

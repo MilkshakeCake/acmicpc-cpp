@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/1.Bronze/1000~9999/2738",
-      "program": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/1.Bronze/1000~9999/2738/build/Debug/outDebug",
+      "cwd": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/0.C++TEST",
+      "program": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/0.C++TEST/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
