@@ -72,7 +72,7 @@ int main() {
 
             if(nx < 1 || ny < 1 || nx > n || ny > m) continue;
 
-            if(board[nx][ny]) {
+            if(board[nx][ny] == 1) {
                 if(status == 0) status = 1;
                 else continue;
             }
@@ -86,5 +86,5 @@ int main() {
 
     int ret = min(trail[0][n][m], trail[1][n][m]);
     if(ret == INF) cout << -1;
-    else cout << ret;
+    else cout << ret;   
 }
