@@ -32,7 +32,23 @@
 using namespace std;
 
 int main() {
-    int t[36] = {1, 1, 0, };
+    int n, m;
+    cin >> n >> m;
 
-    for(auto& i : t) cout << i << ' ';
+    vt<vt<bool>> board(1002, vt<bool>(1002, false));
+    for(int i = 1; i <= n; i++) {
+        int input;
+        cin >> input;
+        for(int j = 1; j <= m; j++) {
+            board[i][j] = input % 10;
+            input /= 10;
+        }
+    }
+
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= m; j++) {
+            cout << board[i][j] << ' ';
+        }
+        cout << '\n';
+    }
 }
