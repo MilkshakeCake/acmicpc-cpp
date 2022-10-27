@@ -25,13 +25,13 @@
 #define F_OR3(i, b, e) F_OR(i, b, e, 1)
 #define EACH(x, a) for (auto& x : a)
 
-#define INF 1e9 + 7
+#define INF 1e9
 
 using namespace std;
 
 const vt<pii> moves = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 vt<vt<bool>> board(1002, vt<bool>(1002, 1));
-int trail[2][1002][1002] = {};
+int trail[2][1002][1002] = {0};
 queue<vt<int>> que;
 
 int main() {
@@ -77,14 +77,14 @@ int main() {
                 else continue;
             }
 
-            if(trail[status][nx][ny] <= trail[status][now[1]][now[2]] +1) continue;
+            if(trail[status][nx][ny] <= trail[now[0]][now[1]][now[2]] +1) continue;
 
             que.push({status, nx, ny});
-            trail[status][nx][ny] = trail[status][now[1]][now[2]] +1;
+            trail[status][nx][ny] = trail[now[0]][now[1]][now[2]] +1;
         }
     }
 
     int ret = min(trail[0][n][m], trail[1][n][m]);
     if(ret == INF) cout << -1;
-    else cout << ret;   
+    else cout << ret;
 }

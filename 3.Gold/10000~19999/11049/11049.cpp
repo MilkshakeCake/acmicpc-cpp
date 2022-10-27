@@ -1,4 +1,4 @@
-// Practice Techniques of C++
+// 행렬 곱셈 순서 - Baekjoon Online Judge #11049
 
 #include <string>
 #include <cmath>
@@ -10,6 +10,7 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <sstream>
 #include <map>
 
 #define ll long long
@@ -29,13 +30,40 @@
 #define F_OR3(i, b, e) F_OR(i, b, e, 1)
 #define EACH(x, a) for (auto& x : a)
 
+#define INF INT32_MAX
+
 using namespace std;
 
-int main() {
-    int n;
-    int matrices[502];
-    vt<int> pmul(502, 1);
+ll matrices[502];
+vt<ll> pmul(502, 1);
+vt<vt<ll>> dp(502, vt<ll>(502, -1));
+ll n;
 
+ll cut(int l, int r) {
+    return matrices[l] * matrices[r +1];
+}
+
+ll dynamo(int l, int r) {
+    ll& lr = dp[l][r];
+    if(lr != -1) return lr;
+    else if(l == r) {
+        return 0;
+    };
+
+    lr = INF;
+
+    for(int i = l; i < r; i++) {
+        lr = min(lr, (cut(l, i) * cut(i +1, r) / matrices[i +1]) + dynamo(l, i) + dynamo(i +1, r));
+    }
+
+    return lr;
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
     cin >> n;
     cin >> matrices[0] >> matrices[1];
     pmul[0] = matrices[0] * matrices[1];
@@ -45,6 +73,5 @@ int main() {
         pmul[i] = pmul[i -1] * matrices[i +1];
     }
 
-    for(int i = 0; i < n; i++) cout << pmul[i] << ' ';
-    cout << '\n';
+    cout << dynamo(0, n -1);
 }
