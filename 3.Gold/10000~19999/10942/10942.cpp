@@ -32,7 +32,17 @@
 
 using namespace std;
 
-int dp[2001][2001];
+int numbers[2001] = {0};
+vt<vt<bool>> dp(2001, vt<bool>(2001, -1));
+
+bool pali(int s, int e) {
+    if(dp[s][e] != -1) return true;
+    if(s == e) return true;
+    
+    for(int i = s; i < e; i++) {
+        
+    }
+}
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -40,7 +50,6 @@ int main() {
     cout.tie(NULL);
     
     int N, M;
-    vt<int> numbers(2001, 0);
     cin >> N;
     for(int i = 0; i < N; i++) {
         cin >> numbers[i];
@@ -51,6 +60,6 @@ int main() {
         int S, E;
         cin >> S >> E;
 
-        
+
     }
 }
