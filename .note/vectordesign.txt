@@ -1,0 +1,7 @@
+vector<T> vec[100]; >> array(size is 100) of T-type vectors
+
+vec[0].push_back(/**arbitrary input**/);
+
+vector<T> vec[N][M]; >> array(size is N*M) of T-type vectors
+
+vec[0][0].push_back(/**arbitrary input**/);

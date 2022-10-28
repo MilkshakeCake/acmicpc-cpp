@@ -1,4 +1,4 @@
-// Practice Techniques of C++
+// 팰린드롬? - Baekjoon Online Judge #10942
 
 #include <string>
 #include <cmath>
@@ -10,6 +10,7 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <sstream>
 #include <map>
 
 #define ll long long
@@ -31,8 +32,25 @@
 
 using namespace std;
 
+int dp[2001][2001];
+
 int main() {
-    vt<int> dp[10][10];
-    dp[0][0].push_back(3);
-    cout << dp[0][0][0];
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    int N, M;
+    vt<int> numbers(2001, 0);
+    cin >> N;
+    for(int i = 0; i < N; i++) {
+        cin >> numbers[i];
+    }
+
+    cin >> M;
+    for(int i = 0; i < M; i++) {
+        int S, E;
+        cin >> S >> E;
+
+        
+    }
 }

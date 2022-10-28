@@ -34,7 +34,7 @@ int m, n;
 ll dfs(int x, int y) {
     if(x < 1 || y < 1 || x > m || y > n) return 0;
     if(dp[x][y] != -1) return dp[x][y];
-    if(x == m || x == n) return 1;
+    if(x == m && y == n) return 1;
     dp[x][y] = 0;
     for(auto& i : moves) {
         int nx = x + i.fr;
