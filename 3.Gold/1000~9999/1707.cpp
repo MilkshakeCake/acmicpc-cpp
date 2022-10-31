@@ -78,11 +78,13 @@ int main() {
             graph[u].push_back(v);
             graph[v].push_back(u);
         }
-        for(int i = 1; i <= V; i++) {
-            sort(all(graph[i]));
-        }
 
-        cout << (bfs() ? "YES" : "NO") << '\n';
+        bool flag = true;
+        for(int i = 1; i <= V; i++) {
+            if(color[i] == -1) flag = bfs();
+            if(!flag) break;
+        }
+        cout << (flag ? "YES" : "NO") << '\n';
 
         init();
     }
