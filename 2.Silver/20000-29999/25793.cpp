@@ -41,10 +41,10 @@ int main() {
     int T;
     cin >> T;
     while(T--) {
-        int R, C;
+        ll R, C;
         cin >> R >> C;
-        int N = min(R, C);
-        int M = max(R, C) - N;
+        ll N = min(R, C);
+        ll M = max(R, C) - N;
 
         ll white = (N * (N * N *2 +1)) / 3 + N * N * M;
         ll dark = (N * (N * N -1)) * 2 / 3 + N * N * M;
