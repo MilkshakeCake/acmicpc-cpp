@@ -31,8 +31,13 @@
 
 using namespace std;
 
+int num = 3;
+
+void func(int& x) {
+    x *= 2;
+}
+
 int main() {
-    vt<int> dp[10][10];
-    dp[0][0].push_back(3);
-    cout << dp[0][0][0];
+    func(num);
+    cout << num;
 }
