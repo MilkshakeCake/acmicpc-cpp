@@ -38,10 +38,10 @@ void init() {
     }
 }
 
-bool bfs() {
+bool bfs(int x) {
     queue<int> que;
-    que.push(1);
-    color[1] = 0;
+    que.push(x);
+    color[x] = 0;
 
     while(!que.empty()) {
         int v = que.front();
@@ -70,7 +70,7 @@ int main() {
     
     cin >> K;
     while(K--) {
-
+        init();
         cin >> V >> E;
         while(E--) {
             int u, v;
@@ -81,11 +81,9 @@ int main() {
 
         bool flag = true;
         for(int i = 1; i <= V; i++) {
-            if(color[i] == -1) flag = bfs();
+            if(color[i] == -1) flag = bfs(i);
             if(!flag) break;
         }
         cout << (flag ? "YES" : "NO") << '\n';
-
-        init();
     }
 }
