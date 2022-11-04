@@ -1,4 +1,4 @@
-// Practice Techniques of C++
+// 최댓값 - Baekjoon Online Judge #2566
 
 #include <string>
 #include <cmath>
@@ -10,6 +10,7 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <sstream>
 #include <map>
 
 #define ll long long
@@ -31,13 +32,23 @@
 
 using namespace std;
 
-int num = 3;
-
-void func(int& x) {
-    x *= 2;
-}
-
 int main() {
-    func(num);
-    cout << num;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    int row, col, maxn(-1), input;
+    
+    for(int i = 1; i < 10; i++) {
+        for(int j = 1; j < 10; j++) {
+            cin >> input;
+            if(input > maxn) {
+                row = i;
+                col = j;
+                maxn = input;
+            }
+        }
+    }
+
+    cout << maxn << '\n' << row << ' ' << col;
 }

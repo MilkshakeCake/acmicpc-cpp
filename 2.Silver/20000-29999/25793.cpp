@@ -1,4 +1,4 @@
-// Practice Techniques of C++
+// 초콜릿 피라미드 - Baekjoon Online Judge #25793
 
 #include <string>
 #include <cmath>
@@ -10,7 +10,9 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <sstream>
 #include <map>
+#include <inttypes.h>
 
 #define ll long long
 #define ull unsigned long long
@@ -31,13 +33,22 @@
 
 using namespace std;
 
-int num = 3;
-
-void func(int& x) {
-    x *= 2;
-}
-
 int main() {
-    func(num);
-    cout << num;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    int T;
+    cin >> T;
+    while(T--) {
+        ll R, C;
+        cin >> R >> C;
+        ll N = min(R, C);
+        ll M = max(R, C) - N;
+
+        ll white = (N * (N * N *2 +1)) / 3 + N * N * M;
+        ll dark = (N * (N * N -1)) * 2 / 3 + N * N * M;
+
+        cout << white << ' ' << dark << '\n';
+    }
 }

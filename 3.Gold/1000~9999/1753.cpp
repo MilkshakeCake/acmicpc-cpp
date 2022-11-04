@@ -1,4 +1,4 @@
-// Practice Techniques of C++
+// 최단 경로 - Baekjoon Online Judge #1753
 
 #include <string>
 #include <cmath>
@@ -10,6 +10,7 @@
 #include <stack>
 #include <deque>
 #include <fstream>
+#include <sstream>
 #include <map>
 
 #define ll long long
@@ -31,13 +32,10 @@
 
 using namespace std;
 
-int num = 3;
-
-void func(int& x) {
-    x *= 2;
-}
-
 int main() {
-    func(num);
-    cout << num;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    
 }
