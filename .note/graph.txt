@@ -1,0 +1,81 @@
+HOW TO NAVIGATE THRU GRAPHS W/ ALGORITHM
+
+//NODE
+struct Node {
+    ll w, idx;
+
+    bool operator<(const Node &b) const {
+        return w > b.w;
+    }
+};
+
+//BFS
+vector<int> graph[100001];
+bool visited[100001] = {0, };
+queue<int> que;
+int result[100001];
+int cnt = 0;
+
+void bfs(int r) {
+    visited[r] = true;
+    que.push(r);
+    result[r] = ++cnt;
+
+    while(!que.empty()) {
+        int v = que.front();
+        que.pop();
+        
+        for(int i = 0; i < sz(graph[v]); i++) {
+            int temp = graph[v][i];
+            if(!visited[temp]) {
+                result[temp] = ++cnt;
+                que.push(temp);
+                visited[temp] = true;
+            }
+        }
+    }
+}
+
+//DFS
+vector<int> graph[100001];
+bool visited[100001] = {0, };
+int result[100001];
+int cnt = 0;
+
+void dfs(int r) {
+    if(visited[r]) return;
+
+    visited[r] = true;
+    result[r] = ++cnt;
+
+    for(int i = 0; i < sz(graph[r]); i++) {
+        dfs(graph[r][i]);
+    }
+}
+
+//DIJKSTRA
+int N, E;
+vt<Node> graph[802];
+
+ll dijkstra(int start, int end) {
+    vt<ll> cache(N + 1, INT32_MAX);
+    cache[start] = 0;
+
+    priority_queue<Node> pq;
+    pq.push({0, start});
+
+    while (!pq.empty()) {
+        Node now = pq.top();
+        pq.pop();
+        
+        if (now.w > cache[now.idx]) continue;
+
+        for (const auto &next : graph[now.idx]) {
+            if (next.w + now.w < cache[next.idx]) {
+                cache[next.idx] = next.w + now.w;
+                pq.push({cache[next.idx], next.idx});
+            }
+        }
+    }
+    return cache[end];
+}

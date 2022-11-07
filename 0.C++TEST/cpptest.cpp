@@ -38,6 +38,7 @@ void func(int& x) {
 }
 
 int main() {
-    func(num);
-    cout << num;
+    string input;
+    cin >> input;
+    cout << sz(input);
 }
