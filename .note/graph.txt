@@ -1,14 +1,5 @@
 HOW TO NAVIGATE THRU GRAPHS W/ ALGORITHM
 
-//NODE
-struct Node {
-    ll w, idx;
-
-    bool operator<(const Node &b) const {
-        return w > b.w;
-    }
-};
-
 //BFS
 vector<int> graph[100001];
 bool visited[100001] = {0, };
@@ -56,11 +47,19 @@ void dfs(int r) {
 //DIJKSTRA
 //all w >= 0
 
+struct Node {
+    ll w, idx;
+
+    bool operator<(const Node &b) const {
+        return w > b.w;
+    }
+};
+
 int N, E;
-vt<Node> graph[802];
+vt<Node> graph[N +1];
 
 ll dijkstra(int start, int end) {
-    vt<ll> cache(N + 1, INT32_MAX);
+    vt<ll> cache(N +1, INT32_MAX);
     cache[start] = 0;
 
     priority_queue<Node> pq;
@@ -80,4 +79,45 @@ ll dijkstra(int start, int end) {
         }
     }
     return cache[end];
+}
+
+//BELLMAN-FORD
+
+struct Edge {
+    ll start, end, cost;
+};
+
+int N, M;
+bool flag = false;
+vt<Edge> graph;
+vt<int> cache(N +1, INT32_MAX);
+
+void BellmanFord(int begin) {
+    cache[begin] = 0;
+
+    //NAVIGATE ALL EDGES
+    for (int i = 1; i <= N - 1; i++) {
+        for (int j = 0; j < M; j++) {
+            ll start = graph[j].start;
+            ll end = graph[j].end;
+            ll cost = graph[j].cost;
+ 
+            if (cache[start] == INT32_MAX) continue;
+            if (cache[end] > cache[start] + cost) cache[end] = cache[start] + cost;
+        }
+    }
+ 
+    //NEGATIVE LOOP CHECK
+    for (auto &i : graph) {
+        int start = i.start;
+        int end = i.end;
+        int cost = i.cost;
+ 
+        if (cache[start] == INT32_MAX) continue;
+        if (cache[end] > cache[start] + cost) {
+            flag = true;
+        }
+    }
+
+    return;
 }
