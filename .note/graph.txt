@@ -54,6 +54,8 @@ void dfs(int r) {
 }
 
 //DIJKSTRA
+//all w >= 0
+
 int N, E;
 vt<Node> graph[802];
 
