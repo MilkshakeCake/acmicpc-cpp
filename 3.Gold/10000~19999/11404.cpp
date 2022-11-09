@@ -40,5 +40,19 @@ int main() {
         matrix[a][b] = min(matrix[a][b], c);
     }
 
+    for(int k = 1; k <= n; k++){
+        for(int i = 1; i <= n; i++){
+            if(i == k) matrix[i][k] = 0;
+            for(int j = 1; j <= n; j++){
+                matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]);
+            }
+        }
+    }
 
+    for(int i = 1; i <= n; i++) {
+        for(int j = 1; j <= n; j++) {
+            cout << (matrix[i][j] != INF ? matrix[i][j] : 0) << ' ';
+        }
+        cout << '\n';
+    }
 }

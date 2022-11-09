@@ -38,7 +38,7 @@ void func(int& x) {
 }
 
 int main() {
-    string input;
-    cin >> input;
-    cout << sz(input);
+    for(int i = 1; i < 99; i++) {
+        cout << i << ' ' << i +1 << ' ' << 100000 << '\n';
+    }
 }
