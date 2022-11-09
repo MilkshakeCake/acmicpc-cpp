@@ -1,6 +1,6 @@
 HOW TO NAVIGATE THRU GRAPHS W/ ALGORITHM
 
-//BFS
+// BFS
 vector<int> graph[100001];
 bool visited[100001] = {0, };
 queue<int> que;
@@ -27,7 +27,7 @@ void bfs(int r) {
     }
 }
 
-//DFS
+// DFS
 vector<int> graph[100001];
 bool visited[100001] = {0, };
 int result[100001];
@@ -44,8 +44,8 @@ void dfs(int r) {
     }
 }
 
-//DIJKSTRA
-//all w >= 0
+// DIJKSTRA
+// all w >= 0
 
 struct Node {
     ll w, idx;
@@ -81,7 +81,7 @@ ll dijkstra(int start, int end) {
     return cache[end];
 }
 
-//BELLMAN-FORD
+// BELLMAN-FORD
 
 struct Edge {
     ll start, end, cost;
@@ -95,7 +95,7 @@ vt<int> cache(N +1, INT32_MAX);
 void BellmanFord(int begin) {
     cache[begin] = 0;
 
-    //NAVIGATE ALL EDGES
+    // NAVIGATE ALL EDGES
     for (int i = 1; i <= N - 1; i++) {
         for (int j = 0; j < M; j++) {
             ll start = graph[j].start;
@@ -107,7 +107,7 @@ void BellmanFord(int begin) {
         }
     }
  
-    //NEGATIVE LOOP CHECK
+    // NEGATIVE LOOP CHECK
     for (auto &i : graph) {
         int start = i.start;
         int end = i.end;
@@ -120,4 +120,14 @@ void BellmanFord(int begin) {
     }
 
     return;
+}
+
+// FLOYD-WARSHALL
+for(int k = 1; k <= n; k++) {
+    for(int i = 1; i <= n; i++) {
+        if(i == k) matrix[i][k] = 0;
+        for(int j = 1; j <= n; j++){
+            matrix[i][j] = min(matrix[i][j], matrix[i][k] + matrix[k][j]);
+        }
+    }
 }
