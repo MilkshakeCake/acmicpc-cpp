@@ -1,4 +1,4 @@
-// 두 수의 합 - Baekjoon Online Judge #3273
+// 두 용액 - Baekjoon Online Judge #2470
 
 #include <bits/stdc++.h>
 
@@ -26,26 +26,28 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int n, temp;
-    cin >> n;
-    vt<int> arr;
+    int n, temp; cin >> n;
+    vt<int> liquid;
     for(int i = 0; i < n; i++) {
         cin >> temp;
-        arr.push_back(temp);
+        liquid.push_back(temp);
     }
-    int x; cin >> x;
+    sort(all(liquid));
 
-    sort(all(arr));
-
-    int start(0), end(n -1), cnt(0);
-
+    int start(0), end(n -1);
+    int alk(liquid[start]), acid(liquid[end]);
+    int mix = INT32_MAX;
     while(start < end) {
-        if(arr[start] + arr[end] == x) {
-            cnt++;
-            end--;
+        int sum = liquid[start] + liquid[end];
+        if(abs(sum) < mix) {
+            mix = abs(sum);
+            alk = liquid[start];
+            acid = liquid[end];
+
+            if(sum == 0) break;
         }
-        else (arr[start] + arr[end] > x) ? end-- : start++;
+        sum < 0 ? start++ : end--;
     }
 
-    cout << cnt;
+    cout << alk << ' ' << acid;
 }
