@@ -35,8 +35,33 @@
 using namespace std;
 
 int main() {
-    int n, k;
+    ll n, k;
     cin >> n >> k;
 
-    
+    ll result = 1;
+    for(int i = n - k + 1; i <= n; i++) {
+        result *= i;
+        result %= MOD;
+    }
+
+    ll kfac = 1;
+    for(int i = 1; i <= k; i++) {
+        kfac *= i;
+        kfac %= MOD;
+    }
+
+    ll ret = 1;
+	ll goal = MOD -2;
+	while(goal){
+		if(goal % 2) {
+			ret *= kfac;
+			ret %= MOD;
+		}
+		kfac *= kfac;
+		kfac %= MOD;
+		goal /= 2;
+	}
+    ret %= MOD;
+
+    cout << (result * ret) % MOD;
 }
