@@ -1,16 +1,7 @@
-// Practice Techniques of C++
+// 해시 해킹 - Baekjoon Online Judge #26008
+// BOJ Contest 884 - 홍익대학교 PS 동아리 HI-ARC 2022
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
-#include <queue>
-#include <stack>
-#include <deque>
-#include <fstream>
-#include <map>
+#include <bits/stdc++.h>
 
 #define ll long long
 #define ull unsigned long long
@@ -29,11 +20,24 @@
 #define F_OR3(i, b, e) F_OR(i, b, e, 1)
 #define EACH(x, a) for (auto& x : a)
 
+#define MOD 1e9 + 7
+
 using namespace std;
 
-int num = 3;
+int power(int a, int n) {
+    while(n) {
+        if(n % 2) {
+            a *= a;
+        }
+    }
+}
 
 int main() {
-    int a = 2;
-    cout << a;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    ll N, M, A, H;
+    cin >> N >> M >> A >> H;
+
 }
