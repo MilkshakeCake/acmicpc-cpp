@@ -20,16 +20,23 @@
 #define F_OR3(i, b, e) F_OR(i, b, e, 1)
 #define EACH(x, a) for (auto& x : a)
 
-#define MOD 1e9 + 7
+#define MOD 1000000007
 
 using namespace std;
 
-int power(int a, int n) {
+ll power(ll a, ll n) {
+    ll result = 1;
     while(n) {
         if(n % 2) {
-            a *= a;
+            result *= a;
+            result %= MOD;
         }
+        a *= a;
+        a %= MOD;
+        n /= 2;
     }
+
+    return result;
 }
 
 int main() {
@@ -40,4 +47,5 @@ int main() {
     ll N, M, A, H;
     cin >> N >> M >> A >> H;
 
+    cout << power(M, N-1) % MOD;
 }
