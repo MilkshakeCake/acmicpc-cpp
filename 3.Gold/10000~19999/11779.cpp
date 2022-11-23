@@ -37,11 +37,11 @@ ll dijkstra(int start, int end) {
     vt<ll> cache(N +1, INT32_MAX);
     cache[start] = 0;
 
-    priority_queue<Node> pq;
+    queue<Node> pq;
     pq.push({0, start});
 
     while (!pq.empty()) {
-        Node now = pq.top();
+        Node now = pq.front();
         pq.pop();
         
         if (now.w > cache[now.idx]) continue;
@@ -71,6 +71,7 @@ int main() {
         graph[s].push_back({c, e});
     }
     cin >> s >> e;
+    route[s].push_back(s);
 
     cout << dijkstra(s, e) << '\n';
     cout << sz(route[e]) << '\n';
