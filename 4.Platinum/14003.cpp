@@ -1,4 +1,4 @@
-// "Project_Name" - Baekjoon Online Judge #
+// 가장 긴 증가하는 부분 수열 5 - Baekjoon Online Judge #14003
 
 #include <bits/stdc++.h>
 
@@ -16,10 +16,24 @@
 
 using namespace std;
 
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     
-    
+    int N, temp;
+    vt<int> sequence;
+    vt<int> lis;
+    stack<int> output;
+
+    cin >> N;
+    for(int i = 0; i < N; i++) {
+        cin >> temp;
+        sequence.push_back(temp);
+    }
+
+    for(int i = 0; i < N; i++) {
+        
+    }
 }

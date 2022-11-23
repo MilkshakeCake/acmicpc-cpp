@@ -1,4 +1,4 @@
-// 가장 긴 증가하는 부분 수열 - Baekjoon Online Judge no.11053
+// 줄세우기 - Baekjoon Online Judge no.2631
 
 #include <string>
 #include <cmath>
