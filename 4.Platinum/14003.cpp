@@ -25,15 +25,32 @@ int main() {
     int N, temp;
     vt<int> sequence;
     vt<int> lis;
+    vt<int> tracker;
     stack<int> output;
 
     cin >> N;
     for(int i = 0; i < N; i++) {
         cin >> temp;
         sequence.push_back(temp);
+
+        if(!sz(lis) || lis.back() < sequence[i]) lis.push_back(sequence[i]);
+        else lis[lower_bound(all(lis), sequence[i]) - lis.begin()] = sequence[i];
+
+        tracker.push_back(lower_bound(all(lis), sequence[i]) - lis.begin());
     }
 
-    for(int i = 0; i < N; i++) {
-        
+    int track = sz(lis) -1;
+    for(int i = sz(tracker) -1; i >= 0; i--) {
+        if(tracker[i] == track) {
+            output.push(i);
+            track--;
+        }
+    }
+
+    cout << sz(lis) << '\n';
+
+    while(!output.empty()) {
+        cout << sequence[output.top()] << ' ';
+        output.pop();
     }
 }

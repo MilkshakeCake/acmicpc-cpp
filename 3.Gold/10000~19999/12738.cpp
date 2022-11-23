@@ -36,9 +36,6 @@ int main() {
     for(int i = 0; i < N; i++) {
         cin >> temp;
         sequence.push_back(temp);
-    }
-
-    for (int i = 0; i < N; i++) {
         if (lis.size() == 0 || lis.back() < sequence[i]) lis.push_back(sequence[i]);
         else lis[lower_bound(all(lis), sequence[i]) - lis.begin()] = sequence[i];
     }
