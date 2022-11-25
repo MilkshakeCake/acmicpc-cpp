@@ -16,18 +16,46 @@
 
 using namespace std;
 
+vector<int> grid(100001, -1);
+int n, k;
+
+void minDis() {
+    queue<int> que;
+
+    que.push(n);
+    grid[n] = 0;
+
+    while(!que.empty()) {
+        int now = que.front();
+        que.pop();
+        
+        if(now -1 < 0) continue;
+        if(grid[now -1] == -1) {
+            grid[now -1] = grid[now] +1;
+            que.push(now -1);
+        }
+
+        if(now +1 > 1e5) continue;
+        if(grid[now +1] == -1) {
+            grid[now +1] = grid[now] +1;
+            que.push(now +1);
+        }
+
+        if(now *2 > 1e5) continue;
+        if(grid[now *2] == -1) {
+            grid[now *2] = grid[now] +1;
+            que.push(now *2);
+        }
+    }
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int n, k;
     cin >> n >> k;
 
-    vector<int> grid(100000, -1);
-    queue<int> que;
-
-    que.push(n);
-    grid[n] = 0;
-    
+    minDis();
+    cout << grid[k];
 }
