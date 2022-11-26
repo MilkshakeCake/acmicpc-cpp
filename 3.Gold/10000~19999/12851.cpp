@@ -16,37 +16,33 @@ typedef unsigned long long ull;
 
 using namespace std;
 
-vector<int> grid(100001, -1);
-int n, k, cnt = 0;
+vector<bool> visited(100001, false);
+int n, k, t;
+int cnt = 0;
 
 void minDis() {
-    queue<int> que;
+    queue<pii> que;
 
-    que.push(n);
-    grid[n] = 0;
+    que.push({n, 0});
+    visited[n] = true;
 
     while(!que.empty()) {
-        int now = que.front();
+        int now = que.front().fr;
+        int time = que.front().sc;
         que.pop();
-        
-        for(int i : {now -1, now +1, now *2}) {
-            if(i < 0 || i > 100000) continue;
-            if(grid[i] != -1) continue;
-            que.push(i);
-            grid[i] = grid[now] +1;
-        }
-    }
-}
+        visited[now] = true;
 
-void dfs(int now, int dist) {
-    if(now == n && dist == 0) cnt++;
-    else {
-        for(int i : {now -1, now +1, now /2}) {
-            if(i < 0 || i > 100000) continue;
-            if(grid[(i == now /2 ? (now %2 == 0 ? i : now) : i)] +1 == grid[now]) dfs(i, dist -1);
+        if(cnt && now == k && time == t) cnt++;
+        if(!cnt && now == k) {
+            t = time;
+            cnt++;
+        }
+
+        for(int i : {now -1, now +1, now *2}) {
+            if(i < 0 || i > 100000 || visited[i]) continue;
+            que.push({i, time +1});
         }
     }
-    return;
 }
 
 int main() {
@@ -57,6 +53,5 @@ int main() {
     cin >> n >> k;
 
     minDis();
-    dfs(k, grid[k]);
-    cout << grid[k] << '\n' << cnt;
+    cout << t << '\n' << cnt;
 }
