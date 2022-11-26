@@ -1,15 +1,6 @@
 // 도미노 넘어뜨리기 - Baekjoon Online Judge #25633
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
-#include <queue>
-#include <stack>
-#include <deque>
-#include <fstream>
+#include <bits/stdc++.h>
 #include <map>
 
 using namespace std;

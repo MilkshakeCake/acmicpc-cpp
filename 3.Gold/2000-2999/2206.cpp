@@ -1,15 +1,10 @@
 // 벽 부수고 이동하기 - Baekjoon Online Judge #2206
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
+#include <bits/stdc++.h>
 #include <queue>
 
-#define ll long long
-#define ull unsigned long long
+typedef long long ll;
+typedef unsigned long long ull;
 #define ld long double
 #define pii pair<int, int>
 #define pll pair<ll, ll>

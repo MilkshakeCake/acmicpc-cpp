@@ -1,11 +1,6 @@
 // 카드2 - Baekjoon Online Judge no.2164
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
+#include <bits/stdc++.h>
 #include <queue>
 
 using namespace std;

@@ -1,14 +1,6 @@
 // 균형잡힌 세상 - Baekjoon Online Judge no.4949
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
-#include <queue>
-#include <stack>
-#include <deque>
+#include <bits/stdc++.h>
 
 using namespace std;
 

@@ -1,11 +1,6 @@
 // 이항 계수 1 - Baekjoon Online Judge no. 11050
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
+#include <bits/stdc++.h>
 
 using namespace std;
 

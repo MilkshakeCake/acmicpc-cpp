@@ -1,20 +1,9 @@
 // 1, 2, 3 더하기 - Baekjoon Online Judge #9095
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
-#include <queue>
-#include <stack>
-#include <deque>
-#include <fstream>
-#include <sstream>
-#include <map>
+#include <bits/stdc++.h>
 
-#define ll long long
-#define ull unsigned long long
+typedef long long ll;
+typedef unsigned long long ull;
 #define ld long double
 #define pii pair<int, int>
 #define pll pair<ll, ll>

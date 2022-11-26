@@ -1,11 +1,6 @@
 // 신나는 함수 실행 - Baekjoon Online Judge no.9184
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
+#include <bits/stdc++.h>
 
 using namespace std;
 

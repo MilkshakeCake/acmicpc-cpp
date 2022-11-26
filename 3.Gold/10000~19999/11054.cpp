@@ -1,18 +1,9 @@
 // 가장 긴 바이토닉 부분 수열 - Baekjoon Online Judge no.11054
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
-#include <queue>
-#include <stack>
-#include <deque>
-#include <fstream>
+#include <bits/stdc++.h>
 
-#define ll long long
-#define ull unsigned long long
+typedef long long ll;
+typedef unsigned long long ull;
 #define ld long double
 #define pii pair<int, int>
 #define pll pair<ll, ll>

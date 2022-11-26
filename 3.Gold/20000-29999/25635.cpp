@@ -1,15 +1,6 @@
 // 자유 이용권 - Baekjoon Online Judge #25635
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
-#include <queue>
-#include <stack>
-#include <deque>
-#include <fstream>
+#include <bits/stdc++.h>
 #include <map>
 
 using namespace std;

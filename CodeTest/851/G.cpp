@@ -1,16 +1,7 @@
 // 문자열 탑 쌓기 - 충남대학교 SW_IT Contest G
 // BOJ #25643
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
-#include <queue>
-#include <stack>
-#include <deque>
-#include <fstream>
+#include <bits/stdc++.h>
 
 using namespace std;
 

@@ -1,11 +1,6 @@
 // 프린터 큐 - Baekjoon Online Judge no.1966
 
-#include <cstdio>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
-#include <queue>
+#include <bits/stdc++.h>
 
 using namespace std;
 

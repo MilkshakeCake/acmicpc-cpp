@@ -1,18 +1,9 @@
 // 회전하는 큐 - Baekjoon Online Judge no.1021
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
-#include <queue>
-#include <stack>
-#include <deque>
-#include <fstream>
+#include <bits/stdc++.h>
 
-#define ll long long
-#define ull unsigned long long
+typedef long long ll;
+typedef unsigned long long ull;
 #define ld long double
 #define pii pair<int, int>
 #define pll pair<ll, ll>

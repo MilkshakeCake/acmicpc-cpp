@@ -1,16 +1,11 @@
 // 종이의 개수 - Baekjoon Online Judge #1780
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
+#include <bits/stdc++.h>
 #include <map>
 
 #define uint unsigned int
-#define ll long long
-#define ull unsigned long long
+typedef long long ll;
+typedef unsigned long long ull;
 #define ld long double
 #define pii pair<int, int>
 #define pll pair<ll, ll>

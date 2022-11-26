@@ -1,15 +1,6 @@
 // 최대 상승 - Baekjoon Online Judge #25644
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
-#include <queue>
-#include <stack>
-#include <deque>
-#include <fstream>
+#include <bits/stdc++.h>
 #include <map>
 
 using namespace std;

@@ -1,16 +1,7 @@
 // 전구 뒤집기 - 충남대학교 SW_IT Contest L
 // BOJ #25634
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
-#include <queue>
-#include <stack>
-#include <deque>
-#include <fstream>
+#include <bits/stdc++.h>
 #include <map>
 
 using namespace std;

@@ -7,7 +7,7 @@
 #include <numeric>
 #include <map>
 #include <stack>
-#define ll long long
+typedef long long ll;
 using namespace std;
 int M,N,ans;
 int board[550][550];

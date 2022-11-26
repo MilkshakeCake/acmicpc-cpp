@@ -1,14 +1,6 @@
 // 피보나치 함수 - Baekjoon Online Judge no.1003
 
-#include <string>
-#include <cmath>
-#include <vector>
-#include <iostream>
-#include <algorithm>
-#include <utility>
-#include <queue>
-#include <stack>
-#include <deque>
+#include <bits/stdc++.h>
 
 using namespace std;
 

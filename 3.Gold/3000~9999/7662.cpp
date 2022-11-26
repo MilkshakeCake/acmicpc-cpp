@@ -2,24 +2,10 @@
 // Dual Priority Queue
 
 //입력
-#include <iostream>
-#include <fstream>
-#include <sstream>
-//함수
-#include <algorithm>
-#include <utility>
-#include <cmath>
-//자료구조
-#include <queue>
-#include <stack>
-#include <deque>
-#include <map>
-#include <set>
-#include <string>
-#include <vector>
+#include <bits/stdc++.h>
 
-#define ll long long
-#define ull unsigned long long
+typedef long long ll;
+typedef unsigned long long ull;
 #define ld long double
 #define pii pair<int, int>
 #define pll pair<ll, ll>
