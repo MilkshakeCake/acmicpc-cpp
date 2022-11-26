@@ -1,4 +1,4 @@
-// 숨바꼭질 2 - Baekjoon Online Judge #12851
+// 숨바꼭질 4 - Baekjoon Online Judge #13913
 
 #include <bits/stdc++.h>
 
@@ -16,8 +16,10 @@
 
 using namespace std;
 
-vector<int> grid(100001, -1);
-int n, k, cnt = 0;
+int n, k;
+vt<int> grid(1e5 +1, -1);
+vt<int> tracker(1e5 +1, 0);
+vt<int> ans;
 
 void minDis() {
     queue<int> que;
@@ -34,19 +36,9 @@ void minDis() {
             if(grid[i] != -1) continue;
             que.push(i);
             grid[i] = grid[now] +1;
+            tracker[i] = now;
         }
     }
-}
-
-void dfs(int now, int dist) {
-    if(now == n && dist == 0) cnt++;
-    else {
-        for(int i : {now -1, now +1, now /2}) {
-            if(i < 0 || i > 100000) continue;
-            if(grid[(i == now /2 ? (now %2 == 0 ? i : now) : i)] +1 == grid[now]) dfs(i, dist -1);
-        }
-    }
-    return;
 }
 
 int main() {
@@ -55,8 +47,20 @@ int main() {
     cout.tie(NULL);
     
     cin >> n >> k;
-
     minDis();
-    dfs(k, grid[k]);
-    cout << grid[k] << '\n' << cnt;
+
+    cout << grid[k] << '\n';
+    
+    int iter = k;
+    stack<int> ans;
+    ans.push(k);
+    while(iter != n) {
+        ans.push(tracker[iter]);
+        iter = tracker[iter];
+    }
+
+    while(!ans.empty()) {
+        cout << ans.top() << ' ';
+        ans.pop();
+    }
 }
