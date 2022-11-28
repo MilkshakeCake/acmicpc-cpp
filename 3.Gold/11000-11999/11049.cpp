@@ -1,4 +1,4 @@
-// 행렬 곱셈 순서 - Baekjoon Online Judge #11049
+// 행렬 곱셈 순서 - BOJ #11049
 
 #include <bits/stdc++.h>
 

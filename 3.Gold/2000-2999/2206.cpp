@@ -1,4 +1,4 @@
-// 벽 부수고 이동하기 - Baekjoon Online Judge #2206
+// 벽 부수고 이동하기 - BOJ #2206
 
 #include <bits/stdc++.h>
 #include <queue>

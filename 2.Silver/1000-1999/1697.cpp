@@ -1,4 +1,4 @@
-// 숨바꼭질 - Baekjoon Online Judge #1697
+// 숨바꼭질 - BOJ #1697
 
 #include <bits/stdc++.h>
 

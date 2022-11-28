@@ -1,4 +1,4 @@
-// 계단 오르기 - Baekjoon Online Judge no.2579
+// 계단 오르기 - BOJ #2579
 
 #include <bits/stdc++.h>
 

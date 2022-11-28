@@ -1,4 +1,4 @@
-// 덱 - Baekjoon Online Judge no.10866
+// 덱 - BOJ #10866
 
 #include <string>
 #include <iostream>

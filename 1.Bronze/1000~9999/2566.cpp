@@ -1,4 +1,4 @@
-// 최댓값 - Baekjoon Online Judge #2566
+// 최댓값 - BOJ #2566
 
 #include <bits/stdc++.h>
 

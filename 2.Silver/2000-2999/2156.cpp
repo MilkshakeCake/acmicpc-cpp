@@ -1,4 +1,4 @@
-// 포도주 시식 - Baekjoon Online Judge no.2156
+// 포도주 시식 - BOJ #2156
 
 #include <bits/stdc++.h>
 

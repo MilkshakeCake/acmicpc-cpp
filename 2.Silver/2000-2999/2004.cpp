@@ -1,4 +1,4 @@
-// 조합 0의 개수 - Baekjoon Online Judge #2004
+// 조합 0의 개수 - BOJ #2004
 
 #include <bits/stdc++.h>
 

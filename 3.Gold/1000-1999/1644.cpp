@@ -1,4 +1,4 @@
-// 소수의 연속합 - Baekjoon Online Judge #1644
+// 소수의 연속합 - BOJ #1644
 
 #include <bits/stdc++.h>
 

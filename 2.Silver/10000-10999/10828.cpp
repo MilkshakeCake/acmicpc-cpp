@@ -1,4 +1,4 @@
-// 스택 - Baekjoon Online Judge no.10828
+// 스택 - BOJ #10828
 
 #include <string>
 #include <vector>

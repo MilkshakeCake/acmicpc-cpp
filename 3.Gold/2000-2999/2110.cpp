@@ -1,4 +1,4 @@
-// 공유기 설치 - Baekjoon Online Judge #2110
+// 공유기 설치 - BOJ #2110
 
 #include <bits/stdc++.h>
 

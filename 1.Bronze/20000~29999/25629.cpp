@@ -1,4 +1,4 @@
-// 홀짝 수열 - Baekjoon Online Judge #25629
+// 홀짝 수열 - BOJ #25629
 
 #include <bits/stdc++.h>
 

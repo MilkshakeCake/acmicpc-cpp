@@ -1,4 +1,4 @@
-// 미로 탐색 - Baekjoon Online Judge #2178
+// 미로 탐색 - BOJ #2178
 
 #include <bits/stdc++.h>
 

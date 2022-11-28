@@ -1,4 +1,4 @@
-// 평범한 배낭 - Baekjoon Online Judge #12865
+// 평범한 배낭 - BOJ #12865
 
 #include <bits/stdc++.h>
 

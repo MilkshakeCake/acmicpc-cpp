@@ -1,4 +1,4 @@
-// 이중 우선순위 큐 - Baekjoon Online Judge #7662
+// 이중 우선순위 큐 - BOJ #7662
 // Dual Priority Queue
 
 //입력

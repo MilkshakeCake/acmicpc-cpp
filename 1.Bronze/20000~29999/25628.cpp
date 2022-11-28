@@ -1,4 +1,4 @@
-// 햄버거 만들기 - Baekjoon Online Judge #25628
+// 햄버거 만들기 - BOJ #25628
 
 #include <bits/stdc++.h>
 

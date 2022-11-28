@@ -1,4 +1,4 @@
-// Z - Baekjoon Online Judge no.1074
+// Z - BOJ #1074
 
 #include <cmath>
 #include <iostream>

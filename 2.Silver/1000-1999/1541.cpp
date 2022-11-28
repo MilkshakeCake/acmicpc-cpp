@@ -1,4 +1,4 @@
-// 잃어버린 괄호 - Baekjoon Online Judge no.1541
+// 잃어버린 괄호 - BOJ #1541
 // longest subtraction interval
 
 #include <bits/stdc++.h>

@@ -1,4 +1,4 @@
-// 자유 이용권 - Baekjoon Online Judge #25635
+// 자유 이용권 - BOJ #25635
 
 #include <bits/stdc++.h>
 #include <map>

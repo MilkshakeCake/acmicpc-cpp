@@ -1,4 +1,4 @@
-// 초콜릿 피라미드 - Baekjoon Online Judge #25793
+// 초콜릿 피라미드 - BOJ #25793
 
 #include <bits/stdc++.h>
 #include <inttypes.h>

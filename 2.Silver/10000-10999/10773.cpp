@@ -1,4 +1,4 @@
-// 제로 - Baekjoon Online Judge no.10773
+// 제로 - BOJ #10773
 
 #include <iostream>
 #include <stack>

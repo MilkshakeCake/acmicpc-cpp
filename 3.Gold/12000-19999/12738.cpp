@@ -1,4 +1,4 @@
-// 가장 긴 증가하는 부분 수열 3 - Baekjoon Online Judge #12738
+// 가장 긴 증가하는 부분 수열 3 - BOJ #12738
 
 #include <bits/stdc++.h>
 

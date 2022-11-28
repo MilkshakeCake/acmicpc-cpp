@@ -1,4 +1,4 @@
-// AC - Baekjoon Online Judge #5430
+// AC - BOJ #5430
 
 #include <bits/stdc++.h>
 #include <sstream>

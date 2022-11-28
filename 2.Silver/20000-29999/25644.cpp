@@ -1,4 +1,4 @@
-// 최대 상승 - Baekjoon Online Judge #25644
+// 최대 상승 - BOJ #25644
 
 #include <bits/stdc++.h>
 #include <map>

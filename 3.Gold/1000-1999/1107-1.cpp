@@ -1,4 +1,4 @@
-// 리모컨 - Baekjoon Online Judge no.1107
+// 리모컨 - BOJ #1107
 
 #include <cmath>
 #include <vector>

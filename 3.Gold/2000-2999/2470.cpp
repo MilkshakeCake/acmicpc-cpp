@@ -1,4 +1,4 @@
-// 두 용액 - Baekjoon Online Judge #2470
+// 두 용액 - BOJ #2470
 
 #include <bits/stdc++.h>
 

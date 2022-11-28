@@ -1,4 +1,4 @@
-// 마트료시카 합치기 - Baekjoon Online Judge #25631
+// 마트료시카 합치기 - BOJ #25631
 
 #include <bits/stdc++.h>
 #include <map>

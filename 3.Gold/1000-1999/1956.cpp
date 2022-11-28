@@ -1,4 +1,4 @@
-// 운동 - Baekjoon Online Judge #1956
+// 운동 - BOJ #1956
 
 #include <bits/stdc++.h>
 

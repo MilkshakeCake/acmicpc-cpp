@@ -1,4 +1,4 @@
-// 어린 왕자 - Baekjoon Online Judge #1004
+// 어린 왕자 - BOJ #1004
 
 #include <bits/stdc++.h>
 

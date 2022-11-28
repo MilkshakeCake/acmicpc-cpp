@@ -1,4 +1,4 @@
-// RGB거리 - Baekjoon Online Judge no.1149
+// RGB거리 - BOJ #1149
 // Dynamic Programming
 
 #include <bits/stdc++.h>

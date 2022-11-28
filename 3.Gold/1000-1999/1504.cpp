@@ -1,4 +1,4 @@
-// 특정한 최단 경로 - Baekjoon Online Judge #1504
+// 특정한 최단 경로 - BOJ #1504
 
 #include <bits/stdc++.h>
 

@@ -1,4 +1,4 @@
-// 파일 합치기 - Baekjoon Online Judge no.11066
+// 파일 합치기 - BOJ #11066
 
 #include <bits/stdc++.h>
 

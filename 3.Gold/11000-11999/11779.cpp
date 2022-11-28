@@ -1,4 +1,4 @@
-// 최소비용 구하기 2 - Baekjoon Online Judge #11779
+// 최소비용 구하기 2 - BOJ #11779
 
 #include <bits/stdc++.h>
 

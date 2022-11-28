@@ -1,4 +1,4 @@
-// 피보나치 수 6 - Baekjoon Online Judge #11444
+// 피보나치 수 6 - BOJ #11444
 
 #include <bits/stdc++.h>
 

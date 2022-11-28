@@ -1,4 +1,4 @@
-// 앱 - Baekjoon Online Judge #7579
+// 앱 - BOJ #7579
 // DP knapsack
 // 재풀이 필요
 

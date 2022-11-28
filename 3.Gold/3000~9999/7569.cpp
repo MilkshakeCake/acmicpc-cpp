@@ -1,4 +1,4 @@
-// 토마토(3D) - Baekjoon Online Judge #7569
+// 토마토(3D) - BOJ #7569
 
 #include <bits/stdc++.h>
 

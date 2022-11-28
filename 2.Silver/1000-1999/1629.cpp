@@ -1,4 +1,4 @@
-// 곱셈 - Baekjoon Online Judge #1629
+// 곱셈 - BOJ #1629
 
 #include <bits/stdc++.h>
 

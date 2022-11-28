@@ -1,4 +1,4 @@
-// 알고리즘 수업 - 깊이 우선 탐색 1 - Baekjoon Online Judge #24479
+// 알고리즘 수업 - 깊이 우선 탐색 1 - BOJ #24479
 
 #include <bits/stdc++.h>
 

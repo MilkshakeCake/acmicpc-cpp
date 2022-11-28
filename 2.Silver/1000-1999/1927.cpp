@@ -1,4 +1,4 @@
-// 최소 힙 - Baekjoon Online Judge #1927
+// 최소 힙 - BOJ #1927
 
 #include <bits/stdc++.h>
 

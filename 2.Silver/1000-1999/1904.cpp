@@ -1,4 +1,4 @@
-// 01타일 - Baekjoon Online Judge no.1904
+// 01타일 - BOJ #1904
 
 #include <bits/stdc++.h>
 

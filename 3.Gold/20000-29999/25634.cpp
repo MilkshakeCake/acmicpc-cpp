@@ -1,4 +1,4 @@
-// 전구 뒤집기 - Baekjoon Online Judge #25634
+// 전구 뒤집기 - BOJ #25634
 
 #include <bits/stdc++.h>
 #include <map>

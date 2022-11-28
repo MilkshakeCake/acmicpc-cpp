@@ -1,4 +1,4 @@
-// 플로이드 2 - Baekjoon Online Judge #11780
+// 플로이드 2 - BOJ #11780
 
 #include <bits/stdc++.h>
 

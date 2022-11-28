@@ -1,4 +1,4 @@
-// 뱀과 사다리 게임 - Baekjoon Online Judge #16928 V2
+// 뱀과 사다리 게임 - BOJ #16928 V2
 
 #include <bits/stdc++.h>
 

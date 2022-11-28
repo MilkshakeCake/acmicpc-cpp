@@ -1,4 +1,4 @@
-// 집합 - Baekjoon Online Judge #11723
+// 집합 - BOJ #11723
 
 #include <string>
 #include <iostream>

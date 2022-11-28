@@ -1,4 +1,4 @@
-// Hashing - Baekjoon Online Judge no.15829
+// Hashing - BOJ #15829
 
 #include <string>
 #include <iostream>

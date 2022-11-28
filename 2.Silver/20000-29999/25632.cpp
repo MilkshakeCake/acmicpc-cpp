@@ -1,4 +1,4 @@
-// 소수 부르기 게임 - Baekjoon Online Judge #25632
+// 소수 부르기 게임 - BOJ #25632
 
 #include <bits/stdc++.h>
 #include <map>

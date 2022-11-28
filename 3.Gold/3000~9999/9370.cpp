@@ -1,4 +1,4 @@
-// 미확인 도착지 - Baekjoon Online Judge #9370
+// 미확인 도착지 - BOJ #9370
 // Dijkstra algorithm
 
 #include <bits/stdc++.h>

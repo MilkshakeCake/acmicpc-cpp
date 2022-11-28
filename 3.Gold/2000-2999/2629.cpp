@@ -1,4 +1,4 @@
-// 양팔저울 - Baekjoon Online Judge #2629
+// 양팔저울 - BOJ #2629
 
 #include <bits/stdc++.h>
 

@@ -1,4 +1,4 @@
-// 1, 2, 3 더하기 - Baekjoon Online Judge #9095
+// 1, 2, 3 더하기 - BOJ #9095
 
 #include <bits/stdc++.h>
 

@@ -1,4 +1,4 @@
-// 이분 그래프 - Baekjoon Online Judge #1707
+// 이분 그래프 - BOJ #1707
 // bipartite graph
 
 #include <bits/stdc++.h>

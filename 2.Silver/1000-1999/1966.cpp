@@ -1,4 +1,4 @@
-// 프린터 큐 - Baekjoon Online Judge no.1966
+// 프린터 큐 - BOJ #1966
 
 #include <bits/stdc++.h>
 

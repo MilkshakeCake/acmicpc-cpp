@@ -1,4 +1,4 @@
-// 쿼드트리 - Baekjoon Online Judge #1992
+// 쿼드트리 - BOJ #1992
 
 #include <bits/stdc++.h>
 

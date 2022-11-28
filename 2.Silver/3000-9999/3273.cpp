@@ -1,4 +1,4 @@
-// 두 수의 합 - Baekjoon Online Judge #3273
+// 두 수의 합 - BOJ #3273
 
 #include <bits/stdc++.h>
 

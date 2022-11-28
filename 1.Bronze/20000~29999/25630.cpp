@@ -1,4 +1,4 @@
-// 펠린드롬 소떡소떡 - Baekjoon Online Judge #25630
+// 펠린드롬 소떡소떡 - BOJ #25630
 
 #include <bits/stdc++.h>
 

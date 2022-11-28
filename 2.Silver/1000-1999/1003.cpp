@@ -1,4 +1,4 @@
-// 피보나치 함수 - Baekjoon Online Judge no.1003
+// 피보나치 함수 - BOJ #1003
 
 #include <bits/stdc++.h>
 

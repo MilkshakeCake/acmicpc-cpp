@@ -1,4 +1,4 @@
-// 적록색약 - Baekjoon Online Judge #10026
+// 적록색약 - BOJ #10026
 
 #include <bits/stdc++.h>
 

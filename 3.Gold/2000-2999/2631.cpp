@@ -1,4 +1,4 @@
-// 줄세우기 - Baekjoon Online Judge no.2631
+// 줄세우기 - BOJ #2631
 
 #include <string>
 #include <cmath>

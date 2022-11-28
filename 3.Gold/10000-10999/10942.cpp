@@ -1,4 +1,4 @@
-// 팰린드롬? - Baekjoon Online Judge #10942
+// 팰린드롬? - BOJ #10942
 
 #include <bits/stdc++.h>
 

@@ -1,4 +1,4 @@
-// 다각형의 면적 - Baekjoon Online Judge #2166
+// 다각형의 면적 - BOJ #2166
 
 #include <bits/stdc++.h>
 #include <iomanip>

@@ -1,4 +1,4 @@
-// K-Queen - Baekjoon Online Judge #26006
+// K-Queen - BOJ #26006
 // BOJ Contest 884 - 홍익대학교 PS 동아리 HI-ARC 2022
 
 #include <bits/stdc++.h>

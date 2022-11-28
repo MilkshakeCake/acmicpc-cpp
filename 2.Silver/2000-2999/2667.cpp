@@ -1,4 +1,4 @@
-// 단지번호붙이기 - Baekjoon Online Judge #2667
+// 단지번호붙이기 - BOJ #2667
 
 #include <bits/stdc++.h>
 

@@ -1,4 +1,4 @@
-// 나무 자르기 - Baekjoon Online Judge #2805
+// 나무 자르기 - BOJ #2805
 
 #include <bits/stdc++.h>
 

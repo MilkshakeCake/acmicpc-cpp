@@ -1,4 +1,4 @@
-// 토마토 - Baekjoon Online Judge #7576
+// 토마토 - BOJ #7576
 
 #include <bits/stdc++.h>
 

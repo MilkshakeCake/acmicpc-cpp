@@ -1,4 +1,4 @@
-// 내리막 길 - Baekjoon Online Judge #1520
+// 내리막 길 - BOJ #1520
 
 #include <bits/stdc++.h>
 

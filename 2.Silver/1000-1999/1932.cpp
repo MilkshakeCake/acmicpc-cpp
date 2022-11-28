@@ -1,4 +1,4 @@
-// 정수 삼각형 - Baekjoon Online Judge no.1932
+// 정수 삼각형 - BOJ #1932
 
 #include <bits/stdc++.h>
 

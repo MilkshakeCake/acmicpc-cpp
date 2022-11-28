@@ -1,4 +1,4 @@
-// DFS와 BFS - Baekjoon Online Judge #1260
+// DFS와 BFS - BOJ #1260
 
 #include <bits/stdc++.h>
 

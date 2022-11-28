@@ -1,4 +1,4 @@
-// 나이트의 이동 - Baekjoon Online Judge #7562
+// 나이트의 이동 - BOJ #7562
 
 #include <bits/stdc++.h>
 

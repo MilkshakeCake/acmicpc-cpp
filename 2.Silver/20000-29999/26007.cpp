@@ -1,4 +1,4 @@
-// Codepowers - Baekjoon Online Judge #26007
+// Codepowers - BOJ #26007
 // BOJ Contest 884 - 홍익대학교 PS 동아리 HI-ARC 2022
 
 #include <bits/stdc++.h>

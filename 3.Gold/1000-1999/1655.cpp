@@ -1,4 +1,4 @@
-// 가운데를 말해요 - Baekjoon Online Judge #1655
+// 가운데를 말해요 - BOJ #1655
 
 #include <bits/stdc++.h>
 

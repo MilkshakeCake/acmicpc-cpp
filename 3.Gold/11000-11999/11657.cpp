@@ -1,4 +1,4 @@
-// 타임머신 - Baekjoon Online Judge #11657
+// 타임머신 - BOJ #11657
 // Bellman-Ford Algorithm
 
 #include <bits/stdc++.h>

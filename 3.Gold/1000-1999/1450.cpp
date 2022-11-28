@@ -1,4 +1,4 @@
-    // 냅색문제 - Baekjoon Online Judge #1450
+    // 냅색문제 - BOJ #1450
 
     #include <bits/stdc++.h>
 

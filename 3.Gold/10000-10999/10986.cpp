@@ -1,4 +1,4 @@
-// 나머지 합 - Baekjoon Online Judge no.10986
+// 나머지 합 - BOJ #10986
 
 #include <bits/stdc++.h>
 

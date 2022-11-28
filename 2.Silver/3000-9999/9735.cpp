@@ -1,4 +1,4 @@
-// 패션왕 신해빈 - Baekjoon Online Judge #9735
+// 패션왕 신해빈 - BOJ #9735
 
 #include <bits/stdc++.h>
 

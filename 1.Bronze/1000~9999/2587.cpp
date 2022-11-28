@@ -1,4 +1,4 @@
-// 대표값2 - Baekjoon Online Judge #2587
+// 대표값2 - BOJ #2587
 
 #include <bits/stdc++.h>
 

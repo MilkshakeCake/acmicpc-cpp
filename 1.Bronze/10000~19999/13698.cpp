@@ -1,4 +1,4 @@
-// Hawk eyes - Baekjoon Online Judge #13698
+// Hawk eyes - BOJ #13698
 
 #include <bits/stdc++.h>
 

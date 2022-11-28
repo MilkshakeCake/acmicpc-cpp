@@ -1,4 +1,4 @@
-// 숫자 놀이 - Baekjoon Online Judge #12971
+// 숫자 놀이 - BOJ #12971
 
 #include <bits/stdc++.h>
 

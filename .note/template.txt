@@ -1,4 +1,4 @@
-// "Project_Name" - Baekjoon Online Judge #
+// "Project_Name" - BOJ #
 
 #include <bits/stdc++.h>
 

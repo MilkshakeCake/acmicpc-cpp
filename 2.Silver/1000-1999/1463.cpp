@@ -1,4 +1,4 @@
-// 1로 만들기 - Baekjoon Online Judge no.1463
+// 1로 만들기 - BOJ #1463
 
 #include <bits/stdc++.h>
 

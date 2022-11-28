@@ -1,4 +1,4 @@
-// 트리의 부모 찾기 - Baekjoon Online Judge #11725
+// 트리의 부모 찾기 - BOJ #11725
 
 #include <bits/stdc++.h>
 

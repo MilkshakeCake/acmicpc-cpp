@@ -1,4 +1,4 @@
-// 마인크래프트 - Baekjoon Online Judge no.18111
+// 마인크래프트 - BOJ #18111
 
 #include <vector>
 #include <iostream>

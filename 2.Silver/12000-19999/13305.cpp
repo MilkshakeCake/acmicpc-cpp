@@ -1,4 +1,4 @@
-// 주유소 - Baekjoon Online Judge no.13305
+// 주유소 - BOJ #13305
 
 #include <bits/stdc++.h>
 

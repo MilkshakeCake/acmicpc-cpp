@@ -1,4 +1,4 @@
-// ATM - Baekjoon Online Judge no.11399
+// ATM - BOJ #11399
 
 #include <bits/stdc++.h>
 

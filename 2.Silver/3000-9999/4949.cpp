@@ -1,4 +1,4 @@
-// 균형잡힌 세상 - Baekjoon Online Judge no.4949
+// 균형잡힌 세상 - BOJ #4949
 
 #include <bits/stdc++.h>
 

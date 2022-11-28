@@ -1,4 +1,4 @@
-// 큐 - Baekjoon Online Judge no.10845
+// 큐 - BOJ #10845
 
 #include <string>
 #include <iostream>

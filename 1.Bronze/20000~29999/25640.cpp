@@ -1,4 +1,4 @@
-// MBTI - Baekjoon Online Judge #25640
+// MBTI - BOJ #25640
 
 #include <bits/stdc++.h>
 

@@ -1,4 +1,4 @@
-// lcs 2 - Baekjoon Online Judge no.9251
+// lcs 2 - BOJ #9251
 
 #include <bits/stdc++.h>
 

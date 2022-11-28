@@ -1,4 +1,4 @@
-// 가장 긴 바이토닉 부분 수열 - Baekjoon Online Judge no.11054
+// 가장 긴 바이토닉 부분 수열 - BOJ #11054
 
 #include <bits/stdc++.h>
 

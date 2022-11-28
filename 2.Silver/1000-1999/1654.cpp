@@ -1,4 +1,4 @@
-// 랜선 자르기 - Baekjoon Online Judge no.1654
+// 랜선 자르기 - BOJ #1654
 
 #include <bits/stdc++.h>
 

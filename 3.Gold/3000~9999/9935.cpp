@@ -1,4 +1,4 @@
-// 문자열 폭발 - Baekjoon Online Judge #9935
+// 문자열 폭발 - BOJ #9935
 
 #include <bits/stdc++.h>
 

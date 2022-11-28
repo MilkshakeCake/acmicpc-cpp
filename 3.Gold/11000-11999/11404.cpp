@@ -1,4 +1,4 @@
-// 플로이드 - Baekjoon Online Judge #11404
+// 플로이드 - BOJ #11404
 // Floyd-Warshall Algorithm
 
 #include <bits/stdc++.h>

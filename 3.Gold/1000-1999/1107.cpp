@@ -1,4 +1,4 @@
-// "Project_Name" - Baekjoon Online Judge #
+// 리모컨 - BOJ #1107
 
 #include <bits/stdc++.h>
 

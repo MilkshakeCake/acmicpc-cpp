@@ -1,4 +1,4 @@
-// 최대 GCD - Baekjoon Online Judge #9417
+// 최대 GCD - BOJ #9417
 
 #include <bits/stdc++.h>
 

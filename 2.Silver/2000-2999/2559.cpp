@@ -1,4 +1,4 @@
-// 수열 - Baekjoon Online Judge no.2559
+// 수열 - BOJ #2559
 
 #include <bits/stdc++.h>
 

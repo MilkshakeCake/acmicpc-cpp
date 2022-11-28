@@ -1,4 +1,4 @@
-// 괄호 - Baekjoon Online Judge no.9012
+// 괄호 - BOJ #9012
 
 #include <bits/stdc++.h>
 

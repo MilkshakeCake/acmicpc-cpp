@@ -1,4 +1,4 @@
-// 연속합 - Baekjoon Online Judge no.1912
+// 연속합 - BOJ #1912
 
 #include <bits/stdc++.h>
 

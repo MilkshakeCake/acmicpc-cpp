@@ -1,4 +1,4 @@
-// 완전 범죄 - Baekjoon Online Judge #13700
+// 완전 범죄 - BOJ #13700
 
 #include <bits/stdc++.h>
 

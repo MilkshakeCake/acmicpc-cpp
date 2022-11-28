@@ -1,4 +1,4 @@
-// 젓가락 게임 - Baekjoon Online Judge #25642
+// 젓가락 게임 - BOJ #25642
 
 #include <bits/stdc++.h>
 

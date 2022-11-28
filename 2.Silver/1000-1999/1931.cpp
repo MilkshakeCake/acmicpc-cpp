@@ -1,4 +1,4 @@
-// 회의실 배정 - Baekjoon Online Judge no.1931
+// 회의실 배정 - BOJ #1931
 
 #include <bits/stdc++.h>
 

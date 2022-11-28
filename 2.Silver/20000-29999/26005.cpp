@@ -1,4 +1,4 @@
-// 나뭇잎 학회 - Baekjoon Online Judge #26005
+// 나뭇잎 학회 - BOJ #26005
 // BOJ Contest 884 - 홍익대학교 PS 동아리 HI-ARC 2022
 
 #include <bits/stdc++.h>

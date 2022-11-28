@@ -1,4 +1,4 @@
-// 파도반 수열 - Baekjoon Online Judge no.9461
+// 파도반 수열 - BOJ #9461
 
 #include <bits/stdc++.h>
 

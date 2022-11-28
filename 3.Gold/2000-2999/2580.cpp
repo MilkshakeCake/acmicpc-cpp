@@ -1,4 +1,4 @@
-// 스도쿠 - Baekjoon Online Judge no.2580
+// 스도쿠 - BOJ #2580
 
 #include <bits/stdc++.h>
 

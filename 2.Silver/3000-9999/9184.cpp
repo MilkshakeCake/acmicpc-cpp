@@ -1,4 +1,4 @@
-// 신나는 함수 실행 - Baekjoon Online Judge no.9184
+// 신나는 함수 실행 - BOJ #9184
 
 #include <bits/stdc++.h>
 

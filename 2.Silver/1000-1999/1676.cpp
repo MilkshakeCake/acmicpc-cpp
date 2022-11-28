@@ -1,4 +1,4 @@
-// 팩토리얼 0의 개수 - Baekjoon Online Judge #1676
+// 팩토리얼 0의 개수 - BOJ #1676
 
 #include <bits/stdc++.h>
 

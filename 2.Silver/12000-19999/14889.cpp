@@ -1,4 +1,4 @@
-// 스타트와 링크 - Baekjoon Online Judge no.14889
+// 스타트와 링크 - BOJ #14889
 
 #include <string>
 #include <cmath>

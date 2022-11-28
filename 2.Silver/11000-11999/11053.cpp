@@ -1,4 +1,4 @@
-// 가장 긴 증가하는 부분 수열 - Baekjoon Online Judge no.11053
+// 가장 긴 증가하는 부분 수열 - BOJ #11053
 
 #include <string>
 #include <cmath>

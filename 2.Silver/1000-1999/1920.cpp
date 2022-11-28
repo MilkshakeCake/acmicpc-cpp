@@ -1,4 +1,4 @@
-// 수 찾기 - Baekjoon Online Judge no.1920
+// 수 찾기 - BOJ #1920
 
 #include <bits/stdc++.h>
 

@@ -1,4 +1,4 @@
-// 구간 합 구하기 5 - Baekjoon Online Judge no.11660
+// 구간 합 구하기 5 - BOJ #11660
 
 #include <bits/stdc++.h>
 

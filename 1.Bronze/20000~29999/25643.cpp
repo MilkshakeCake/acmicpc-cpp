@@ -1,4 +1,4 @@
-// 문자열 탑 쌓기 - Baekjoon Online Judge #25643
+// 문자열 탑 쌓기 - BOJ #25643
 
 #include <bits/stdc++.h>
 

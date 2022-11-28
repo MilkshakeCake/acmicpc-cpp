@@ -1,4 +1,4 @@
-// 최대 힙 - Baekjoon Online Judge #11279
+// 최대 힙 - BOJ #11279
 
 #include <bits/stdc++.h>
 

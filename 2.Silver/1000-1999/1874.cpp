@@ -1,4 +1,4 @@
-// 스택 수열 - Baekjoon Online Judge no.1874
+// 스택 수열 - BOJ #1874
 
 #include <bits/stdc++.h>
 

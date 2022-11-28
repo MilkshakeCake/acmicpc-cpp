@@ -1,4 +1,4 @@
-// 바이러스 - Baekjoon Online Judge #2606
+// 바이러스 - BOJ #2606
 
 #include <bits/stdc++.h>
 

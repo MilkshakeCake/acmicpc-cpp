@@ -1,4 +1,4 @@
-// 종이의 개수 - Baekjoon Online Judge #1780
+// 종이의 개수 - BOJ #1780
 
 #include <bits/stdc++.h>
 #include <map>

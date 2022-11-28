@@ -1,4 +1,4 @@
-// 점화식 - Baekjoon Online Judge #13699
+// 점화식 - BOJ #13699
 
 #include <bits/stdc++.h>
 

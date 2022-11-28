@@ -1,4 +1,4 @@
-// 인간-컴퓨터 상호작용 - Baekjoon Online Judge no.16139
+// 인간-컴퓨터 상호작용 - BOJ #16139
 
 #include <bits/stdc++.h>
 

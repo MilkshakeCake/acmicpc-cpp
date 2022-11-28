@@ -1,4 +1,4 @@
-// 연결 요소의 개수 - Baekjoon Online Judge #11724
+// 연결 요소의 개수 - BOJ #11724
 
 #include <bits/stdc++.h>
 

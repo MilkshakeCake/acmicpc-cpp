@@ -1,4 +1,4 @@
-// 쉬운 계단 수 - Baekjoon Online Judge no.10844
+// 쉬운 계단 수 - BOJ #10844
 #include <bits/stdc++.h>
 
 typedef long long ll;

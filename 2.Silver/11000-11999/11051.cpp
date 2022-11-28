@@ -1,4 +1,4 @@
-// 이항 계수 2 - Baekjoon Online Judge #11051
+// 이항 계수 2 - BOJ #11051
 
 #include <bits/stdc++.h>
 

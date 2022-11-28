@@ -1,4 +1,4 @@
-// 2*n 타일링 - Baekjoon Online Judge #11726
+// 2*n 타일링 - BOJ #11726
 
 #include <bits/stdc++.h>
 

@@ -1,4 +1,4 @@
-// 행렬 제곱 - Baekjoon Online Judge #10830
+// 행렬 제곱 - BOJ #10830
 
 #include <bits/stdc++.h>
 

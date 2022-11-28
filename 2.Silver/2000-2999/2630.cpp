@@ -1,4 +1,4 @@
-// 색종이 만들기 - Baekjoon Online Judge #2630
+// 색종이 만들기 - BOJ #2630
 
 #include <bits/stdc++.h>
 

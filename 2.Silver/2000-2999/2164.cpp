@@ -1,4 +1,4 @@
-// 카드2 - Baekjoon Online Judge no.2164
+// 카드2 - BOJ #2164
 
 #include <bits/stdc++.h>
 #include <queue>

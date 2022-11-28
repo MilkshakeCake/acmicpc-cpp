@@ -1,4 +1,4 @@
-// 회전하는 큐 - Baekjoon Online Judge no.1021
+// 회전하는 큐 - BOJ #1021
 
 #include <bits/stdc++.h>
 

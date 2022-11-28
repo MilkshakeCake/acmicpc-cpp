@@ -1,4 +1,4 @@
-// 부분합 - Baekjoon Online Judge #1806
+// 부분합 - BOJ #1806
 
 #include <bits/stdc++.h>
 

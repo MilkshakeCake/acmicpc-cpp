@@ -1,4 +1,4 @@
-// 도미노 넘어뜨리기 - Baekjoon Online Judge #25633
+// 도미노 넘어뜨리기 - BOJ #25633
 
 #include <bits/stdc++.h>
 #include <map>

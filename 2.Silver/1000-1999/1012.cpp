@@ -1,4 +1,4 @@
-// 유기농 배추 - Baekjoon Online Judge #1012
+// 유기농 배추 - BOJ #1012
 
 #include <bits/stdc++.h>
 

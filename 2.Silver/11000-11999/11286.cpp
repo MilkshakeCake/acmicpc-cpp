@@ -1,4 +1,4 @@
-// 절댓값 힙 - Baekjoon Online Judge #11286
+// 절댓값 힙 - BOJ #11286
 
 #include <bits/stdc++.h>
 

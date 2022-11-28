@@ -1,4 +1,4 @@
-// 최단 경로 - Baekjoon Online Judge #1753
+// 최단 경로 - BOJ #1753
 
 #include <bits/stdc++.h>
 

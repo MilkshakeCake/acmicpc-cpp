@@ -1,4 +1,4 @@
-// 균형 잡힌 소떡소떡 - Baekjoon Online Judge #25641
+// 균형 잡힌 소떡소떡 - BOJ #25641
 
 #include <bits/stdc++.h>
 

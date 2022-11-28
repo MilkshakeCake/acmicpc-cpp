@@ -1,4 +1,4 @@
-// HI_ARC - Baekjoon Online Judge #26004
+// HI_ARC - BOJ #26004
 // BOJ Contest 884 - 홍익대학교 PS 동아리 HI-ARC 2022
 
 #include <bits/stdc++.h>

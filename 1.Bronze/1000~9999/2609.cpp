@@ -1,4 +1,4 @@
-// 최대공약수와 최대공배수 - Baekjoon Online Judge no.2609
+// 최대공약수와 최대공배수 - BOJ #2609
 #include <cmath>
 #include <iostream>
 #include <algorithm>

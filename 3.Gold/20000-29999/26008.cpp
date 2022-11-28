@@ -1,4 +1,4 @@
-// 해시 해킹 - Baekjoon Online Judge #26008
+// 해시 해킹 - BOJ #26008
 // BOJ Contest 884 - 홍익대학교 PS 동아리 HI-ARC 2022
 
 #include <bits/stdc++.h>

@@ -1,4 +1,4 @@
-// 동전 1 - Baekjoon Online Judge #2293
+// 동전 1 - BOJ #2293
 
 #include <bits/stdc++.h>
 

@@ -1,4 +1,4 @@
-// 그대로 출력하기 - Baekjoon Online Judge no.11718
+// 그대로 출력하기 - BOJ #11718
 
 #include <string>
 #include <iostream>

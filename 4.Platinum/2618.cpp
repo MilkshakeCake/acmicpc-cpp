@@ -1,4 +1,4 @@
-// 경찰차 - Baekjoon Online Judge #2618
+// 경찰차 - BOJ #2618
 // DP + BFS
 // INCOMPLETE
 

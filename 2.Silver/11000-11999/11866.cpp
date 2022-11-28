@@ -1,4 +1,4 @@
-//요세푸스 문제 0 - Baekjoon Online Judge no.11866
+//요세푸스 문제 0 - BOJ #11866
 
 #include <iostream>
 #include <queue>

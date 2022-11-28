@@ -1,4 +1,4 @@
-// 오늘 날짜 - Baekjoon Online Judge no.10699
+// 오늘 날짜 - BOJ #10699
 
 #include <iostream>
 #include <ctime>
