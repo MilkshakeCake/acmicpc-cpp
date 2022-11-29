@@ -21,5 +21,5 @@ int num = 3;
 
 int main() {
     vt<int> arr = {10, 20, 30, 40, 50};
-    cout << *lower_bound(all(arr), 25);
+    
 }
