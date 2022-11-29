@@ -1,12 +1,13 @@
 struct Node {
-    char left;
-    char right;
+    <template T> left;
+    <template T> right;
 };
 
 int N;
 vt<Node> tree(N);
 
-void preorder(char root) {
+//전위 순회(preorder) : 루트 - 왼쪽 - 오른쪽
+void preorder(<template T> root) {
     if(root == '.') return;
 
     cout << root;
@@ -14,7 +15,8 @@ void preorder(char root) {
     preorder(tree[root - 'A'].right);
 }
 
-void inorder(char root) {
+//중위 순회(inorder) : 왼쪽 - 루트 - 오른쪽
+void inorder(<template T> root) {
     if(root == '.') return;
 
     inorder(tree[root - 'A'].left);
@@ -22,7 +24,8 @@ void inorder(char root) {
     inorder(tree[root - 'A'].right);
 }
 
-void postorder(char root) {
+//후위 순회(postorder) : 왼쪽 - 오른쪽 - 루트
+void postorder(<template T> root) {
     if(root == '.') return;
 
     postorder(tree[root - 'A'].left);
