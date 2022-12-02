@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/3.Gold/2000-2999",
-      "program": "c:/Users/USER/Desktop/my/GitDir/acmicpc-cpp/3.Gold/2000-2999/build/Debug/outDebug",
+      "cwd": "d:/Personal/C++/3.Gold/3000~9999",
+      "program": "d:/Personal/C++/3.Gold/3000~9999/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
