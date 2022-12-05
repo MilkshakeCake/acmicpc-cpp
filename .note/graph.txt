@@ -1,46 +1,47 @@
-HOW TO NAVIGATE THRU GRAPHS W/ ALGORITHM
+// HOW TO NAVIGATE THRU GRAPHS W/ ALGORITHM
 
 // BFS
-vector<int> graph[100001];
-bool visited[100001] = {0, };
-queue<int> que;
-int result[100001];
-int cnt = 0;
+struct Node {
+    bool visit;
+    vt<int> idx;
+};
 
-void bfs(int r) {
-    visited[r] = true;
-    que.push(r);
-    result[r] = ++cnt;
+vt<Node> graph(N +1);
+
+void bfs(int start) {
+    queue<int> que;
+
+    que.push(start);
+    graph[start].visit = true;
 
     while(!que.empty()) {
-        int v = que.front();
+        int now = que.top();
         que.pop();
-        
-        for(int i = 0; i < sz(graph[v]); i++) {
-            int temp = graph[v][i];
-            if(!visited[temp]) {
-                result[temp] = ++cnt;
-                que.push(temp);
-                visited[temp] = true;
-            }
+
+        for(auto &i : graph[now].idx) {
+            if(graph[i].visit) continue;
+            que.push(i);
+            graph[i].visit = true;
         }
     }
 }
 
 // DFS
-vector<int> graph[100001];
-bool visited[100001] = {0, };
-int result[100001];
-int cnt = 0;
+struct Node {
+    bool visit;
+    vt<int> idx;
+};
 
-void dfs(int r) {
-    if(visited[r]) return;
+vt<Node> graph(N +1);
 
-    visited[r] = true;
-    result[r] = ++cnt;
+void dfs(int p) {
+    if(graph[p].visit) return;
 
-    for(int i = 0; i < sz(graph[r]); i++) {
-        dfs(graph[r][i]);
+    graph[p].visit = true;
+
+    for(auto &i : graph[p].idx) {
+        if(graph[i].visit) continue;
+        dfs(i);
     }
 }
 
