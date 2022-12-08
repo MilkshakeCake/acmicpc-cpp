@@ -132,3 +132,36 @@ for(int k = 1; k <= n; k++) {
         }
     }
 }
+
+// SCC - KOSARAJU
+vt<int> graph[N +1];    // graph w/ given edge
+vt<int> rev[N +1];      // graph w/ reversed edge
+vt<bool> visited[N +1];
+vt<int> comp[N +1];
+stack<int> scc;
+
+void dfs(int now, bool reverse, int cnt) {
+    if(visited[now]) continue;
+    visited[now] = true;
+
+    for(auto &i : (reverse ? rev[now] : graph[now])) if(!visited[i]) dfs(i, reverse, cnt);
+    reverse ? comp[cnt].push_back(now) : scc.push(now);
+}
+
+int main() {
+    int N, M, v, w;
+    cin >> N >> M;
+
+    while(M--) {
+        cin >> v >> w;
+        graph[v].push_back(w);
+        rev[w].push_back(v);
+    }
+
+    for(int i = 1; i <= N; i++) dfs(i, false);
+
+    visited.assign(N +1, 0);
+
+    dfs(scc.top(), true);
+}
+

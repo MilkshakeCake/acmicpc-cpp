@@ -22,8 +22,8 @@ bool flag = true;
 vt<int> graph[200001];
 vt<int> rev[200001];
 vt<int> scc;
-stack<int> stk;
 vt<bool> visited(200001, false);
+stack<int> stk;
 
 void dfs(int now, bool reverse) {
     if(visited[now]) return;
@@ -46,9 +46,7 @@ int main() {
         rev[w].push_back(v);
     }
 
-    for(int i = 1; i <= N; i++) {
-        dfs(i, false);
-    }
+    for(int i = 1; i <= N; i++) dfs(i, false);
 
     visited.assign(200001, false);
 
