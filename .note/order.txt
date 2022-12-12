@@ -1,22 +1,31 @@
 01. STL 1: 기초 자료구조 (큐, 스택, 힙, 벡터, 데큐, 맵, 셋 ...)
+check
 
 02. STL 2: 기초 알고리즘 (이분 탐색, 정렬, ...)
+check
 
 03. 그래프 1: BFS, DFS
+check
 
 04. 전수탐색과 재귀호출
+check
 
 05. Greedy 기초
+check
 
 06. Dijkstra, Floyd, 벨만-포드
+check
 
 07. DP 1
+check
 
 08. 문자열 기초 (KMP, Manacher)
 
 09. 수학 1: 정수론 기초
+check
 
 10. DP 2: 다차원, 메모이제이션, 분할정복
+check
 
 11. 기하 기초
 
