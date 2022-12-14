@@ -1,4 +1,4 @@
-// 전깃줄 - BOJ #2565
+// 전깃줄 2 - BOJ #2565
 
 #include <bits/stdc++.h>
 
