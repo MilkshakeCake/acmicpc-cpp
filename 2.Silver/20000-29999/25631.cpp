@@ -36,8 +36,9 @@ int main() {
         cin >> temp;
         if(mat[temp] != 0) {
             cnt = max(cnt, ++mat[temp]);
+            continue;
         }
-        else mat[temp]++;
+        mat[temp]++;
     }
     cout << cnt;
 }
