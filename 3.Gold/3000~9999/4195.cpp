@@ -46,7 +46,7 @@ int main() {
     while(T--) {
         for(int i = 0; i <= 100001; i++) root.push_back(i);
         cin >> F;
-        
+
         while(F--) {
             cin >> A >> B;
             if(idxOf[A] == 0) {

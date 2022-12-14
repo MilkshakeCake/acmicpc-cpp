@@ -11,6 +11,7 @@ typedef unsigned long long ull;
 #define vt vector
 #define all(c) (c).begin(), (c).end()
 #define sz(x) (int)(x).size()
+#define printall(i, a) for (auto &i : a) cout << i << ' '
 
 #define F_OR(i, a, b, s) for (int i = (a); (s) > 0 ? i < (b) : i > (b); i += (s))
 #define F_OR1(e) F_OR(i, 0, e, 1)

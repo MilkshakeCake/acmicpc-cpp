@@ -13,6 +13,7 @@ typedef unsigned long long ull;
 #define vt vector
 #define all(c) (c).begin(), (c).end()
 #define sz(x) (int)(x).size()
+#define printall(i, a) for (auto &i : a) cout << i << ' '
 
 #define MOD 1000000007
 
