@@ -13,7 +13,7 @@ typedef unsigned long long ull;
 #define vt vector
 #define all(c) (c).begin(), (c).end()
 #define sz(x) (int)(x).size()
-#define printall(i, a) for (auto &i : a) cout << i << ' '
+#define printall(i, a) for (auto i : a) cout << i << ' '
 
 using namespace std;
 
@@ -31,35 +31,42 @@ int main() {
     int k;
     cin >> k;
 
-    vt<Line> line(k);
-    for(int i = 0; i < k; i++) {
+    vt<Line> line(k +1, {0, 0});
+    for(int i = 1; i <= k; i++) {
         cin >> line[i].from >> line[i].to;
     }
 
     sort(all(line));
 
-    for(int i = 0; i < k; i++) cout << line[i].to << ' ';
-    cout << '\n';
+    vt<int> LIS(1, line[1].to);
+    vt<int> LISIdx(1, 0);
+    vt<int> tracker(0);
 
-    vt<int> dp(k, 1);
-    vt<int> dptracker(k, 1);
-    int maxn = 0;
-
-    for(int i = 1; i < k; i++) {
-        for(int j = 0; j < i; j++) {
-            if(line[j].to < line[i].to) {
-                if(dp[i] <= dp[j] +1) {
-                    dp[i] = dp[j] +1;
-                    dptracker[i] = j;
-                }
-                maxn = max(maxn, dp[i]);
-            }
+    for(int i = 2; i <= k; i++) {
+        int next = line[i].to;
+        if(LIS.back() < next) {
+            LIS.push_back(next);
+            LISIdx.push_back(sz(LIS) -1);
+            continue;
         }
+
+        int nidx = lower_bound(all(LIS), next) - LIS.begin();
+        LIS[nidx] = next;
+        LISIdx.push_back(nidx);
     }
 
-    
+    cout << k - sz(LIS) << '\n';
+    for(auto i : line) cout << i.from << ' ';
+    cout << '\n';
+    printall(i, LISIdx);
+    cout << '\n';
 
-    printall(i, dptracker);
+    int now = sz(LIS) -1;
+    for(int i = sz(LISIdx) -1; i > 0; i--) {
+        if(now == LISIdx[i]) now--;
+        else tracker.push_back(line[i].from);
+    }
 
-    cout << k - maxn;
+    sort(all(tracker));
+    printall(i, tracker);
 }
