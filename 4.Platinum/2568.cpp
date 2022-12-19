@@ -38,11 +38,10 @@ int main() {
 
     sort(all(line));
 
-    vt<int> LIS(1, line[1].to);
+    vt<int> LIS(1, 0);
     vt<int> LISIdx(1, 0);
-    vt<int> tracker(0);
 
-    for(int i = 2; i <= k; i++) {
+    for(int i = 1; i <= k; i++) {
         int next = line[i].to;
         if(LIS.back() < next) {
             LIS.push_back(next);
@@ -55,18 +54,27 @@ int main() {
         LISIdx.push_back(nidx);
     }
 
-    cout << k - sz(LIS) << '\n';
-    for(auto i : line) cout << i.from << ' ';
-    cout << '\n';
-    printall(i, LISIdx);
-    cout << '\n';
+    // for(auto i : line) cout << i.to << ' ';
+    // cout << '\n';
+    // printall(i, LIS);
+    // cout << '\n';
+    // printall(i, LISIdx);
+    // cout << '\n';
 
-    int now = sz(LIS) -1;
-    for(int i = sz(LISIdx) -1; i > 0; i--) {
-        if(now == LISIdx[i]) now--;
-        else tracker.push_back(line[i].from);
+    int trace = sz(LIS) -1;
+    cout << k - trace << '\n';
+    
+    LIS.clear();
+    for(int i = k; i > 0; i--) {
+        if(LISIdx[i] == trace) {
+            LIS.push_back(line[i].to);
+            trace--;
+        }
     }
+    sort(all(LIS));
 
-    sort(all(tracker));
-    printall(i, tracker);
+    for(int i = 1; i <= k; i++) {
+        if(LIS[trace] != line[i].to) cout << line[i].from << '\n';
+        else trace++;
+    }
 }
