@@ -80,6 +80,24 @@
     "unordered_set": "cpp",
     "regex": "cpp",
     "valarray": "cpp",
-    "ratio": "cpp"
+    "ratio": "cpp",
+    "bitset": "cpp",
+    "cfenv": "cpp",
+    "chrono": "cpp",
+    "cinttypes": "cpp",
+    "codecvt": "cpp",
+    "complex": "cpp",
+    "condition_variable": "cpp",
+    "csetjmp": "cpp",
+    "csignal": "cpp",
+    "cuchar": "cpp",
+    "set": "cpp",
+    "future": "cpp",
+    "iomanip": "cpp",
+    "mutex": "cpp",
+    "scoped_allocator": "cpp",
+    "shared_mutex": "cpp",
+    "thread": "cpp",
+    "typeindex": "cpp"
   }
 }
