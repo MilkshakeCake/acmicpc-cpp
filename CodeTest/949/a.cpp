@@ -1,4 +1,5 @@
-// "Project_Name" - BOJ #
+// 2023년은 검은 토끼의 해 - BOJ #949-1
+// 2023 ICPC Sinchon Winter Algorithm Camp Contest
 
 #include <bits/stdc++.h>
 
