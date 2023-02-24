@@ -4,8 +4,11 @@
 #include <queue>
 #include <algorithm>
 #include <cmath>
+
 #define INF 1e9
+
 using namespace std;
+
 char board[1001][1001];
 int cost[2][1001][1001];
 int dx[4] = {0, 1, 0, -1};

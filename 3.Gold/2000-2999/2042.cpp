@@ -4,9 +4,9 @@
 
 typedef long long ll;
 typedef unsigned long long ull;
-#define ld long double
-#define pii pair<int, int>
-#define pll pair<ll, ll>
+typedef long double ld;
+typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
 #define fr first
 #define sc second
 #define vt vector
@@ -20,8 +20,8 @@ using namespace std;
 int n, m, k;
 //1<=n<=1000000
 //1<=m,k<=10000
-long long arr[MAX];
-long long makeSegmentTree(vector<long long> &segmentTree, int node, int start, int end) {
+ll arr[MAX];
+ll makeSegmentTree(vector<ll> &segmentTree, int node, int start, int end) {
 	if (start == end) {
 		return segmentTree[node] = arr[start];
 	}
@@ -31,7 +31,7 @@ long long makeSegmentTree(vector<long long> &segmentTree, int node, int start, i
 	
 }
 
-void updateSegmentTree(vector<long long> &segmentTree, int node, int start, int end,int idx, long long diff) {
+void updateSegmentTree(vector<ll> &segmentTree, int node, int start, int end,int idx, ll diff) {
 	if (idx<start || idx > end) return;
 	segmentTree[node] += diff;
 	if (start != end) {
@@ -40,7 +40,7 @@ void updateSegmentTree(vector<long long> &segmentTree, int node, int start, int 
 		updateSegmentTree(segmentTree, node * 2 + 1, mid + 1, end, idx, diff);
 	}
 }
-long long sumSegmentTree(vector<long long> &segmentTree, int node, int left, int right, int start, int end) {
+ll sumSegmentTree(vector<ll> &segmentTree, int node, int left, int right, int start, int end) {
 	if (left>end || right<start) return 0;
 	if (left <= start && right >= end) return segmentTree[node];
 	int mid = (start + end) / 2;
@@ -56,12 +56,12 @@ int main() {
 	}
 	int treeDepth = ceil(log2(n));
 	int treeSize = 1 << (treeDepth + 1);
-	vector<long long> segmentTree(treeSize);
+	vector<ll> segmentTree(treeSize);
 	
 	makeSegmentTree(segmentTree,1,0,n-1);
 	for (int i = 0; i < m + k; i++) {
 		int order, left;
-		long long right;
+		ll right;
 		cin >> order>> left >> right;
 		if (order == 1) {
 			//change

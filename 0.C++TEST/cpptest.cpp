@@ -5,9 +5,9 @@
 
 typedef long long ll;
 typedef unsigned long long ull;
-#define ld long double
-#define pii pair<int, int>
-#define pll pair<ll, ll>
+typedef long double ld;
+typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
 #define fr first
 #define sc second
 #define vt vector
@@ -17,29 +17,9 @@ typedef unsigned long long ull;
 
 using namespace std;
 
-int n, m;
-vt<int> root;
-
-int find(int node) {
-    if(root[node] == node) return node;
-    root[node] = find(root[node]);
-    return root[node];
-}
-
-void uni(int a, int b) {
-    int ra = find(a);
-    int rb = find(b);
-    root[rb] = ra;
-}
 
 int main() {
-    scanf("%d %d", &n, &m);
-    for(int i = 0; i <= n; i++) root.push_back(i);
-
-    int flag, from, to;
-    while(m--) {
-        scanf("%d %d %d", &flag, &from, &to);
-        if(!flag) uni(from, to);
-        else cout << (find(from) == find(to) ? "YES" : "NO") << '\n';
-    }
+    int a = 3;
+    int b = 0;
+    cout << a / b;
 }

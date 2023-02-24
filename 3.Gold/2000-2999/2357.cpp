@@ -1,7 +1,6 @@
-// 초콜릿 피라미드 - BOJ #25793
+// 최솟값과 최댓값 - BOJ #2357
 
 #include <bits/stdc++.h>
-#include <inttypes.h>
 
 typedef long long ll;
 typedef unsigned long long ull;
@@ -17,22 +16,12 @@ typedef pair<ll, ll> pll;
 
 using namespace std;
 
+vt<ll> arr(100007);
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-
-    int T;
-    cin >> T;
-    while(T--) {
-        ll R, C;
-        cin >> R >> C;
-        ll N = min(R, C);
-        ll M = max(R, C) - N;
-
-        ll white = (N * (N * N *2 +1)) / 3 + N * N * M;
-        ll dark = (N * (N * N -1)) * 2 / 3 + N * N * M;
-
-        cout << white << ' ' << dark << '\n';
-    }
+    
+    
 }
