@@ -4,8 +4,8 @@
 typedef long long ll;
 typedef unsigned long long ull;
 typedef long double ld;
-typedef pair<int, int> pii;
-typedef pair<ll, ll> pll;
+#define pii pair<int, int>
+#define pll pair<long, long>
 #define fr first
 #define sc second
 #define vt vector
