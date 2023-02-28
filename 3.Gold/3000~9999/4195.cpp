@@ -18,10 +18,8 @@ typedef long double ld;
 using namespace std;
 
 vt<int> root;
-vt<int> compSize(100001, 1);
-map<string, int> idxOf;
-int T, F, cnt(0);
-string A, B;
+vt<int> compSize(200001, 0);
+unordered_map<string, int> idxOf;
 
 int find(int node) {
     if(root[node] != node) root[node] = find(root[node]);
@@ -31,21 +29,26 @@ int find(int node) {
 void uni(int a, int b) {
     int ra = find(a);
     int rb = find(b);
+    if(ra == rb) return;
+    
     root[max(rb, ra)] = min(rb, ra);
     
-    compSize[b] += compSize[a];
-    compSize[a] = compSize[b];
+    compSize[a] += compSize[b];
+    compSize[b] = compSize[a];
 }
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    
+
+    string A, B;
+    int T, F, cnt(0);
+
     cin >> T;
     while(T--) {
-        for(int i = 0; i <= 100001; i++) root.push_back(i);
         cin >> F;
+        for(int i = 0; i <= 200001; i++) root.push_back(i);
 
         while(F--) {
             cin >> A >> B;
@@ -60,17 +63,17 @@ int main() {
             }
 
             if(find(idxOf[A]) == find(idxOf[B])) {
-                printf("%d\n", compSize[idxOf[A]]);
+                cout << compSize[idxOf[A]] << '\n';
                 continue;
             }
 
             uni(idxOf[A], idxOf[B]);
-            printf("%d\n", compSize[idxOf[A]]);
+            cout << compSize[idxOf[A]] << '\n';
         }
 
         cnt = 0;
         root.clear();
-        compSize.assign(100001, 1);
         idxOf.clear();
+        compSize.assign(200001, 0);
     }
 }
