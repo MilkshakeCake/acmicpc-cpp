@@ -1,11 +1,7 @@
 // 친구 네트워크 - BOJ #4195
-// INCOMPLETE
 
 #include <bits/stdc++.h>
 
-typedef long long ll;
-typedef unsigned long long ull;
-typedef long double ld;
 #define pii pair<int, int>
 #define pll pair<long, long>
 #define fr first
@@ -31,10 +27,8 @@ void uni(int a, int b) {
     int rb = find(b);
     if(ra == rb) return;
     
-    root[max(rb, ra)] = min(rb, ra);
-    
-    compSize[a] += compSize[b];
-    compSize[b] = compSize[a];
+    root[rb] = ra;
+    compSize[ra] += compSize[rb];
 }
 
 int main() {
@@ -52,23 +46,23 @@ int main() {
 
         while(F--) {
             cin >> A >> B;
-            if(idxOf[A] == 0) {
+            if(idxOf.count(A) == 0) {
                 idxOf[A] = ++cnt;
                 compSize[idxOf[A]] = 1;
             }
 
-            if(idxOf[B] == 0) {
+            if(idxOf.count(B) == 0) {
                 idxOf[B] = ++cnt;
                 compSize[idxOf[B]] = 1;
             }
 
             if(find(idxOf[A]) == find(idxOf[B])) {
-                cout << compSize[idxOf[A]] << '\n';
+                cout << compSize[find(idxOf[A])] << '\n';
                 continue;
             }
 
             uni(idxOf[A], idxOf[B]);
-            cout << compSize[idxOf[A]] << '\n';
+            cout << compSize[find(idxOf[A])] << '\n';
         }
 
         cnt = 0;
