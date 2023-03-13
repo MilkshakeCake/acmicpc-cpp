@@ -17,7 +17,7 @@ typedef long double ld;
 using namespace std;
 
 vt<pair<double, double>> cosmos;
-vt<vt<double>> distances(101);
+vt<pair<double, int>> distances[100];
 vt<bool> tracker;
 double sum = 0;
 
@@ -39,18 +39,37 @@ int main() {
 
     tracker.assign(n, false);
     double cosx, cosy;
-
-    cin >> cosx >> cosy;
-    cosmos.push_back({cosx, cosy});
-    int cnt = 0;
-
-    for(int i = 1; i < n; i++) {
+    for(int i = 0; i < n; i++) {
         cin >> cosx >> cosy;
         cosmos.push_back({cosx, cosy});
-        for(int j = 0; j < i; j++) {
-            distances[j].push_back(distance(cosmos[i], cosmos[sz(cosmos) -1]));
+    }
+
+    for(int i = 0; i < n; i++) {
+        for(int j = i +1; j < n; j++) {
+            double dist = distance(cosmos[i], cosmos[j]);
+            distances[i].push_back({dist, j});
+            distances[j].push_back({dist, i});
         }
     }
 
-    
+    double sum = 0;
+
+    priority_queue<pair<double, int>> pq;
+    pq.push({0, 0});
+
+    while(!pq.empty()) {
+        pair<double, int> now = pq.top();
+        pq.pop();
+
+        if(tracker[now.second]) continue;
+        tracker[now.second] = true;
+        sum -= now.first;
+
+        for(auto next : distances[now.second]) {
+            if(tracker[next.second]) continue;
+            pq.push({-next.first, next.second});
+        }
+    }
+
+    cout << sum;
 }
