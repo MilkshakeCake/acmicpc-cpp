@@ -1,4 +1,5 @@
 // 별자리 만들기 - BOJ #4386
+// Prim algorithm (similar to Dijkstra with PQ)
 
 #include <bits/stdc++.h>
 
@@ -24,10 +25,6 @@ double sum = 0;
 double distance(pair<double, double> p1, pair<double, double> p2) {
     return sqrt((p1.first - p2.first)*(p1.first - p2.first) + (p1.second - p2.second)*(p1.second - p2.second));
 }
-
-// void prim(int idx) {
-
-// }
 
 int main() {
     ios_base::sync_with_stdio(false);
