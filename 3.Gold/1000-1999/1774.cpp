@@ -28,9 +28,21 @@ struct compare {
     }
 };
 
-vt<bool> tracker(1000, 0);
+vt<int> root(1000, 0);
 vt<pair<double, double>> pantheon;
 vt<vt<bool>> ready(1000, vt<bool>(1000));
+
+int find(int node) {
+    if(root[node] == node) return node;
+    return find(root[node]);
+}
+
+void uni(int a, int b) {
+    int fa = find(a);
+    int fb = find(b);
+
+    root[fb] = fa;
+}
 
 double distance(pair<double, double> p1, pair<double, double> p2) {
     return sqrt((p1.first - p2.first)*(p1.first - p2.first) + (p1.second - p2.second)*(p1.second - p2.second));
@@ -47,7 +59,13 @@ int main() {
     int n, m, x, y;
     cin >> n >> m;
 
+    if(n == 1) {
+        cout << 0;
+        return 0;
+    }
+
     for(int i = 0; i < n; i++) {
+        root[i] = i;
         cin >> x >> y;
         pantheon.push_back({x, y});
     }
@@ -68,7 +86,6 @@ int main() {
             pq.push({dist, i, j});
         }
     }
-    tracker[pq.top().from] = true;
 
     double sum = 0;
 
@@ -76,11 +93,9 @@ int main() {
         auto now = pq.top();
         pq.pop();
         
-        if(tracker[now.from] && tracker[now.to]) continue;
-
+        if(find(now.from) == find(now.to)) continue;
         sum += now.len;
-        tracker[now.from] = true;
-        tracker[now.to] = true;
+        uni(now.from, now.to);
     }
 
     cout << sum;
