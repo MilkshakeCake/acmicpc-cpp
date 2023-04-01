@@ -1,4 +1,4 @@
-// ìš°ì£¼ì‹ ê³¼ì˜ êµê° - BOJ #1774
+// ?¿ìÁÖ½Å°úÀÇ ±³°¨ - BOJ #1774
 
 #include <bits/stdc++.h>
 
