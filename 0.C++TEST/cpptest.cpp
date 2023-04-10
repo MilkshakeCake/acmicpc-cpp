@@ -1,7 +1,6 @@
 // Practice Techniques of C++
 
 #include <bits/stdc++.h>
-#include <map>
 
 typedef long long ll;
 typedef unsigned long long ull;
@@ -17,11 +16,47 @@ typedef long double ld;
 
 using namespace std;
 
+class Person {
+    string name;
+    string tel;
 
-int main() {
-    for(int i = 1; i <= 10; i++) {
-        for(int j = 1; j <= 10; j++) {
-            cout << i << ' ' << j << '\n';
+    public:
+    Person() {};
+    void setName(string name) {this->name = name; this->tel = ""; }
+    string getName() {return name; }
+    string getTel() {return tel; }
+    void set(string name, string tel) {this->name = name; this->tel = tel; }
+};
+
+class Family {
+    string name;
+    int size;
+    Person *p;
+
+    public:
+    Family(string name, int size) {
+        this->name = name;
+        this->size = size;
+        this->p = new Person[size];
+    }
+
+    void setName(int num, string name) {
+        this->p[num].setName(name);
+    }
+
+    void show() {
+        for(int i = 0; i < size; i++) {
+            cout << p[i].getName() << ' ';
         }
     }
+    ~Family() {};
+};
+
+int main() {
+    Family *simpson = new Family("Simpson", 3);
+    simpson->setName(0, "Mr. Simpson");
+    simpson->setName(1, "Mrs. Simpson");
+    simpson->setName(2, "Bart Simpson");
+    simpson->show();
+    delete simpson;
 }

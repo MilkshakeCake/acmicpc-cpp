@@ -21,13 +21,13 @@ int main() {
     vector<int> dp(1001, 1);
 
     int temp;
-    F_OR1(n) {
+    for(int i = 0; i < n; i++) {
         cin >> temp;
         arr.push_back(temp);
     }
 
-    F_OR3(i, 1, n) {
-        F_OR3(j, 0, i) {
+    for(int i = 1; i < n; i++) {
+        for(int j = 0; j < i; j++) {
             if(arr[j] < arr[i]) {
                 dp[i] = max(dp[i], dp[j] + 1);
             }

@@ -1,15 +1,27 @@
-#include <iostream>
-#include <queue>
-#include <vector>
+// ½Ã°£ ¿Ü ±Ù¹« ¸ØÃç! - BOJ #27112
+
+#include <bits/stdc++.h>
 
 using namespace std;
+
+typedef long long ll;
+typedef unsigned long long ull;
+typedef long double ld;
+#define pii pair<int, int>
+#define pll pair<long, long>
+#define fr first
+#define sc second
+#define vt vector
+#define all(c) (c).begin(), (c).end()
+#define sz(x) (int)(x).size()
+#define printall(i, a) for (auto &i : a) cout << i << ' '
 
 struct work {
 	int deadline;
 	int time;
 	int num;
 
-	void printall() {
+	void printer() {
 		cout << deadline << ' ' << time << ' ' << num << '\n';
 	}
 };
