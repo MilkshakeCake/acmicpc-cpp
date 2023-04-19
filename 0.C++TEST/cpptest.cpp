@@ -16,47 +16,31 @@ typedef long double ld;
 
 using namespace std;
 
-class Person {
-    string name;
-    string tel;
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    
+    int n, m;
+    cin >> n >> m;
+    vt<vt<bool>> board(n, vt<bool>(m));
+    
+    pii point = {-1, -1};
 
-    public:
-    Person() {};
-    void setName(string name) {this->name = name; this->tel = ""; }
-    string getName() {return name; }
-    string getTel() {return tel; }
-    void set(string name, string tel) {this->name = name; this->tel = tel; }
-};
+    char input;
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            cin >> input;
+            if(input == '.') {
+                if(point.first != -1) {
+                    int avg = j - point.first;
+                    point = {point.first + avg, point.second + avg};
+                    cout << avg << '\n';
+                }
+                continue;
+            }
 
-class Family {
-    string name;
-    int size;
-    Person *p;
-
-    public:
-    Family(string name, int size) {
-        this->name = name;
-        this->size = size;
-        this->p = new Person[size];
-    }
-
-    void setName(int num, string name) {
-        this->p[num].setName(name);
-    }
-
-    void show() {
-        for(int i = 0; i < size; i++) {
-            cout << p[i].getName() << ' ';
+            if(point.first == -1) point = {i, j};
         }
     }
-    ~Family() {};
-};
-
-int main() {
-    Family *simpson = new Family("Simpson", 3);
-    simpson->setName(0, "Mr. Simpson");
-    simpson->setName(1, "Mrs. Simpson");
-    simpson->setName(2, "Bart Simpson");
-    simpson->show();
-    delete simpson;
 }
