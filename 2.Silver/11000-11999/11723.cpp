@@ -1,8 +1,6 @@
 // 집합 - BOJ #11723
 
-#include <string>
-#include <iostream>
-#include <algorithm>
+#include <bits/stdc++.h>
 
 typedef long long ll;
 typedef unsigned long long ull;

@@ -1,0 +1,26 @@
+a & b : AND between a, b                | 교집합
+a | b : OR                              | 합집합
+a ^ b : XOR                             | 합집합 - 교집합
+~a    : NOT                             | 여집합
+a << b: shift a to left by b bits       | 
+a >> b: shift a to right by b bits      | 
+
+*add component
+cur = cur | (1 << p);
+
+*delete component
+cur = cur & ~(1 << p);
+
+*toggle component
+cur = cur ^ (1 << p);
+
+*size of set (RECURSIVE)
+int bitcount(int x) {
+    if(x == 0) return 0;
+    return x %2 + bitcount(x /2);
+}
+
+*iterate subset
+for(int subset = set; subset; subset = (subset -1) & set) {
+    // code
+}
