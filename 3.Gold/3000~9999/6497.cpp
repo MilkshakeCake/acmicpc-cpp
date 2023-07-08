@@ -1,4 +1,4 @@
-// Àü·Â³­ - BOJ #6497
+// ì „ë ¥ë‚œ - BOJ #6497
 
 #include <bits/stdc++.h>
 
@@ -17,11 +17,12 @@ typedef long double ld;
 using namespace std;
 
 vt<int> root(200000);
+vt<int> depth(200000, 0);
 
 struct edge {
-    int from;
-    int to;
-    int dis;
+    ll from;
+    ll to;
+    ll dis;
 };
 
 struct compare {
@@ -38,14 +39,21 @@ int find(int idx) {
 }
 
 void uni(int a, int b) {
-    int fa = find(a);
-    int fb = find(b);
+    a = find(a);
+    b = find(b);
 
-    root[fb] = fa;
+    if(a == b) return;
+    if(a > b) swap(a, b);
+
+    if(depth[a] > depth[b]) swap(a, b);
+
+    root[b] = a;
+
+    if(depth[a] == depth[b]) depth[b]++;
 }
 
 priority_queue<edge, vt<edge>, compare> pq;
-int m, n, from, to, dis;
+ll m, n, from, to, dis;
 ll sum = 0;
 
 int main() {
@@ -55,26 +63,32 @@ int main() {
     
     cin >> m >> n;
 
-    for(int i = 0; i < m; i++) {
-        root[i] = i;
+    while(m != 0 && n != 0) {
+        for(int i = 0; i <= m; i++) {
+            root[i] = i;
+        }
+
+        for(int i = 0; i < n; i++) {
+            cin >> from >> to >> dis;
+            pq.push({from, to, dis});
+            sum += dis;
+        }
+
+        while(!pq.empty()) {
+            auto now = pq.top();
+            pq.pop();
+
+            if(find(now.from) == find(now.to)) continue;
+            uni(now.from, now.to);
+            sum -= now.dis;
+        }
+
+        cout << sum <<'\n';
+
+        sum = 0;
+        root.assign(200000, 0);
+        cin >> m >> n;
     }
 
-    for(int i = 0; i < n; i++) {
-        cin >> from >> to >> dis;
-        pq.push({from, to, dis});
-        sum += dis;
-    }
-
-    while(!pq.empty()) {
-        auto now = pq.top();
-        pq.pop();
-
-        if(find(now.from) == find(now.to)) continue;
-        uni(now.from, now.to);
-        sum -= now.dis;
-    }
-
-    cin >> from >> to;
-
-    cout << sum;
+    return 0;
 }
