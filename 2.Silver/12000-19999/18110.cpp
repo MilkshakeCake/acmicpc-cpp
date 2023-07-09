@@ -1,4 +1,4 @@
-// Practice Techniques of C++
+// solved.ac - BOJ #18110
 
 #include <bits/stdc++.h>
 
@@ -23,14 +23,35 @@ int main() {
     
     double n; cin >> n;
 
+    if(n == 0) {
+        cout << 0;
+        return 0;
+    }
+
+    vt<double> vec;
+    deque<double> dq;
+    double exclusion = n * 0.15;
+    exclusion = round(exclusion);
     double temp;
-    double sum = 0;
 
     for(int i = 0; i < n; i++) {
         cin >> temp;
-        sum += temp;
+        vec.push_back(temp);
     }
 
-    sum /= n;
-    cout << sum;
+    sort(all(vec));
+
+    for(auto i : vec) dq.push_back(i);
+    
+    for(int i = 0; i < exclusion; i++) {
+        dq.pop_back();
+        dq.pop_front();
+    }
+
+    double avg = 0;
+    for(auto i : dq) avg += i;
+
+    avg /= (double)dq.size();
+    avg = round(avg);
+    cout << avg;
 }

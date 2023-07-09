@@ -1,4 +1,4 @@
-// Practice Techniques of C++
+// 문자와 문자열 - BOJ #27866
 
 #include <bits/stdc++.h>
 
@@ -21,16 +21,10 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    double n; cin >> n;
+    string str;
+    cin >> str;
 
-    double temp;
-    double sum = 0;
-
-    for(int i = 0; i < n; i++) {
-        cin >> temp;
-        sum += temp;
-    }
-
-    sum /= n;
-    cout << sum;
+    int i;
+    cin >> i;
+    cout << str[i -1];
 }
