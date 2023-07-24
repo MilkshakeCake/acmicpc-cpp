@@ -1,4 +1,4 @@
-// Practice Techniques of C++
+// 체육은 코딩과목 입니다 - BOJ #28295
 
 #include <bits/stdc++.h>
 
@@ -21,4 +21,16 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
+    int n = 0;
+    for(int i = 0; i < 10; i++) {
+        int temp;
+        cin >> temp;
+        n += temp;
+        n %= 4;
+    }
+
+    if(n == 0) cout << 'N';
+    else if(n == 1) cout << 'E';
+    else if(n == 2) cout << 'S';
+    else cout << 'W';
 }
