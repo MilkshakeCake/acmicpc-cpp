@@ -33,46 +33,33 @@ int main() {
     int n, m, k;
     cin >> n >> m >> k;
 
-    vector<vector<char>> color(n, vector<char>(m));
+    vector<vector<vector<int>>> tile(k, vector<vector<int>>(k, vector<int>(28, 0)));
+    vector<vector<char>> board(n, vector<char>(m));
+
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
-            cin >> color[i][j];
+            cin >> board[i][j];
+            tile[i % k][j % k][(int)board[i][j] - 65]++;
         }
     }
-
-    map<string, int> tile;
-    vector<string> tiles;
-
-    for(int i = 0; i < n; i += k) {
-        for(int j = 0; j < m; j += k) {
-            string now;
-            for(int a = i; a < i + k; a++) {
-                for(int b = j; b < j + k; b++) {
-                    now += color[a][b];
-                }
-            }
-            tiles.push_back(now);
-            tile[now]++;
-        }
-    }
-
-    auto pr = max_element(all(tile), [](const auto &x, const auto &y) {
-        if(x.second == y.second) return x.first > y.first;
-        return x.second < y.second;
-    });
 
     int sum = 0;
-    for(int i = 0; i < (int)tiles.size(); i++) {
-        sum += diff(pr->first, tiles[i]);
+
+    for(int i = 0; i < k; i++) {
+        for(int j = 0; j < k; j++) {
+            for(int h = 0; h < 26; h++) {
+                if(tile[i][j][26] >= tile[i][j][h]) continue;
+                tile[i][j][26] = tile[i][j][h];
+                tile[i][j][27] = h + 65;
+            }
+            sum += (n / k) * (m / k) - tile[i][j][26];
+        }
     }
 
     cout << sum << '\n';
-
     for(int i = 0; i < n; i++) {
-        for(int j = 0; j < m; j += k) {
-            for(int a = 0; a < k; a++) {
-                cout << pr->first[a + (i % k) * k];
-            }
+        for(int j = 0; j < m; j++) {
+            cout << (char)tile[i % k][j % k][27];
         }
         cout << '\n';
     }
