@@ -1,5 +1,3 @@
-// Practice Techniques of C++
-
 #include <bits/stdc++.h>
 
 typedef long long ll;
@@ -21,15 +19,18 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int n, tmp;
-    cin >> n >> tmp;
+    int t;
+    cin >> t;
+    while(t--) {
+        string str;
+        char input;
+        for(int i = 0; i < 8; i++) {
+            for(int j = 0; j < 8; j++) {
+                cin >> input;
+                if(input != '.') str += input;
+            }
+        }
 
-    vt<int> arr;
-    for(int i = 0; i < n; i++) {
-        cin >> tmp;
-        arr.push_back(tmp);
+        cout << str << '\n';
     }
-
-    sort(all(arr));
-    printall(i, arr);
 }

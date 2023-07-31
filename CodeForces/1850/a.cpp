@@ -1,5 +1,3 @@
-// Practice Techniques of C++
-
 #include <bits/stdc++.h>
 
 typedef long long ll;
@@ -21,15 +19,17 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int n, tmp;
-    cin >> n >> tmp;
+    int t;
+    cin >> t;
 
-    vt<int> arr;
-    for(int i = 0; i < n; i++) {
-        cin >> tmp;
-        arr.push_back(tmp);
+    int sum = 0;
+    while(t--) {
+        int a, b, c;
+        cin >> a >> b >> c;
+        sum += a + b + c;
+        sum -= min({a, b, c});
+
+        cout << (sum >= 10 ? "YES" : "NO") << '\n';
+        sum = 0;
     }
-
-    sort(all(arr));
-    printall(i, arr);
 }

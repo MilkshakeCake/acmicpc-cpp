@@ -1,5 +1,3 @@
-// Practice Techniques of C++
-
 #include <bits/stdc++.h>
 
 typedef long long ll;
@@ -21,15 +19,21 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int n, tmp;
-    cin >> n >> tmp;
+    int t;
+    cin >> t;
+    while(t--) {
+        int n;
+        cin >> n;
 
-    vt<int> arr;
-    for(int i = 0; i < n; i++) {
-        cin >> tmp;
-        arr.push_back(tmp);
+        priority_queue<pair<int, int>> pq;
+        int a, b;
+        for(int i = 1; i <= n; i++) {
+            cin >> a >> b;
+            if(a > 10) continue;
+
+            pq.push({b, i});
+        }
+
+        cout << pq.top().second << '\n';
     }
-
-    sort(all(arr));
-    printall(i, arr);
 }

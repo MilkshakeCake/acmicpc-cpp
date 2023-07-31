@@ -1,5 +1,3 @@
-// Practice Techniques of C++
-
 #include <bits/stdc++.h>
 
 typedef long long ll;
@@ -21,15 +19,27 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int n, tmp;
-    cin >> n >> tmp;
+    int t;
+    cin >> t;
+    while(t--) {
+        int n;
+        ull c, sum(0);
+        cin >> n >> c;
 
-    vt<int> arr;
-    for(int i = 0; i < n; i++) {
-        cin >> tmp;
-        arr.push_back(tmp);
+        ull input;
+        vt<ull> pictures;
+        for(int i = 0; i < n; i++) {
+            cin >> input;
+            pictures.push_back(input);
+            sum += input;
+            c -= input * input;
+        }
+
+        c /= 4 * n;
+        sum /= 2 * n;
+
+        ull w = sqrtl(sum * sum + c);
+        w -= sum;
+        cout << w << '\n';
     }
-
-    sort(all(arr));
-    printall(i, arr);
 }

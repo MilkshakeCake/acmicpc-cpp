@@ -1,4 +1,4 @@
-// Practice Techniques of C++
+// Ä«À× ´Þ·Â - BOJ #6064
 
 #include <bits/stdc++.h>
 
@@ -21,15 +21,5 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int n, tmp;
-    cin >> n >> tmp;
-
-    vt<int> arr;
-    for(int i = 0; i < n; i++) {
-        cin >> tmp;
-        arr.push_back(tmp);
-    }
-
-    sort(all(arr));
-    printall(i, arr);
+    
 }
