@@ -1,4 +1,4 @@
-// Ä«À× ´Þ·Â - BOJ #6064
+// HIARC - BOJ #
 
 #include <bits/stdc++.h>
 
@@ -21,12 +21,8 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     
-    int t;
-    cin >> t;
-    while(t--) {
-        int m, n, x, y;
-        cin >> m >> n >> x >> y;
-
-        
-    }
+    int h, i, a, r, c;
+    cin >> h >> i >> a >> r >> c;
+    h *= i * a;
+    r *= c;
 }
