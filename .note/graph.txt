@@ -123,7 +123,7 @@ void BellmanFord(int begin) {
     return;
 }
 
-// FLOYD-WARSHALL
+// FLOYD-WARSHALL - Negative Value Nodes
 for(int k = 1; k <= n; k++) {
     for(int i = 1; i <= n; i++) {
         if(i == k) matrix[i][k] = 0;
