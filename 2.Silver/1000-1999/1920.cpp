@@ -17,6 +17,7 @@ int main() {
         vec.push_back(temp);
     }
     sort(vec.begin(), vec.end());       //sort 안하면 binary_search가 제대로 작동 안함
+    
     int m;
     cin >> m;
     for(int i = 0; i < m; i++) {

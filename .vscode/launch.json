@@ -7,9 +7,9 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "d:/Personal/C++/CodeForces/1850",
-      "program": "d:/Personal/C++/CodeForces/1850/build/Debug/outDebug",
+      "externalConsole": false,
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

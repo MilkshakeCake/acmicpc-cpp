@@ -1,6 +1,8 @@
 // Practice Techniques of C++
 
-#include <bits/stdc++.h>
+// #include <bits/stdc++.h>
+
+#include <iostream>
 
 typedef long long ll;
 typedef unsigned long long ull;
@@ -20,16 +22,27 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-    
-    int n, tmp;
-    cin >> n >> tmp;
 
-    vt<int> arr;
-    for(int i = 0; i < n; i++) {
-        cin >> tmp;
-        arr.push_back(tmp);
+    char choice;
+    cout << "is A?" << endl;
+    cin >> choice;
+    if(choice == 'y' || choice == 'Y') {
+        cout << "is C?" << endl;
+        cin >> choice;
+        if(choice == 'y' || choice == 'Y') {
+            cout << "A, C" << endl;
+        }
+
+        else cout << "A, D" << endl;
     }
 
-    sort(all(arr));
-    printall(i, arr);
+    else {
+        cout << "is C?" << endl;
+        cin >> choice;
+        if(choice == 'y' || choice == 'Y') {
+            cout << "B, C" << endl;
+        }
+
+        else cout << "B, D" << endl;
+    }
 }

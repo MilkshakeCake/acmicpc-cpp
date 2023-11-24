@@ -1,0 +1,21 @@
+int binary_search(vector<int> &arr, int K) {
+    int lo = 0, hi = arr.size();
+
+    while(lo +1 < hi) {
+        int mid = (lo + hi) / 2;
+        if(K < arr[mid]) hi = mid;
+        else lo = mid;
+    }
+}
+// ver.JSM
+
+int binary_search(<vector<int> &arr, int K) {
+    int lo = 0; int hi = arr.size();
+
+    while(lo <= hi) {
+        int mid = lo + hi >> 1;
+        if(K < arr[mid]) hi = mid -1;
+        else lo = mid +1;
+    }
+}
+// ver.ME

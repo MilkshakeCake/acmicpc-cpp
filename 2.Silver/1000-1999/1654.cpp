@@ -18,6 +18,7 @@ int main() {
         cin >> temp;
         v.push_back(temp);
     }
+    
     sort(v.begin(), v.end());
     long long snum = 1;
     long long lnum = v[v.size()-1];

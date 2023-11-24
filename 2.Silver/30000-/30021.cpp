@@ -22,5 +22,17 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
+    int n;
+    cin >> n;
+
+    vector<bool> isP(n +1, false);
+    for (int i = 2; i * i <= n; i++) {
+        if (!isP[i]) {
+            for (int j = i * i; j <= n; j += i) {
+                isP[j] = true;
+            }
+        }
+    }
+
     
 }
